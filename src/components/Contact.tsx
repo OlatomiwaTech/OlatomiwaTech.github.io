@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, AlertCircle, Loader2, Mail, MessageSquare, User, AtSign } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Loader2, Mail, MessageSquare, User, AtSign, ArrowUpRight } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import type { ContactFormData, FormState } from '../types/portfolio';
+import { GithubIcon } from './icons/GithubIcon';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -48,7 +49,6 @@ export const Contact: React.FC = () => {
     setFormState('submitting');
 
     try {
-      // Dispatch payload to email endpoint (Formspree or direct email router)
       const response = await fetch(`https://formspree.io/f/${PERSONAL_INFO.contactEmail}`, {
         method: 'POST',
         headers: {
@@ -60,7 +60,7 @@ export const Contact: React.FC = () => {
           email: formData.email,
           message: formData.message,
           _replyto: formData.email,
-          _subject: `New Developer Portfolio Message from ${formData.name}`,
+          _subject: `New Portfolio Inquiry from ${formData.name}`,
         }),
       });
 
@@ -68,7 +68,6 @@ export const Contact: React.FC = () => {
         setFormState('success');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        // Fallback for direct mailto trigger if endpoint requires form key confirmation
         window.location.href = `mailto:${PERSONAL_INFO.contactEmail}?subject=${encodeURIComponent(
           `Portfolio Inquiry from ${formData.name}`
         )}&body=${encodeURIComponent(`From: ${formData.name} (${formData.email})\n\n${formData.message}`)}`;
@@ -76,7 +75,6 @@ export const Contact: React.FC = () => {
         setFormData({ name: '', email: '', message: '' });
       }
     } catch {
-      // Network fallback
       window.location.href = `mailto:${PERSONAL_INFO.contactEmail}?subject=${encodeURIComponent(
         `Portfolio Inquiry from ${formData.name}`
       )}&body=${encodeURIComponent(`From: ${formData.name} (${formData.email})\n\n${formData.message}`)}`;
@@ -87,8 +85,8 @@ export const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="py-24 relative border-t border-slate-800/60 bg-[#0A0E1A]">
-      {/* Background glow accent */}
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-[#38BDF8]/5 blur-[120px] rounded-full pointer-events-none" />
+      {/* Background radial glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#38BDF8]/5 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -96,24 +94,36 @@ export const Contact: React.FC = () => {
         <div className="text-center space-y-3 mb-12">
           <div className="inline-flex items-center gap-2 text-xs font-mono text-[#38BDF8] uppercase tracking-wider">
             <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8]" />
-            Get In Touch
+            Initiate Collaboration
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#F8FAFC] tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#F8FAFC] tracking-tight">
             {PERSONAL_INFO.contactHeading}
           </h2>
 
-          <p className="text-base sm:text-lg text-[#94A3B8] max-w-xl mx-auto">
+          <p className="text-base sm:text-lg text-[#94A3B8] max-w-lg mx-auto">
             {PERSONAL_INFO.contactCopy}
           </p>
 
-          <div className="pt-2">
+          {/* Quick Direct Links Badge Row */}
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
             <a
               href={`mailto:${PERSONAL_INFO.contactEmail}`}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#111827] border border-slate-800 text-xs font-mono text-[#38BDF8] hover:border-[#38BDF8]/40 hover:shadow-[0_0_15px_rgba(56,189,248,0.2)] transition-all"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111827] border border-slate-800 text-xs font-mono text-[#38BDF8] hover:border-[#38BDF8]/40 hover:shadow-[0_0_15px_rgba(56,189,248,0.2)] transition-all"
             >
-              <AtSign className="w-3.5 h-3.5" />
+              <AtSign className="w-3.5 h-3.5 text-[#38BDF8]" />
               <span>{PERSONAL_INFO.contactEmail}</span>
+            </a>
+
+            <a
+              href={PERSONAL_INFO.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111827] border border-slate-800 text-xs font-mono text-[#F8FAFC] hover:border-slate-700 transition-all"
+            >
+              <GithubIcon className="w-3.5 h-3.5 text-[#38BDF8]" />
+              <span>GitHub Profile</span>
+              <ArrowUpRight className="w-3 h-3 text-[#94A3B8]" />
             </a>
           </div>
         </div>
@@ -128,11 +138,11 @@ export const Contact: React.FC = () => {
               </div>
 
               <h3 className="text-2xl font-bold text-[#F8FAFC]">
-                Message Sent to {PERSONAL_INFO.contactEmail}!
+                Message Delivered
               </h3>
 
               <p className="text-sm text-[#94A3B8] max-w-md mx-auto">
-                Thank you for reaching out. Olatomiwa will review your inquiry and reply to your email address promptly.
+                Thank you for reaching out. Olatomiwa will review your project details and respond to <span className="text-[#F8FAFC] font-mono">{formData.email || 'your email'}</span>.
               </p>
 
               <div className="pt-4">
@@ -141,7 +151,7 @@ export const Contact: React.FC = () => {
                   onClick={() => setFormState('idle')}
                   className="px-6 py-2.5 rounded-lg bg-[#0A0E1A] border border-slate-800 text-xs font-mono text-[#38BDF8] hover:border-slate-700 hover:bg-slate-800/60 transition-colors"
                 >
-                  Send Another Message
+                  Send Another Inquiry
                 </button>
               </div>
             </div>
@@ -211,7 +221,7 @@ export const Contact: React.FC = () => {
               <div className="space-y-2">
                 <label htmlFor="message" className="block text-xs font-mono text-[#F8FAFC] font-medium flex items-center gap-1.5">
                   <MessageSquare className="w-3.5 h-3.5 text-[#38BDF8]" />
-                  <span>Project Details / Message *</span>
+                  <span>Project / Inquiry Details *</span>
                 </label>
                 <textarea
                   id="message"
@@ -219,7 +229,7 @@ export const Contact: React.FC = () => {
                   rows={5}
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Describe your project, timeline, or inquiry..."
+                  placeholder="Outline your project scope, technical requirements, or opportunity..."
                   disabled={formState === 'submitting'}
                   className={`w-full px-4 py-3 rounded-lg bg-[#0A0E1A] border text-sm text-[#F8FAFC] placeholder-slate-600 focus:outline-none transition-all ${
                     errors.message
@@ -238,7 +248,7 @@ export const Contact: React.FC = () => {
               {/* Submit Button */}
               <div className="pt-2 flex items-center justify-between">
                 <p className="text-xs text-[#94A3B8] font-mono">
-                  * Submits directly to {PERSONAL_INFO.contactEmail}
+                  * Dispatches to {PERSONAL_INFO.contactEmail}
                 </p>
 
                 <button
@@ -249,7 +259,7 @@ export const Contact: React.FC = () => {
                   {formState === 'submitting' ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin text-[#0A0E1A]" />
-                      <span>Sending to {PERSONAL_INFO.contactEmail}...</span>
+                      <span>Sending Message...</span>
                     </>
                   ) : (
                     <>

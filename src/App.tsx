@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { EngineeringProof } from './components/EngineeringProof';
 import { ProjectSection } from './components/ProjectSection';
 import { ProjectModal } from './components/ProjectModal';
-import { TechStack } from './components/TechStack';
+import { EngineeringThinking } from './components/EngineeringThinking';
+import { CurrentFocus } from './components/CurrentFocus';
 import { About } from './components/About';
+import { GitHubSection } from './components/GitHubSection';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import type { Project } from './types/portfolio';
@@ -15,7 +18,7 @@ export function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'projects', 'stack', 'about', 'contact'];
+      const sections = ['home', 'proof', 'projects', 'thinking', 'focus', 'about', 'github', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -37,19 +40,22 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-[#0A0E1A] text-[#F8FAFC] flex flex-col font-sans selection:bg-[#38BDF8]/30 selection:text-[#38BDF8]">
-      {/* Sticky Navigation */}
+      {/* Sticky Floating Navbar */}
       <Navbar activeSection={activeSection} />
 
-      {/* Main Content Area */}
+      {/* Main Narrative Content */}
       <main className="flex-grow">
         <Hero />
+        <EngineeringProof />
         <ProjectSection onOpenModal={(project) => setSelectedProject(project)} />
-        <TechStack />
+        <EngineeringThinking />
+        <CurrentFocus />
         <About />
+        <GitHubSection />
         <Contact />
       </main>
 
-      {/* Project Detail Modal */}
+      {/* Project Architecture Modal */}
       <ProjectModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}

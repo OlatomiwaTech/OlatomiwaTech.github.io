@@ -84,38 +84,35 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative border-t border-slate-800/60 bg-[#0A0E1A]">
-      {/* Background radial glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#38BDF8]/5 blur-[130px] rounded-full pointer-events-none" />
-
+    <section id="contact" className="py-20 sm:py-28 relative border-t border-slate-800/60 bg-[#0A0E1A]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header */}
-        <div className="text-center space-y-3 mb-12">
-          <div className="flex items-center justify-center gap-3">
-            <span className="font-mono text-xs font-bold text-[#38BDF8] bg-[#38BDF8]/10 border border-[#38BDF8]/20 px-3 py-1 rounded-md tracking-wider">
+        {/* Editorial Headline */}
+        <div className="text-left space-y-4 mb-12">
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-xs text-[#38BDF8] tracking-widest uppercase">
               07 / CONNECT
-            </span>
-            <span className="font-mono text-xs text-[#94A3B8] tracking-widest uppercase">
-              INITIATE COLLABORATION
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#F8FAFC] tracking-tight">
-            {PERSONAL_INFO.contactHeading}
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-[#F8FAFC] tracking-tight leading-[1.02]">
+            LET'S BUILD <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F8FAFC] to-[#38BDF8]">
+              SOMETHING USEFUL.
+            </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-[#94A3B8] max-w-lg mx-auto">
-            {PERSONAL_INFO.contactCopy}
+          <p className="text-base sm:text-lg text-[#94A3B8] max-w-lg font-normal">
+            Interested in collaborating, discussing software architecture, or exploring product opportunities? Send a message.
           </p>
 
-          {/* Quick Direct Links Badge Row */}
-          <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
+          {/* Quick Direct Link Buttons */}
+          <div className="pt-2 flex flex-wrap items-center gap-3 font-mono text-xs">
             <a
               href={`mailto:${PERSONAL_INFO.contactEmail}`}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111827] border border-slate-800 text-xs font-mono text-[#38BDF8] hover:border-[#38BDF8]/40 hover:shadow-[0_0_15px_rgba(56,189,248,0.2)] transition-all"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111827] border border-slate-800 text-[#38BDF8] hover:border-slate-700 transition-all"
             >
-              <AtSign className="w-3.5 h-3.5 text-[#38BDF8]" />
+              <AtSign className="w-3.5 h-3.5" />
               <span>{PERSONAL_INFO.contactEmail}</span>
             </a>
 
@@ -123,10 +120,10 @@ export const Contact: React.FC = () => {
               href={PERSONAL_INFO.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111827] border border-slate-800 text-xs font-mono text-[#F8FAFC] hover:border-slate-700 transition-all"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111827] border border-slate-800 text-[#F8FAFC] hover:border-slate-700 transition-all"
             >
               <GithubIcon className="w-3.5 h-3.5 text-[#38BDF8]" />
-              <span>GitHub Profile</span>
+              <span>GitHub</span>
               <ArrowUpRight className="w-3 h-3 text-[#94A3B8]" />
             </a>
 
@@ -134,7 +131,7 @@ export const Contact: React.FC = () => {
               href={PERSONAL_INFO.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111827] border border-slate-800 text-xs font-mono text-[#F8FAFC] hover:border-slate-700 transition-all"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111827] border border-slate-800 text-[#F8FAFC] hover:border-slate-700 transition-all"
             >
               <span>LinkedIn</span>
               <ArrowUpRight className="w-3 h-3 text-[#94A3B8]" />
@@ -142,10 +139,10 @@ export const Contact: React.FC = () => {
           </div>
         </div>
 
-        {/* Contact Form Card */}
+        {/* Contact Form Container */}
         <div className="rounded-2xl bg-[#111827] border border-slate-800 p-6 sm:p-10 shadow-2xl text-left">
           {formState === 'success' ? (
-            /* Success Feedback State */
+            /* Success State */
             <div className="py-12 text-center space-y-4 animate-in fade-in duration-300">
               <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 mx-auto flex items-center justify-center shadow-[0_0_20px_rgba(52,211,153,0.2)]">
                 <CheckCircle2 className="w-8 h-8" />
@@ -163,18 +160,18 @@ export const Contact: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setFormState('idle')}
-                  className="px-6 py-2.5 rounded-lg bg-[#0A0E1A] border border-slate-800 text-xs font-mono text-[#38BDF8] hover:border-slate-700 hover:bg-slate-800/60 transition-colors"
+                  className="px-6 py-2.5 rounded-lg bg-[#0A0E1A] border border-slate-800 text-xs font-mono text-[#38BDF8] hover:border-slate-700 transition-colors"
                 >
                   Send Another Inquiry
                 </button>
               </div>
             </div>
           ) : (
-            /* Main Form */
+            /* Main Form Inputs */
             <form onSubmit={handleSubmit} className="space-y-6" noValidate>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {/* Name Input */}
+                {/* Name */}
                 <div className="space-y-2">
                   <label htmlFor="name" className="block text-xs font-mono text-[#F8FAFC] font-medium flex items-center gap-1.5">
                     <User className="w-3.5 h-3.5 text-[#38BDF8]" />
@@ -202,7 +199,7 @@ export const Contact: React.FC = () => {
                   )}
                 </div>
 
-                {/* Email Input */}
+                {/* Email */}
                 <div className="space-y-2">
                   <label htmlFor="email" className="block text-xs font-mono text-[#F8FAFC] font-medium flex items-center gap-1.5">
                     <Mail className="w-3.5 h-3.5 text-[#38BDF8]" />
@@ -231,7 +228,7 @@ export const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* Message Input */}
+              {/* Message */}
               <div className="space-y-2">
                 <label htmlFor="message" className="block text-xs font-mono text-[#F8FAFC] font-medium flex items-center gap-1.5">
                   <MessageSquare className="w-3.5 h-3.5 text-[#38BDF8]" />
@@ -273,7 +270,7 @@ export const Contact: React.FC = () => {
                   {formState === 'submitting' ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin text-[#0A0E1A]" />
-                      <span>Sending Message...</span>
+                      <span>Sending...</span>
                     </>
                   ) : (
                     <>

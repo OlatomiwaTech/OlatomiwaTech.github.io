@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { WhatIBuild } from './components/WhatIBuild';
 import { ProjectSection } from './components/ProjectSection';
-import { ProjectModal } from './components/ProjectModal';
+import { WhatIBuild } from './components/WhatIBuild';
 import { EngineeringThinking } from './components/EngineeringThinking';
 import { CurrentFrontier } from './components/CurrentFrontier';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { ProjectModal } from './components/ProjectModal';
 import type { Project } from './types/portfolio';
 
 export function App() {
@@ -17,7 +17,7 @@ export function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'capabilities', 'projects', 'thinking', 'frontier', 'about', 'contact'];
+      const sections = ['home', 'projects', 'capabilities', 'thinking', 'frontier', 'about', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -39,21 +39,21 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-[#0A0E1A] text-[#F8FAFC] flex flex-col font-sans selection:bg-[#38BDF8]/30 selection:text-[#38BDF8]">
-      {/* Sticky Floating Navbar */}
+      {/* Quiet Floating Navbar */}
       <Navbar activeSection={activeSection} />
 
-      {/* Main Narrative Content */}
+      {/* Main Narrative Content Flow */}
       <main className="flex-grow">
         <Hero />
-        <WhatIBuild />
         <ProjectSection onOpenModal={(project) => setSelectedProject(project)} />
+        <WhatIBuild />
         <EngineeringThinking />
         <CurrentFrontier />
         <About />
         <Contact />
       </main>
 
-      {/* Project Architecture Modal */}
+      {/* Architecture Case Study Modal */}
       <ProjectModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}

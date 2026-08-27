@@ -3,25 +3,22 @@ import { User, Code2, BookOpen, Compass, CheckCircle2 } from 'lucide-react';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 relative border-t border-slate-800/60 bg-[#0A0E1A]">
+    <section id="about" className="py-20 sm:py-24 relative border-t border-slate-800/60 bg-[#0A0E1A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-left mb-16 space-y-3">
+        <div className="text-left mb-14 space-y-3">
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-bold text-[#38BDF8] bg-[#38BDF8]/10 border border-[#38BDF8]/20 px-3 py-1 rounded-md tracking-wider">
+            <span className="font-mono text-xs text-[#38BDF8] tracking-widest uppercase">
               06 / ABOUT
-            </span>
-            <span className="font-mono text-xs text-[#94A3B8] tracking-widest uppercase">
-              BACKGROUND & PROFILE
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#F8FAFC] tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#F8FAFC] tracking-tight">
             ABOUT OLATOMIWA
           </h2>
 
-          <p className="text-base sm:text-lg text-[#94A3B8] max-w-2xl">
+          <p className="text-base sm:text-lg text-[#94A3B8] max-w-2xl font-normal">
             A software engineer grounded in practical execution, technical discipline, and continuous learning.
           </p>
         </div>
@@ -30,9 +27,9 @@ export const About: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
           
           {/* Block 1: WHO I AM */}
-          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-[#38BDF8]/40 hover:-translate-y-1">
+          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-slate-700">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8] group-hover:border-[#38BDF8]/40 group-hover:bg-[#38BDF8]/10 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8]">
                 <User className="w-5 h-5" />
               </div>
 
@@ -49,16 +46,16 @@ export const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center gap-2 text-xs font-mono text-slate-400">
+            <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-mono text-slate-400">
               <CheckCircle2 className="w-3.5 h-3.5 text-[#38BDF8]" />
               <span>Engineered Discipline</span>
             </div>
           </div>
 
           {/* Block 2: WHAT I BUILD */}
-          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-[#38BDF8]/40 hover:-translate-y-1">
+          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-slate-700">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8] group-hover:border-[#38BDF8]/40 group-hover:bg-[#38BDF8]/10 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8]">
                 <Code2 className="w-5 h-5" />
               </div>
 
@@ -75,16 +72,16 @@ export const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center gap-2 text-xs font-mono text-slate-400">
+            <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-mono text-slate-400">
               <CheckCircle2 className="w-3.5 h-3.5 text-[#38BDF8]" />
               <span>Shipped Products</span>
             </div>
           </div>
 
           {/* Block 3: WHAT I'M LEARNING */}
-          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-[#38BDF8]/40 hover:-translate-y-1">
+          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-slate-700">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8] group-hover:border-[#38BDF8]/40 group-hover:bg-[#38BDF8]/10 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8]">
                 <BookOpen className="w-5 h-5" />
               </div>
 
@@ -101,16 +98,16 @@ export const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center gap-2 text-xs font-mono text-slate-400">
+            <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-mono text-slate-400">
               <CheckCircle2 className="w-3.5 h-3.5 text-[#38BDF8]" />
               <span>Active Exploration</span>
             </div>
           </div>
 
           {/* Block 4: WHERE I'M HEADED */}
-          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-[#38BDF8]/40 hover:-translate-y-1">
+          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-slate-700">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8] group-hover:border-[#38BDF8]/40 group-hover:bg-[#38BDF8]/10 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8]">
                 <Compass className="w-5 h-5" />
               </div>
 
@@ -127,7 +124,7 @@ export const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center gap-2 text-xs font-mono text-slate-400">
+            <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-mono text-slate-400">
               <CheckCircle2 className="w-3.5 h-3.5 text-[#38BDF8]" />
               <span>Advanced Engineering</span>
             </div>

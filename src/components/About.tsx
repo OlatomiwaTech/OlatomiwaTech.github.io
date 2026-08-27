@@ -1,134 +1,70 @@
 import React from 'react';
-import { User, Code2, BookOpen, Compass, CheckCircle2 } from 'lucide-react';
+import { FadeUp, StaggerContainer, StaggerItem, HoverCard } from './motion/MotionPrimitives';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 sm:py-24 relative border-t border-slate-800/60 bg-[#0A0E1A]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="text-left mb-14 space-y-3">
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-xs text-[#38BDF8] tracking-widest uppercase">
-              06 / ABOUT
-            </span>
-          </div>
+    <section id="about" className="bg-[#080B14] py-24 lg:py-32 border-t border-white/[0.06]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#F8FAFC] tracking-tight">
-            ABOUT OLATOMIWA
-          </h2>
-
-          <p className="text-base sm:text-lg text-[#94A3B8] max-w-2xl font-normal">
-            A software engineer grounded in practical execution, technical discipline, and continuous learning.
+        {/* Section Label */}
+        <FadeUp className="flex items-center gap-3 mb-10">
+          <span className="w-2 h-2 rounded-full bg-[#38BDF8]" />
+          <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#38BDF8]">
+            08 — About Me
           </p>
-        </div>
+        </FadeUp>
 
-        {/* 4 Editorial Blocks Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-          
-          {/* Block 1: WHO I AM */}
-          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-slate-700">
-            <div>
-              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8]">
-                <User className="w-5 h-5" />
-              </div>
+        {/* Narrative & Facts Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-              <span className="text-xs font-mono text-[#38BDF8] uppercase tracking-wider block mb-1">
-                IDENTITY
-              </span>
+          {/* Personal Statement */}
+          <FadeUp className="lg:col-span-7 space-y-6">
+            <h2
+              className="font-black tracking-tight text-[#F5F7FA] leading-tight"
+              style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)' }}
+            >
+              "I’m a software engineer and builder interested in turning real-world problems into practical software."
+            </h2>
 
-              <h3 className="text-lg font-bold text-[#F8FAFC] mb-3">
-                WHO I AM
-              </h3>
+            <p className="text-[#94A0B4] text-base sm:text-lg leading-relaxed">
+              I enjoy understanding how complex systems work, building software products from scratch, and using each project to push my engineering ability further.
+            </p>
 
-              <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
-                A full-stack software engineer and entrepreneur dedicated to building clean, maintainable web applications and backend systems that solve genuine problems.
-              </p>
-            </div>
+            <p className="text-[#94A0B4] text-base leading-relaxed">
+              Based in Nigeria, I focus on full-stack web applications, backend architecture, relational database modeling, and practical AI integrations. I care deeply about product usability, clear code contracts, and building software people can actually rely on.
+            </p>
+          </FadeUp>
 
-            <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-mono text-slate-400">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38BDF8]" />
-              <span>Engineered Discipline</span>
-            </div>
-          </div>
-
-          {/* Block 2: WHAT I BUILD */}
-          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-slate-700">
-            <div>
-              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8]">
-                <Code2 className="w-5 h-5" />
-              </div>
-
-              <span className="text-xs font-mono text-[#38BDF8] uppercase tracking-wider block mb-1">
-                EXECUTION
-              </span>
-
-              <h3 className="text-lg font-bold text-[#F8FAFC] mb-3">
-                WHAT I BUILD
-              </h3>
-
-              <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
-                Developer workflow tools, school administration platforms, bespoke e-commerce tracking engines, and scalable REST APIs with PostgreSQL persistence layers.
-              </p>
-            </div>
-
-            <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-mono text-slate-400">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38BDF8]" />
-              <span>Shipped Products</span>
-            </div>
-          </div>
-
-          {/* Block 3: WHAT I'M LEARNING */}
-          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-slate-700">
-            <div>
-              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8]">
-                <BookOpen className="w-5 h-5" />
-              </div>
-
-              <span className="text-xs font-mono text-[#38BDF8] uppercase tracking-wider block mb-1">
-                KNOWLEDGE
-              </span>
-
-              <h3 className="text-lg font-bold text-[#F8FAFC] mb-3">
-                WHAT I'M LEARNING
-              </h3>
-
-              <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
-                Deepening knowledge around PostgreSQL query execution plans, transaction isolation levels, AI LLM function calling, and vector context augmentation.
-              </p>
-            </div>
-
-            <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-mono text-slate-400">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38BDF8]" />
-              <span>Active Exploration</span>
-            </div>
-          </div>
-
-          {/* Block 4: WHERE I'M HEADED */}
-          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-slate-700">
-            <div>
-              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8]">
-                <Compass className="w-5 h-5" />
-              </div>
-
-              <span className="text-xs font-mono text-[#38BDF8] uppercase tracking-wider block mb-1">
-                TRAJECTORY
-              </span>
-
-              <h3 className="text-lg font-bold text-[#F8FAFC] mb-3">
-                WHERE I'M HEADED
-              </h3>
-
-              <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
-                Advancing toward staff-level systems architecture, high-throughput backend services, and building impactful AI-native software products.
-              </p>
-            </div>
-
-            <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-mono text-slate-400">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38BDF8]" />
-              <span>Advanced Engineering</span>
-            </div>
-          </div>
+          {/* 4 Facts Grid */}
+          <StaggerContainer staggerDelay={0.08} className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-6 bg-[#0E1320] p-8 rounded-2xl border border-white/10">
+            {[
+              {
+                label: 'WHO I AM',
+                body: 'Full-stack software engineer and product builder focused on scalable web apps and databases.',
+              },
+              {
+                label: 'WHAT I BUILD',
+                body: 'Developer tools, institutional platforms, custom e-commerce engines, and RESTful API services.',
+              },
+              {
+                label: "WHAT I'M LEARNING",
+                body: 'PostgreSQL index tuning, Prisma query optimization, AI function calling, and systems design.',
+              },
+              {
+                label: "WHERE I'M HEADED",
+                body: 'Staff-level software architecture, high-throughput systems, and AI-native product development.',
+              },
+            ].map(({ label, body }) => (
+              <StaggerItem key={label}>
+                <HoverCard className="space-y-2 p-2 rounded-lg">
+                  <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-[#38BDF8] font-bold">
+                    {label}
+                  </p>
+                  <p className="text-xs text-[#94A0B4] leading-relaxed font-medium">{body}</p>
+                </HoverCard>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
 
         </div>
 

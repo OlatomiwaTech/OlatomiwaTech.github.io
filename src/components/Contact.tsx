@@ -1,290 +1,234 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, AlertCircle, Loader2, Mail, MessageSquare, User, AtSign, ArrowUpRight } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
-import type { ContactFormData, FormState } from '../types/portfolio';
 import { GithubIcon } from './icons/GithubIcon';
+import type { ContactFormData, FormState } from '../types/portfolio';
+import { FadeUp, MagneticButton } from './motion/MotionPrimitives';
 
 export const Contact: React.FC = () => {
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const [formState, setFormState] = useState<FormState>('idle');
+  const [form, setForm] = useState<ContactFormData>({ name: '', email: '', message: '' });
+  const [state, setState] = useState<FormState>('idle');
   const [errors, setErrors] = useState<Partial<ContactFormData>>({});
 
-  const validate = (): boolean => {
-    const newErrors: Partial<ContactFormData> = {};
-    if (!formData.name.trim()) {
-      newErrors.name = 'Please enter your name.';
-    }
-    if (!formData.email.trim()) {
-      newErrors.email = 'Please enter your email address.';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address.';
-    }
-    if (!formData.message.trim()) {
-      newErrors.message = 'Please enter your message.';
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters long.';
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+  const validate = () => {
+    const e: Partial<ContactFormData> = {};
+    if (!form.name.trim()) e.name = 'Name is required.';
+    if (!form.email.trim()) e.email = 'Email is required.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Invalid email address.';
+    if (!form.message.trim() || form.message.trim().length < 10) e.message = 'Message must be at least 10 characters.';
+    setErrors(e);
+    return Object.keys(e).length === 0;
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    if (errors[name as keyof ContactFormData]) {
-      setErrors((prev) => ({ ...prev, [name]: undefined }));
-    }
+    setForm(p => ({ ...p, [name]: value }));
+    if (errors[name as keyof ContactFormData]) setErrors(p => ({ ...p, [name]: undefined }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-
-    setFormState('submitting');
+    setState('submitting');
 
     try {
-      const response = await fetch(`https://formspree.io/f/${PERSONAL_INFO.contactEmail}`, {
+      const res = await fetch(`https://formspree.io/f/${PERSONAL_INFO.contactEmail}`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          _replyto: formData.email,
-          _subject: `New Portfolio Inquiry from ${formData.name}`,
-        }),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ ...form, _subject: `Portfolio inquiry from ${form.name}` }),
       });
-
-      if (response.ok) {
-        setFormState('success');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        window.location.href = `mailto:${PERSONAL_INFO.contactEmail}?subject=${encodeURIComponent(
-          `Portfolio Inquiry from ${formData.name}`
-        )}&body=${encodeURIComponent(`From: ${formData.name} (${formData.email})\n\n${formData.message}`)}`;
-        setFormState('success');
-        setFormData({ name: '', email: '', message: '' });
-      }
+      if (res.ok) {
+        setState('success');
+        setForm({ name: '', email: '', message: '' });
+      } else throw new Error();
     } catch {
-      window.location.href = `mailto:${PERSONAL_INFO.contactEmail}?subject=${encodeURIComponent(
-        `Portfolio Inquiry from ${formData.name}`
-      )}&body=${encodeURIComponent(`From: ${formData.name} (${formData.email})\n\n${formData.message}`)}`;
-      setFormState('success');
-      setFormData({ name: '', email: '', message: '' });
+      window.location.href = `mailto:${PERSONAL_INFO.contactEmail}?subject=${encodeURIComponent(`Inquiry from ${form.name}`)}&body=${encodeURIComponent(`${form.name} (${form.email})\n\n${form.message}`)}`;
+      setState('success');
+      setForm({ name: '', email: '', message: '' });
     }
   };
 
+  const inputClass = (field: keyof ContactFormData) =>
+    `w-full px-4 py-3.5 bg-[#080B14] rounded-xl border text-[#F5F7FA] text-sm placeholder-[#94A0B4]/50 focus:outline-none transition-colors ${
+      errors[field]
+        ? 'border-rose-500/80 focus:border-rose-500'
+        : 'border-white/10 focus:border-[#38BDF8]'
+    }`;
+
   return (
-    <section id="contact" className="py-20 sm:py-28 relative border-t border-slate-800/60 bg-[#0A0E1A]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Editorial Headline */}
-        <div className="text-left space-y-4 mb-12">
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-xs text-[#38BDF8] tracking-widest uppercase">
-              07 / CONNECT
-            </span>
-          </div>
+    <section id="contact" className="bg-[#0E1320] py-24 lg:py-36 relative overflow-hidden border-t border-white/[0.06]">
+      {/* Background wordmark */}
+      <div
+        className="absolute bottom-0 right-0 font-black text-white/[0.015] leading-none tracking-tighter select-none pointer-events-none"
+        style={{ fontSize: 'clamp(8rem, 20vw, 22rem)', lineHeight: 0.8 }}
+        aria-hidden="true"
+      >
+        BUILD
+      </div>
 
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-[#F8FAFC] tracking-tight leading-[1.02]">
-            LET'S BUILD <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F8FAFC] to-[#38BDF8]">
-              SOMETHING USEFUL.
-            </span>
-          </h2>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-          <p className="text-base sm:text-lg text-[#94A3B8] max-w-lg font-normal">
-            Interested in collaborating, discussing software architecture, or exploring product opportunities? Send a message.
-          </p>
+          {/* Left Column: Direct Links & Headline */}
+          <FadeUp className="lg:col-span-6 space-y-6">
+            <div className="flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#38BDF8]" />
+              <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#38BDF8]">
+                09 — Contact
+              </p>
+            </div>
 
-          {/* Quick Direct Link Buttons */}
-          <div className="pt-2 flex flex-wrap items-center gap-3 font-mono text-xs">
-            <a
-              href={`mailto:${PERSONAL_INFO.contactEmail}`}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111827] border border-slate-800 text-[#38BDF8] hover:border-slate-700 transition-all"
+            <h2
+              className="font-black tracking-tight text-[#F5F7FA] leading-[1.02]"
+              style={{ fontSize: 'clamp(2.75rem, 6vw, 5.5rem)' }}
             >
-              <AtSign className="w-3.5 h-3.5" />
-              <span>{PERSONAL_INFO.contactEmail}</span>
-            </a>
+              LET'S BUILD<br />
+              <span className="text-[#38BDF8]">SOMETHING</span><br />
+              USEFUL.
+            </h2>
 
-            <a
-              href={PERSONAL_INFO.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111827] border border-slate-800 text-[#F8FAFC] hover:border-slate-700 transition-all"
-            >
-              <GithubIcon className="w-3.5 h-3.5 text-[#38BDF8]" />
-              <span>GitHub</span>
-              <ArrowUpRight className="w-3 h-3 text-[#94A3B8]" />
-            </a>
+            <p className="text-[#94A0B4] text-base sm:text-lg max-w-md leading-relaxed">
+              Interested in software engineering roles, discussing architecture, or building products together?
+            </p>
 
-            <a
-              href={PERSONAL_INFO.linkedinUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111827] border border-slate-800 text-[#F8FAFC] hover:border-slate-700 transition-all"
-            >
-              <span>LinkedIn</span>
-              <ArrowUpRight className="w-3 h-3 text-[#94A3B8]" />
-            </a>
-          </div>
-        </div>
-
-        {/* Contact Form Container */}
-        <div className="rounded-2xl bg-[#111827] border border-slate-800 p-6 sm:p-10 shadow-2xl text-left">
-          {formState === 'success' ? (
-            /* Success State */
-            <div className="py-12 text-center space-y-4 animate-in fade-in duration-300">
-              <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 mx-auto flex items-center justify-center shadow-[0_0_20px_rgba(52,211,153,0.2)]">
-                <CheckCircle2 className="w-8 h-8" />
+            <div className="pt-4 space-y-3 font-mono text-sm">
+              <div>
+                <p className="text-[10px] text-[#94A0B4] uppercase tracking-wider mb-1">DIRECT EMAIL</p>
+                <a
+                  href={`mailto:${PERSONAL_INFO.contactEmail}`}
+                  className="text-[#38BDF8] hover:text-[#7DD3FC] font-semibold transition-colors"
+                >
+                  {PERSONAL_INFO.contactEmail} ↗
+                </a>
               </div>
 
-              <h3 className="text-2xl font-bold text-[#F8FAFC]">
-                Message Delivered
-              </h3>
-
-              <p className="text-sm text-[#94A3B8] max-w-md mx-auto">
-                Thank you for reaching out. Olatomiwa will review your message and reply to <span className="text-[#F8FAFC] font-mono">{formData.email || 'your email'}</span>.
-              </p>
-
-              <div className="pt-4">
-                <button
-                  type="button"
-                  onClick={() => setFormState('idle')}
-                  className="px-6 py-2.5 rounded-lg bg-[#0A0E1A] border border-slate-800 text-xs font-mono text-[#38BDF8] hover:border-slate-700 transition-colors"
+              <div className="flex items-center gap-6 pt-2">
+                <a
+                  href={PERSONAL_INFO.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-[#94A0B4] hover:text-[#F5F7FA] transition-colors"
                 >
-                  Send Another Inquiry
-                </button>
+                  <GithubIcon className="w-4 h-4 text-[#38BDF8]" />
+                  <span>GitHub ↗</span>
+                </a>
+                <a
+                  href={PERSONAL_INFO.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#94A0B4] hover:text-[#F5F7FA] transition-colors"
+                >
+                  <span>LinkedIn ↗</span>
+                </a>
               </div>
             </div>
-          ) : (
-            /* Main Form Inputs */
-            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {/* Name */}
-                <div className="space-y-2">
-                  <label htmlFor="name" className="block text-xs font-mono text-[#F8FAFC] font-medium flex items-center gap-1.5">
-                    <User className="w-3.5 h-3.5 text-[#38BDF8]" />
-                    <span>Your Name *</span>
+          </FadeUp>
+
+          {/* Right Column: Contact Form Container */}
+          <FadeUp delay={0.15} className="lg:col-span-6 bg-[#080B14] p-8 sm:p-10 rounded-2xl border border-white/10 shadow-2xl">
+            {state === 'success' ? (
+              <div className="flex flex-col items-start gap-4 py-8">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center">
+                  <CheckCircle2 className="w-6 h-6 text-emerald-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#F5F7FA]">Message Sent</h3>
+                <p className="text-[#94A0B4] text-sm leading-relaxed">
+                  Thank you for reaching out. Olatomiwa will respond to your message promptly.
+                </p>
+                <button
+                  onClick={() => setState('idle')}
+                  className="font-mono text-xs text-[#38BDF8] hover:underline mt-2"
+                >
+                  Send another message →
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={onSubmit} noValidate className="space-y-6">
+                <h3 className="text-xl font-bold text-[#F5F7FA] tracking-tight">
+                  Send a Direct Message
+                </h3>
+
+                <div className="space-y-1">
+                  <label htmlFor="name" className="block text-xs font-mono text-[#94A0B4] uppercase">
+                    Your Name
                   </label>
                   <input
                     type="text"
-                    id="name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
+                    id="name"
                     placeholder="e.g. Alex Morgan"
-                    disabled={formState === 'submitting'}
-                    className={`w-full px-4 py-3 rounded-lg bg-[#0A0E1A] border text-sm text-[#F8FAFC] placeholder-slate-600 focus:outline-none transition-all ${
-                      errors.name
-                        ? 'border-rose-500/80 focus:ring-1 focus:ring-rose-500'
-                        : 'border-slate-800 focus:border-[#38BDF8] focus:ring-1 focus:ring-[#38BDF8]/50'
-                    }`}
+                    value={form.name}
+                    onChange={onChange}
+                    disabled={state === 'submitting'}
+                    className={inputClass('name')}
                   />
                   {errors.name && (
-                    <p className="text-xs text-rose-400 flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" />
-                      <span>{errors.name}</span>
+                    <p className="text-xs text-rose-400 flex items-center gap-1 pt-1">
+                      <AlertCircle className="w-3 h-3" />{errors.name}
                     </p>
                   )}
                 </div>
 
-                {/* Email */}
-                <div className="space-y-2">
-                  <label htmlFor="email" className="block text-xs font-mono text-[#F8FAFC] font-medium flex items-center gap-1.5">
-                    <Mail className="w-3.5 h-3.5 text-[#38BDF8]" />
-                    <span>Your Email Address *</span>
+                <div className="space-y-1">
+                  <label htmlFor="email" className="block text-xs font-mono text-[#94A0B4] uppercase">
+                    Email Address
                   </label>
                   <input
                     type="email"
-                    id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="e.g. alex@example.com"
-                    disabled={formState === 'submitting'}
-                    className={`w-full px-4 py-3 rounded-lg bg-[#0A0E1A] border text-sm text-[#F8FAFC] placeholder-slate-600 focus:outline-none transition-all ${
-                      errors.email
-                        ? 'border-rose-500/80 focus:ring-1 focus:ring-rose-500'
-                        : 'border-slate-800 focus:border-[#38BDF8] focus:ring-1 focus:ring-[#38BDF8]/50'
-                    }`}
+                    id="email"
+                    placeholder="alex@company.com"
+                    value={form.email}
+                    onChange={onChange}
+                    disabled={state === 'submitting'}
+                    className={inputClass('email')}
                   />
                   {errors.email && (
-                    <p className="text-xs text-rose-400 flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" />
-                      <span>{errors.email}</span>
+                    <p className="text-xs text-rose-400 flex items-center gap-1 pt-1">
+                      <AlertCircle className="w-3 h-3" />{errors.email}
                     </p>
                   )}
                 </div>
-              </div>
 
-              {/* Message */}
-              <div className="space-y-2">
-                <label htmlFor="message" className="block text-xs font-mono text-[#F8FAFC] font-medium flex items-center gap-1.5">
-                  <MessageSquare className="w-3.5 h-3.5 text-[#38BDF8]" />
-                  <span>Project / Inquiry Details *</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Outline your project scope, technical requirements, or opportunity..."
-                  disabled={formState === 'submitting'}
-                  className={`w-full px-4 py-3 rounded-lg bg-[#0A0E1A] border text-sm text-[#F8FAFC] placeholder-slate-600 focus:outline-none transition-all ${
-                    errors.message
-                      ? 'border-rose-500/80 focus:ring-1 focus:ring-rose-500'
-                      : 'border-slate-800 focus:border-[#38BDF8] focus:ring-1 focus:ring-[#38BDF8]/50'
-                  }`}
-                />
-                {errors.message && (
-                  <p className="text-xs text-rose-400 flex items-center gap-1">
-                    <AlertCircle className="w-3 h-3" />
-                    <span>{errors.message}</span>
-                  </p>
-                )}
-              </div>
-
-              {/* Submit Button */}
-              <div className="pt-2 flex items-center justify-between">
-                <p className="text-xs text-[#94A3B8] font-mono">
-                  * Dispatches directly to {PERSONAL_INFO.contactEmail}
-                </p>
-
-                <button
-                  type="submit"
-                  disabled={formState === 'submitting'}
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-[#38BDF8] text-[#0A0E1A] font-semibold text-sm transition-all duration-200 hover:bg-[#7DD3FC] hover:shadow-[0_0_20px_rgba(56,189,248,0.35)] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {formState === 'submitting' ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin text-[#0A0E1A]" />
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Send Message</span>
-                      <Send className="w-4 h-4" />
-                    </>
+                <div className="space-y-1">
+                  <label htmlFor="message" className="block text-xs font-mono text-[#94A0B4] uppercase">
+                    Project / Inquiry Details
+                  </label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows={4}
+                    placeholder="Tell me about what you are building..."
+                    value={form.message}
+                    onChange={onChange}
+                    disabled={state === 'submitting'}
+                    className={`${inputClass('message')} resize-none`}
+                  />
+                  {errors.message && (
+                    <p className="text-xs text-rose-400 flex items-center gap-1 pt-1">
+                      <AlertCircle className="w-3 h-3" />{errors.message}
+                    </p>
                   )}
-                </button>
-              </div>
+                </div>
 
-            </form>
-          )}
+                <MagneticButton>
+                  <button
+                    type="submit"
+                    disabled={state === 'submitting'}
+                    className="btn-primary w-full"
+                  >
+                    {state === 'submitting' ? (
+                      <><Loader2 className="w-4 h-4 animate-spin" /> Sending...</>
+                    ) : (
+                      <>Send Message <Send className="w-4 h-4" /></>
+                    )}
+                  </button>
+                </MagneticButton>
+              </form>
+            )}
+          </FadeUp>
+
         </div>
-
       </div>
     </section>
   );

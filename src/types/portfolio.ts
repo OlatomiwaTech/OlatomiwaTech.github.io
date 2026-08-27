@@ -5,6 +5,7 @@ export interface Project {
   tagline: string;
   description: string;
   problem: string;
+  myRole: string;
   architecture: string;
   implementation: string;
   outcome: string;
@@ -45,6 +46,32 @@ export interface FrontierItem {
   icon: string;
 }
 
+export interface JourneyMilestone {
+  id: string;
+  year: string;
+  label: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  linkedProjectId?: string;
+  tags: string[];
+}
+
+export interface NowItem {
+  category: 'BUILDING' | 'LEARNING' | 'EXPLORING' | 'NEXT';
+  title: string;
+  description: string;
+  tag: string;
+}
+
+export interface ContactFormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+export type FormState = 'idle' | 'submitting' | 'success' | 'error';
+
 export interface TopologyNode {
   id: string;
   label: string;
@@ -55,10 +82,15 @@ export interface TopologyNode {
   y: number;
 }
 
-export interface ContactFormData {
-  name: string;
-  email: string;
-  message: string;
+export interface TechGraphNode {
+  id: string;
+  label: string;
+  category?: string;
+  x: number;
+  y: number;
 }
 
-export type FormState = 'idle' | 'submitting' | 'success' | 'error';
+export interface TechGraphEdge {
+  from: string;
+  to: string;
+}

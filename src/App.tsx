@@ -1,67 +1,46 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { ProjectSection } from './components/ProjectSection';
+import { Journey } from './components/Journey';
 import { WhatIBuild } from './components/WhatIBuild';
+import { ProjectSection } from './components/ProjectSection';
 import { EngineeringThinking } from './components/EngineeringThinking';
 import { CurrentFrontier } from './components/CurrentFrontier';
+import { NowSection } from './components/NowSection';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
+import { MotionProvider, DepthField, ScrollSpine } from './motion';
 import type { Project } from './types/portfolio';
 
 export function App() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [activeSection, setActiveSection] = useState<string>('home');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'projects', 'capabilities', 'thinking', 'frontier', 'about', 'contact'];
-      const scrollPosition = window.scrollY + 200;
-
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
-    <div className="min-h-screen bg-[#0A0E1A] text-[#F8FAFC] flex flex-col font-sans selection:bg-[#38BDF8]/30 selection:text-[#38BDF8]">
-      {/* Quiet Floating Navbar */}
-      <Navbar activeSection={activeSection} />
+    <MotionProvider>
+      <div className="relative min-h-screen text-[#F5F7FA] font-sans">
+        <DepthField />
+        <ScrollSpine />
 
-      {/* Main Narrative Content Flow */}
-      <main className="flex-grow">
-        <Hero />
-        <ProjectSection onOpenModal={(project) => setSelectedProject(project)} />
-        <WhatIBuild />
-        <EngineeringThinking />
-        <CurrentFrontier />
-        <About />
-        <Contact />
-      </main>
+        <Navbar />
 
-      {/* Architecture Case Study Modal */}
-      <ProjectModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
+        <main className="relative z-10">
+          <Hero />
+          <Journey />
+          <WhatIBuild />
+          <ProjectSection onOpenModal={setSelectedProject} />
+          <EngineeringThinking />
+          <CurrentFrontier />
+          <NowSection />
+          <About />
+          <Contact />
+        </main>
 
-      {/* Footer */}
-      <Footer />
-    </div>
+        <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+        <Footer />
+      </div>
+    </MotionProvider>
   );
 }
 

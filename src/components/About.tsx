@@ -1,6 +1,5 @@
 import React from 'react';
-import { User, Code2, Compass, CheckCircle2 } from 'lucide-react';
-import { PERSONAL_INFO } from '../data/portfolioData';
+import { User, Code2, BookOpen, Compass, CheckCircle2 } from 'lucide-react';
 
 export const About: React.FC = () => {
   return (
@@ -9,9 +8,13 @@ export const About: React.FC = () => {
         
         {/* Header */}
         <div className="text-left mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-[#38BDF8] uppercase tracking-wider">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8]" />
-            Personal Background & Engineering Identity
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-xs font-bold text-[#38BDF8] bg-[#38BDF8]/10 border border-[#38BDF8]/20 px-3 py-1 rounded-md tracking-wider">
+              06 / ABOUT
+            </span>
+            <span className="font-mono text-xs text-[#94A3B8] tracking-widest uppercase">
+              BACKGROUND & PROFILE
+            </span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#F8FAFC] tracking-tight">
@@ -19,88 +22,114 @@ export const About: React.FC = () => {
           </h2>
 
           <p className="text-base sm:text-lg text-[#94A3B8] max-w-2xl">
-            A software engineer grounded in practical problem solving, technical discipline, and continuous learning.
+            A software engineer grounded in practical execution, technical discipline, and continuous learning.
           </p>
         </div>
 
-        {/* 3 Narrative Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+        {/* 4 Editorial Blocks Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
           
-          {/* Pillar 1: WHO I AM */}
-          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-8 flex flex-col justify-between transition-all duration-300 hover:border-[#38BDF8]/40 hover:-translate-y-1">
+          {/* Block 1: WHO I AM */}
+          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-[#38BDF8]/40 hover:-translate-y-1">
             <div>
-              <div className="w-12 h-12 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8] group-hover:border-[#38BDF8]/40 group-hover:bg-[#38BDF8]/10 transition-colors">
-                <User className="w-6 h-6" />
+              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8] group-hover:border-[#38BDF8]/40 group-hover:bg-[#38BDF8]/10 transition-colors">
+                <User className="w-5 h-5" />
               </div>
 
-              <span className="text-xs font-mono text-[#38BDF8] uppercase tracking-wider block mb-2">
-                01 / IDENTITY
+              <span className="text-xs font-mono text-[#38BDF8] uppercase tracking-wider block mb-1">
+                IDENTITY
               </span>
 
-              <h3 className="text-xl font-bold text-[#F8FAFC] mb-4">
+              <h3 className="text-lg font-bold text-[#F8FAFC] mb-3">
                 WHO I AM
               </h3>
 
-              <p className="text-sm text-[#94A3B8] leading-relaxed">
-                I am a full-stack software engineer and entrepreneur with a passion for software architecture, clean user interfaces, and reliable backend systems. I approach development as an engineering discipline focused on long-term maintainability.
+              <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+                A full-stack software engineer and entrepreneur dedicated to building clean, maintainable web applications and backend systems that solve genuine problems.
               </p>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-slate-800/80 flex items-center gap-2 text-xs font-mono text-slate-400">
-              <CheckCircle2 className="w-4 h-4 text-[#38BDF8]" />
-              <span>Full-Stack Mindset</span>
+            <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center gap-2 text-xs font-mono text-slate-400">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38BDF8]" />
+              <span>Engineered Discipline</span>
             </div>
           </div>
 
-          {/* Pillar 2: WHAT I BUILD */}
-          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-8 flex flex-col justify-between transition-all duration-300 hover:border-[#38BDF8]/40 hover:-translate-y-1">
+          {/* Block 2: WHAT I BUILD */}
+          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-[#38BDF8]/40 hover:-translate-y-1">
             <div>
-              <div className="w-12 h-12 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8] group-hover:border-[#38BDF8]/40 group-hover:bg-[#38BDF8]/10 transition-colors">
-                <Code2 className="w-6 h-6" />
+              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8] group-hover:border-[#38BDF8]/40 group-hover:bg-[#38BDF8]/10 transition-colors">
+                <Code2 className="w-5 h-5" />
               </div>
 
-              <span className="text-xs font-mono text-[#38BDF8] uppercase tracking-wider block mb-2">
-                02 / EXECUTION
+              <span className="text-xs font-mono text-[#38BDF8] uppercase tracking-wider block mb-1">
+                EXECUTION
               </span>
 
-              <h3 className="text-xl font-bold text-[#F8FAFC] mb-4">
+              <h3 className="text-lg font-bold text-[#F8FAFC] mb-3">
                 WHAT I BUILD
               </h3>
 
-              <p className="text-sm text-[#94A3B8] leading-relaxed">
-                I build web applications, SaaS platforms, developer workflow tools, and database systems. From school management platforms to developer workspaces, I focus on solving concrete operational problems for real users.
+              <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+                Developer workflow tools, school administration platforms, bespoke e-commerce tracking engines, and scalable REST APIs with PostgreSQL persistence layers.
               </p>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-slate-800/80 flex items-center gap-2 text-xs font-mono text-slate-400">
-              <CheckCircle2 className="w-4 h-4 text-[#38BDF8]" />
-              <span>User Value & Scalability</span>
+            <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center gap-2 text-xs font-mono text-slate-400">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38BDF8]" />
+              <span>Shipped Products</span>
             </div>
           </div>
 
-          {/* Pillar 3: WHERE I'M GOING */}
-          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-8 flex flex-col justify-between transition-all duration-300 hover:border-[#38BDF8]/40 hover:-translate-y-1">
+          {/* Block 3: WHAT I'M LEARNING */}
+          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-[#38BDF8]/40 hover:-translate-y-1">
             <div>
-              <div className="w-12 h-12 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8] group-hover:border-[#38BDF8]/40 group-hover:bg-[#38BDF8]/10 transition-colors">
-                <Compass className="w-6 h-6" />
+              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8] group-hover:border-[#38BDF8]/40 group-hover:bg-[#38BDF8]/10 transition-colors">
+                <BookOpen className="w-5 h-5" />
               </div>
 
-              <span className="text-xs font-mono text-[#38BDF8] uppercase tracking-wider block mb-2">
-                03 / TRAJECTORY
+              <span className="text-xs font-mono text-[#38BDF8] uppercase tracking-wider block mb-1">
+                KNOWLEDGE
               </span>
 
-              <h3 className="text-xl font-bold text-[#F8FAFC] mb-4">
-                WHERE I'M GOING
+              <h3 className="text-lg font-bold text-[#F8FAFC] mb-3">
+                WHAT I'M LEARNING
               </h3>
 
-              <p className="text-sm text-[#94A3B8] leading-relaxed">
-                I am advancing toward high-level software engineering, backend systems optimization, and practical AI engineering. My goal is to build software products that scale efficiently while maintaining structural simplicity.
+              <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+                Deepening knowledge around PostgreSQL query execution plans, transaction isolation levels, AI LLM function calling, and vector context augmentation.
               </p>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-slate-800/80 flex items-center gap-2 text-xs font-mono text-slate-400">
-              <CheckCircle2 className="w-4 h-4 text-[#38BDF8]" />
-              <span>Continuous Growth</span>
+            <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center gap-2 text-xs font-mono text-slate-400">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38BDF8]" />
+              <span>Active Exploration</span>
+            </div>
+          </div>
+
+          {/* Block 4: WHERE I'M HEADED */}
+          <div className="group rounded-2xl bg-[#111827] border border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:border-[#38BDF8]/40 hover:-translate-y-1">
+            <div>
+              <div className="w-10 h-10 rounded-xl bg-[#0A0E1A] border border-slate-800 flex items-center justify-center mb-6 text-[#38BDF8] group-hover:border-[#38BDF8]/40 group-hover:bg-[#38BDF8]/10 transition-colors">
+                <Compass className="w-5 h-5" />
+              </div>
+
+              <span className="text-xs font-mono text-[#38BDF8] uppercase tracking-wider block mb-1">
+                TRAJECTORY
+              </span>
+
+              <h3 className="text-lg font-bold text-[#F8FAFC] mb-3">
+                WHERE I'M HEADED
+              </h3>
+
+              <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+                Advancing toward staff-level systems architecture, high-throughput backend services, and building impactful AI-native software products.
+              </p>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center gap-2 text-xs font-mono text-slate-400">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38BDF8]" />
+              <span>Advanced Engineering</span>
             </div>
           </div>
 

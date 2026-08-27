@@ -4,23 +4,26 @@ export interface Project {
   title: string;
   tagline: string;
   description: string;
-  problemSolved: string;
-  whatIBuilt: string;
-  detailedDescription?: string;
+  problem: string;
+  architecture: string;
+  implementation: string;
+  outcome: string;
   tags: string[];
   features?: string[];
-  architecture?: string[];
-  liveUrl?: string;
+  architectureBreakdown?: string[];
+  composition: 'left-preview' | 'right-preview' | 'full-width';
   githubUrl: string;
+  liveUrl: string;
   previewType: 'solohub' | 'nuvora' | 'maria-stitches';
 }
 
-export interface ProofCategory {
+export interface CapabilityPillar {
+  id: string;
   title: string;
-  subtitle: string;
+  tag: string;
   description: string;
-  badge: string;
-  metrics: { label: string; value: string }[];
+  technologies: string[];
+  level: 'Production Proven' | 'Active Domain' | 'Exploring';
   icon: string;
 }
 
@@ -32,36 +35,24 @@ export interface PhilosophyStep {
   codeSnippet: string;
 }
 
-export interface FocusArea {
+export interface FrontierItem {
   id: string;
   title: string;
   subtitle: string;
   description: string;
-  status: 'Active Lab' | 'Deep Dive' | 'Production Focus' | 'Architecture Study';
-  topics: string[];
+  focusTopics: string[];
+  status: string;
   icon: string;
 }
 
-export interface GitTelemetry {
-  branch: string;
-  commitHash: string;
-  lastCommitMessage: string;
-  activeProject: string;
-  uptimeTarget: string;
-  errorsCount: number;
-}
-
-export interface TechItem {
-  name: string;
-  category: 'Frontend' | 'Backend' | 'Database' | 'DevOps & Tools';
-  icon: string;
-  description: string;
-}
-
-export interface HighlightItem {
-  title: string;
-  description: string;
-  icon: string;
+export interface TopologyNode {
+  id: string;
+  label: string;
+  category: string;
+  status: string;
+  latency: string;
+  x: number;
+  y: number;
 }
 
 export interface ContactFormData {

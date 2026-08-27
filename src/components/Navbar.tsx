@@ -24,12 +24,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Work', href: '#projects' },
-    { name: 'Proof', href: '#proof' },
+    { name: 'Build', href: '#capabilities' },
+    { name: 'Systems', href: '#projects' },
     { name: 'Thinking', href: '#thinking' },
-    { name: 'Focus', href: '#focus' },
+    { name: 'Frontier', href: '#frontier' },
     { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Connect', href: '#contact' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -52,7 +52,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo / Personal Brand */}
+          {/* Brand & Signature Motif */}
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
@@ -107,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               <span className="lg:hidden">Available</span>
             </div>
 
-            {/* GitHub Quick Link */}
+            {/* GitHub Profile */}
             <a
               href={PERSONAL_INFO.githubUrl}
               target="_blank"
@@ -133,7 +133,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
         </div>
       </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-[#0A0E1A]/95 backdrop-blur-xl border-b border-slate-800 px-4 pt-4 pb-6 space-y-4 shadow-2xl animate-in fade-in duration-200">
           <div className="flex items-center gap-2 text-xs font-mono bg-[#111827] border border-slate-800 text-[#94A3B8] px-3 py-2 rounded-lg mb-2">

@@ -92,9 +92,13 @@ export const Contact: React.FC = () => {
         
         {/* Header */}
         <div className="text-center space-y-3 mb-12">
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-[#38BDF8] uppercase tracking-wider">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8]" />
-            Initiate Collaboration
+          <div className="flex items-center justify-center gap-3">
+            <span className="font-mono text-xs font-bold text-[#38BDF8] bg-[#38BDF8]/10 border border-[#38BDF8]/20 px-3 py-1 rounded-md tracking-wider">
+              07 / CONNECT
+            </span>
+            <span className="font-mono text-xs text-[#94A3B8] tracking-widest uppercase">
+              INITIATE COLLABORATION
+            </span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#F8FAFC] tracking-tight">
@@ -125,6 +129,16 @@ export const Contact: React.FC = () => {
               <span>GitHub Profile</span>
               <ArrowUpRight className="w-3 h-3 text-[#94A3B8]" />
             </a>
+
+            <a
+              href={PERSONAL_INFO.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111827] border border-slate-800 text-xs font-mono text-[#F8FAFC] hover:border-slate-700 transition-all"
+            >
+              <span>LinkedIn</span>
+              <ArrowUpRight className="w-3 h-3 text-[#94A3B8]" />
+            </a>
           </div>
         </div>
 
@@ -142,7 +156,7 @@ export const Contact: React.FC = () => {
               </h3>
 
               <p className="text-sm text-[#94A3B8] max-w-md mx-auto">
-                Thank you for reaching out. Olatomiwa will review your project details and respond to <span className="text-[#F8FAFC] font-mono">{formData.email || 'your email'}</span>.
+                Thank you for reaching out. Olatomiwa will review your message and reply to <span className="text-[#F8FAFC] font-mono">{formData.email || 'your email'}</span>.
               </p>
 
               <div className="pt-4">
@@ -248,7 +262,7 @@ export const Contact: React.FC = () => {
               {/* Submit Button */}
               <div className="pt-2 flex items-center justify-between">
                 <p className="text-xs text-[#94A3B8] font-mono">
-                  * Dispatches to {PERSONAL_INFO.contactEmail}
+                  * Dispatches directly to {PERSONAL_INFO.contactEmail}
                 </p>
 
                 <button

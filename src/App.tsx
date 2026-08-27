@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { EngineeringProof } from './components/EngineeringProof';
+import { WhatIBuild } from './components/WhatIBuild';
 import { ProjectSection } from './components/ProjectSection';
 import { ProjectModal } from './components/ProjectModal';
 import { EngineeringThinking } from './components/EngineeringThinking';
-import { CurrentFocus } from './components/CurrentFocus';
+import { CurrentFrontier } from './components/CurrentFrontier';
 import { About } from './components/About';
-import { GitHubSection } from './components/GitHubSection';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import type { Project } from './types/portfolio';
@@ -18,7 +17,7 @@ export function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'proof', 'projects', 'thinking', 'focus', 'about', 'github', 'contact'];
+      const sections = ['home', 'capabilities', 'projects', 'thinking', 'frontier', 'about', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -46,12 +45,11 @@ export function App() {
       {/* Main Narrative Content */}
       <main className="flex-grow">
         <Hero />
-        <EngineeringProof />
+        <WhatIBuild />
         <ProjectSection onOpenModal={(project) => setSelectedProject(project)} />
         <EngineeringThinking />
-        <CurrentFocus />
+        <CurrentFrontier />
         <About />
-        <GitHubSection />
         <Contact />
       </main>
 

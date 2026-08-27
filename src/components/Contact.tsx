@@ -56,18 +56,18 @@ export const Contact: React.FC = () => {
     }`;
 
   return (
-    <section id="contact" className="bg-[#0E1320] py-24 lg:py-36 relative overflow-hidden border-t border-white/[0.06]">
-      {/* Background wordmark */}
+    <section id="contact" className="bg-[#0E1320] section-shell relative overflow-hidden border-t border-white/[0.06]">
+      {/* Background wordmark — clipped to section */}
       <div
-        className="absolute bottom-0 right-0 font-black text-white/[0.015] leading-none tracking-tighter select-none pointer-events-none"
-        style={{ fontSize: 'clamp(8rem, 20vw, 22rem)', lineHeight: 0.8 }}
+        className="absolute bottom-0 right-0 font-black text-white/[0.015] leading-none tracking-tighter select-none pointer-events-none translate-x-[10%] translate-y-[10%]"
+        style={{ fontSize: 'clamp(6rem, 18vw, 22rem)', lineHeight: 0.8 }}
         aria-hidden="true"
       >
         BUILD
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <div className="relative z-10 section-container">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-[var(--section-gap)] items-start">
 
           {/* Left Column: Direct Links & Headline */}
           <FadeUp className="lg:col-span-6 space-y-6">
@@ -78,12 +78,9 @@ export const Contact: React.FC = () => {
               </p>
             </div>
 
-            <h2
-              className="font-black tracking-tight text-[#F5F7FA] leading-[1.02]"
-              style={{ fontSize: 'clamp(2.75rem, 6vw, 5.5rem)' }}
-            >
-              LET'S BUILD<br />
-              <span className="text-[#38BDF8]">SOMETHING</span><br />
+            <h2 className="type-display font-black text-[#F5F7FA] max-w-[12ch]">
+              LET'S BUILD{' '}
+              <span className="text-[#38BDF8]">SOMETHING</span>{' '}
               USEFUL.
             </h2>
 

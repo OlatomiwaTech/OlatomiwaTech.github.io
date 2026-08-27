@@ -38,18 +38,23 @@ function getTwoHop(activeId: string | null, adj: Map<string, Set<string>>): Set<
 }
 
 export const TechGraph: React.FC<TechGraphProps> = ({ nodes, edges, className = '' }) => {
-  const { reducedMotion } = useMotion();
+  const { reducedMotion, isTouch } = useMotion();
   const [hovered, setHovered] = useState<string | null>(null);
   const adj = useMemo(() => buildAdjacency(edges), [edges]);
   const lit = useMemo(() => getTwoHop(hovered, adj), [hovered, adj]);
 
   const nodeMap = useMemo(() => new Map(nodes.map((n) => [n.id, n])), [nodes]);
 
+  const activate = (id: string) => setHovered((prev) => (prev === id && isTouch ? null : id));
+  const deactivate = () => {
+    if (!isTouch) setHovered(null);
+  };
+
   return (
-    <div className={`tech-graph relative w-full ${className}`}>
+    <div className={`tech-graph relative w-full min-w-0 overflow-x-auto ${className}`}>
       <svg
         viewBox="0 0 800 320"
-        className="w-full h-auto"
+        className="w-full h-auto min-w-[280px]"
         role="img"
         aria-label="Technology skills graph"
       >
@@ -92,10 +97,19 @@ export const TechGraph: React.FC<TechGraphProps> = ({ nodes, edges, className = 
             <g
               key={node.id}
               onMouseEnter={() => setHovered(node.id)}
-              onMouseLeave={() => setHovered(null)}
-              onFocus={() => setHovered(node.id)}
-              onBlur={() => setHovered(null)}
-              className="cursor-default"
+              onMouseLeave={deactivate}
+              onClick={() => activate(node.id)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  activate(node.id);
+                }
+              }}
+              role="button"
+              tabIndex={0}
+              aria-pressed={isHovered}
+              aria-label={`${node.label}${node.category ? `, ${node.category}` : ''}`}
+              className="cursor-pointer outline-none focus-visible:[&>circle]:stroke-[#38BDF8] focus-visible:[&>circle]:stroke-[2.5]"
               style={{ opacity: active ? 1 : 0.25 }}
             >
               <circle
@@ -112,7 +126,7 @@ export const TechGraph: React.FC<TechGraphProps> = ({ nodes, edges, className = 
                 y={node.y + 1}
                 textAnchor="middle"
                 dominantBaseline="middle"
-                className="fill-[#F5F7FA] text-[11px] font-mono pointer-events-none select-none"
+                className="fill-[#F5F7FA] font-mono pointer-events-none select-none"
                 style={{ fontSize: isHovered ? 12 : 11 }}
               >
                 {node.label}

@@ -14,27 +14,27 @@ interface Props {
 }
 
 const PetraSchoolVisual: React.FC = () => (
-  <div className="h-full w-full bg-[#0E1320] rounded-2xl overflow-hidden p-6 font-mono text-xs flex flex-col justify-between border border-white/10 shadow-2xl space-y-4">
-    <div className="flex items-center justify-between border-b border-white/[0.08] pb-3">
-      <div className="flex items-center gap-2">
-        <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
-        <span className="ml-2 text-[#94A0B4] text-[11px]">nuvora.school / platform / admin</span>
+  <div className="h-full w-full bg-[#0E1320] rounded-2xl overflow-hidden p-4 sm:p-6 font-mono text-xs flex flex-col justify-between border border-white/10 shadow-2xl space-y-4 min-h-0">
+    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.08] pb-3">
+      <div className="flex items-center gap-2 min-w-0">
+        <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57] shrink-0" />
+        <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E] shrink-0" />
+        <span className="w-2.5 h-2.5 rounded-full bg-[#28C840] shrink-0" />
+        <span className="ml-1 sm:ml-2 text-[#94A0B4] text-[10px] sm:text-[11px] truncate">nuvora.school / platform / admin</span>
       </div>
-      <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Term 2 Active</span>
+      <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 shrink-0">Term 2 Active</span>
     </div>
-    <div className="flex items-center justify-between">
-      <div>
-        <h4 className="text-base font-bold text-[#F5F7FA]">Petra School Operations Engine</h4>
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div className="min-w-0">
+        <h4 className="text-sm sm:text-base font-bold text-[#F5F7FA]">Petra School Operations Engine</h4>
         <p className="text-[11px] text-[#94A0B4]">Role-based Access & Transcript Telemetry</p>
       </div>
-      <div className="flex items-center gap-1.5 text-xs text-[#38BDF8] bg-[#38BDF8]/10 px-2.5 py-1 rounded">
+      <div className="flex items-center gap-1.5 text-xs text-[#38BDF8] bg-[#38BDF8]/10 px-2.5 py-1 rounded self-start sm:self-auto shrink-0">
         <Users className="w-4 h-4" />
         <span>Centralized Database</span>
       </div>
     </div>
-    <div className="grid grid-cols-3 gap-3">
+    <div className="project-preview__stats grid gap-3">
       <div className="bg-[#080B14] p-3 rounded-xl border border-white/[0.06]">
         <p className="text-[10px] text-[#94A0B4]">ATTENDANCE AUDIT</p>
         <p className="text-base font-bold text-emerald-400"><CountUpNumber value={97.8} decimals={1} suffix="%" /></p>
@@ -129,20 +129,20 @@ const BADGES = ['INSTITUTIONAL PLATFORM', 'DEVELOPER WORKSPACE', 'BESPOKE E-COMM
 export const ProjectSection: React.FC<Props> = ({ onOpenModal }) => {
   const reelRef = useRef<HTMLDivElement>(null);
   const { reducedMotion, deviceTier } = useMotion();
-  const isMobile = deviceTier === 'mobile';
+  const isCompact = deviceTier !== 'desktop';
 
   const { scrollYProgress } = useScroll({
     target: reelRef,
     offset: ['start start', 'end end'],
   });
 
-  if (isMobile) {
+  if (isCompact) {
     return (
       <section id="projects" className="border-t border-white/[0.06]">
         <PhaseHandoff fromId="capabilities" toId="projects" fromLabel="Capabilities" toLabel="Selected Work" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <div className="section-container section-shell !py-[clamp(3rem,6vw,5rem)]">
           <ProjectHeader />
-          <div className="space-y-16">
+          <div className="space-y-12 md:space-y-16">
             {PROJECTS.map((project, i) => (
               <MobileProjectSlide
                 key={project.id}
@@ -163,8 +163,8 @@ export const ProjectSection: React.FC<Props> = ({ onOpenModal }) => {
       <PhaseHandoff fromId="capabilities" toId="projects" fromLabel="Capabilities" toLabel="Selected Work" />
 
       <div ref={reelRef} className="relative" style={{ height: '300vh' }}>
-        <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-          <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
+        <div className="sticky top-0 h-[100dvh] flex items-center overflow-hidden">
+          <div className="section-container w-full">
             <ProjectHeader compact />
 
             <PinnedReel
@@ -180,18 +180,18 @@ export const ProjectSection: React.FC<Props> = ({ onOpenModal }) => {
 };
 
 const ProjectHeader: React.FC<{ compact?: boolean }> = ({ compact }) => (
-  <div className={`flex flex-col md:flex-row md:items-end justify-between gap-6 ${compact ? 'mb-8' : 'mb-12'}`}>
+  <div className={`section-header ${compact ? '!mb-8' : ''}`}>
     <div>
       <div className="flex items-center gap-3 mb-3">
         <span className="w-2 h-2 rounded-full bg-[#38BDF8]" />
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#38BDF8]">04 — Selected Work</p>
       </div>
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#F5F7FA] tracking-tight">
+      <h2 className="type-section font-black text-[#F5F7FA]">
         EVIDENCE OF REAL PRODUCT ENGINEERING.
       </h2>
     </div>
     {!compact && (
-      <p className="text-[#94A0B4] text-base max-w-md">
+      <p className="text-[#94A0B4] type-lead section-header__intro">
         Each project is a concrete case study: real domain problems, intentional backend choices, clean frontend execution, and authentic results.
       </p>
     )}
@@ -225,7 +225,7 @@ const PinnedReel: React.FC<ReelProps> = ({ scrollYProgress, onOpenModal, reduced
         ))}
       </div>
 
-      <div className="lg:col-span-7 relative h-[380px] sm:h-[420px]" style={{ perspective: '1000px' }}>
+      <div className="lg:col-span-7 relative min-h-[280px] h-[min(420px,50dvh)] max-h-[480px]" style={{ perspective: '1000px', containerType: 'inline-size', containerName: 'project-preview' }}>
         {PROJECTS.map((project, i) => {
           const Visual = VISUALS[project.previewType];
           return (
@@ -291,14 +291,14 @@ const ProjectCopyLayer: React.FC<{
         ))}
       </div>
 
-      <div className="flex items-center gap-4 pt-2">
+      <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
         <MagneticButton onClick={() => onOpenModal(project)}>
-          <button className="btn-primary text-xs py-2.5 px-5 group">
+          <button className="btn-primary text-xs !py-2.5 !px-5 group">
             <span>Architecture Breakdown</span>
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </button>
         </MagneticButton>
-        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost text-xs py-2.5 px-4 group">
+        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost text-xs !py-2.5 !px-4 group">
           <GithubIcon className="w-3.5 h-3.5 text-[#38BDF8]" />
           <span>GitHub Repository</span>
         </a>
@@ -351,18 +351,29 @@ const MobileProjectSlide: React.FC<{
   visual: React.FC;
   onOpenModal: (p: Project) => void;
 }> = ({ project, badge, visual: Visual, onOpenModal }) => (
-  <article className="snap-start space-y-6">
-    <div className="browser-frame h-[320px]"><Visual /></div>
-    <div className="space-y-3">
-      <div className="flex items-center gap-3">
+  <article className="space-y-6 min-w-0">
+    <div
+      className="browser-frame aspect-[16/10] min-h-[240px] max-h-[360px] w-full overflow-hidden"
+      style={{ containerType: 'inline-size', containerName: 'project-preview' }}
+    >
+      <Visual />
+    </div>
+    <div className="space-y-3 min-w-0">
+      <div className="flex flex-wrap items-center gap-3">
         <span className="font-mono text-xs font-bold text-[#38BDF8] bg-[#38BDF8]/10 px-2.5 py-0.5 rounded">PROJECT {project.number}</span>
         <span className="font-mono text-[11px] text-[#94A0B4]">{badge}</span>
       </div>
-      <h3 className="text-2xl font-black text-[#F5F7FA]">{project.title}</h3>
-      <p className="text-sm text-[#94A0B4]">{project.problem}</p>
-      <MagneticButton onClick={() => onOpenModal(project)}>
-        <button className="btn-primary text-xs py-2.5 px-5">Architecture Breakdown</button>
-      </MagneticButton>
+      <h3 className="text-xl sm:text-2xl font-black text-[#F5F7FA]">{project.title}</h3>
+      <p className="text-sm text-[#94A0B4] leading-relaxed">{project.problem}</p>
+      <div className="flex flex-wrap gap-3 pt-1">
+        <MagneticButton onClick={() => onOpenModal(project)}>
+          <button className="btn-primary text-xs !py-2.5 !px-5">Architecture Breakdown</button>
+        </MagneticButton>
+        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost text-xs !py-2.5 !px-4">
+          <GithubIcon className="w-3.5 h-3.5 text-[#38BDF8]" />
+          <span>GitHub</span>
+        </a>
+      </div>
     </div>
   </article>
 );

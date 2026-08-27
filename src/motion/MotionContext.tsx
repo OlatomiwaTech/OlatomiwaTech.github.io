@@ -110,10 +110,21 @@ export const MotionProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   useEffect(() => {
     if (isTouch || reducedMotionPref) return;
 
+    let frameSkip = 0;
+
     const onMove = (e: PointerEvent) => {
       pendingPointer.current = { x: e.clientX, y: e.clientY };
       if (rafRef.current === null) {
-        rafRef.current = requestAnimationFrame(flushPointer);
+        rafRef.current = requestAnimationFrame(() => {
+          if (deviceTier === 'tablet') {
+            frameSkip += 1;
+            if (frameSkip % 2 !== 0) {
+              rafRef.current = null;
+              return;
+            }
+          }
+          flushPointer();
+        });
       }
     };
 
@@ -134,7 +145,7 @@ export const MotionProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       document.documentElement.removeEventListener('pointerleave', onLeave);
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
     };
-  }, [flushPointer, isTouch, reducedMotionPref]);
+  }, [flushPointer, isTouch, reducedMotionPref, deviceTier]);
 
   useEffect(() => {
     const updateScroll = () => {

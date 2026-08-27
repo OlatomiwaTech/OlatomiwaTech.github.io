@@ -30,10 +30,12 @@ export const DepthField: React.FC = () => {
 
       {/* L1 — Ambient light */}
       <div
-        className="depth-field__ambient absolute w-[700px] h-[700px] rounded-full opacity-20"
+        className="depth-field__ambient absolute rounded-full opacity-20"
         style={{
-          left: `calc(var(--pointer-x, 0.5) * 100% - 350px)`,
-          top: `calc(var(--pointer-y, 0.5) * 60% - 200px)`,
+          width: 'min(700px, 70vw)',
+          height: 'min(700px, 70vw)',
+          left: `calc(var(--pointer-x, 0.5) * 100% - min(350px, 35vw))`,
+          top: `calc(var(--pointer-y, 0.5) * 60% - min(200px, 20vw))`,
           transform: parallax
             ? `translate3d(${ambient.x}px, ${ambient.y}px, 0)`
             : undefined,

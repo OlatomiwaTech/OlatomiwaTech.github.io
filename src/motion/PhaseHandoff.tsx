@@ -31,7 +31,7 @@ export const PhaseHandoff: React.FC<PhaseHandoffProps> = ({
   const clipTo = useTransform(scrollYProgress, [0, 0.5, 1], ['inset(100% 0 0 0)', 'inset(50% 0 0 0)', 'inset(0 0 0 0)']);
   const lineScale = useTransform(scrollYProgress, [0, 1], [0.2, 1]);
 
-  if (reducedMotion || deviceTier === 'mobile') {
+  if (reducedMotion || deviceTier !== 'desktop') {
     return (
       <div ref={bridgeRef} className={`phase-bridge h-16 ${className}`} aria-hidden="true">
         <div className="h-px bg-gradient-to-r from-transparent via-[#38BDF8]/30 to-transparent" />

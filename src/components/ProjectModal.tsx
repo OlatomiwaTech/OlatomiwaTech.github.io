@@ -47,12 +47,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.96, y: 12 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#0E1320] border border-white/10 rounded-2xl shadow-2xl p-6 sm:p-8 text-left text-[#F5F7FA]"
+            className="relative z-10 w-full max-w-3xl max-h-[min(90dvh,640px)] overflow-y-auto bg-[#0E1320] border border-white/10 rounded-2xl shadow-2xl p-6 sm:p-8 text-left text-[#F5F7FA]"
           >
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-5 right-5 p-2 rounded-lg bg-[#080B14] border border-white/10 text-[#94A0B4] hover:text-[#38BDF8] hover:border-white/20 transition-colors"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 touch-target p-2 rounded-lg bg-[#080B14] border border-white/10 text-[#94A0B4] hover:text-[#38BDF8] hover:border-white/20 transition-colors"
               aria-label="Close project modal"
             >
               <X className="w-5 h-5" />

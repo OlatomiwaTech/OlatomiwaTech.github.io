@@ -17,7 +17,7 @@ export const EngineeringThinking: React.FC = () => {
   }, [isInView, activated]);
 
   return (
-    <section id="thinking" ref={sectionRef} className="py-24 lg:py-32 border-t border-white/[0.06] relative overflow-hidden">
+    <section id="thinking" ref={sectionRef} className="section-shell border-t border-white/[0.06] relative overflow-hidden">
       {/* Activation grid overlay */}
       <motion.div
         className="pointer-events-none absolute inset-0"
@@ -31,13 +31,13 @@ export const EngineeringThinking: React.FC = () => {
         aria-hidden="true"
       />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="section-container relative z-10">
         <div className="flex items-center gap-3 mb-4">
           <span className="w-2 h-2 rounded-full bg-[#38BDF8]" />
           <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#38BDF8]">05 — How I Think</p>
         </div>
 
-        <h2 className="font-black tracking-tight text-[#F5F7FA] mb-4 text-4xl sm:text-6xl leading-[1.05]">
+        <h2 className="type-section font-black text-[#F5F7FA] mb-4">
           HOW I THINK ABOUT SOFTWARE.
         </h2>
 
@@ -48,7 +48,7 @@ export const EngineeringThinking: React.FC = () => {
         </div>
 
         {/* Process steps — scroll-linked, no stagger */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 relative mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-4 md:gap-6 relative mb-12 md:mb-16">
           {PHILOSOPHY_STEPS.map((step, idx) => (
             <ProcessStep key={step.step} step={step} idx={idx} />
           ))}
@@ -104,7 +104,7 @@ export const EngineeringThinking: React.FC = () => {
         </div>
 
         {/* Principles */}
-        <div className="mt-16 pt-10 border-t border-white/[0.08] grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mt-12 md:mt-16 pt-8 md:pt-10 border-t border-white/[0.08] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {[
             {
               h: 'Domain Modeling First',

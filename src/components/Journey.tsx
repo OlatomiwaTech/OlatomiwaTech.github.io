@@ -7,7 +7,7 @@ import { useMotion } from '../motion/MotionContext';
 export const Journey: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { reducedMotion, deviceTier } = useMotion();
-  const isMobile = deviceTier === 'mobile';
+  const isCompact = deviceTier !== 'desktop';
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -23,20 +23,26 @@ export const Journey: React.FC = () => {
     document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  if (isMobile && !reducedMotion) {
+  if (isCompact && !reducedMotion) {
     return (
-      <section id="journey" className="py-24 lg:py-32 border-t border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section id="journey" className="section-shell border-t border-white/[0.06]">
+        <div className="section-container">
           <JourneyHeader />
-          <div className="journey-carousel flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6">
-            {JOURNEY_STEPS.map((step, idx) => (
-              <article
-                key={step.id}
-                className="snap-center shrink-0 w-[85vw] max-w-sm bg-[#0E1320] p-6 rounded-2xl border border-white/10 space-y-4"
-              >
-                <JourneyCardContent step={step} idx={idx} scrollTo={scrollTo} />
-              </article>
-            ))}
+          <div className="overflow-hidden -mx-[var(--fluid-padding)]">
+            <div
+              className="journey-carousel flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 px-[var(--fluid-padding)]"
+              role="region"
+              aria-label="Journey timeline carousel"
+            >
+              {JOURNEY_STEPS.map((step, idx) => (
+                <article
+                  key={step.id}
+                  className="snap-center shrink-0 w-[min(85vw,calc(var(--container-max)*0.85))] max-w-sm bg-[#0E1320] p-6 rounded-2xl border border-white/10 space-y-4"
+                >
+                  <JourneyCardContent step={step} idx={idx} scrollTo={scrollTo} />
+                </article>
+              ))}
+            </div>
           </div>
           <JourneyFooter scrollTo={scrollTo} />
         </div>
@@ -45,12 +51,11 @@ export const Journey: React.FC = () => {
   }
 
   return (
-    <section id="journey" className="py-24 lg:py-32 border-t border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={containerRef}>
+    <section id="journey" className="section-shell border-t border-white/[0.06]">
+      <div className="section-container" ref={containerRef}>
         <JourneyHeader />
 
         <div className="relative pl-6 md:pl-10 ml-2 md:ml-6">
-          {/* Scroll-drawn rail */}
           <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-white/[0.06] overflow-hidden">
             <motion.div
               className="absolute inset-0 origin-top bg-gradient-to-b from-[#38BDF8] via-[#38BDF8]/50 to-transparent"
@@ -58,7 +63,7 @@ export const Journey: React.FC = () => {
             />
           </div>
 
-          <div className="space-y-16 md:space-y-20">
+          <div className="space-y-12 md:space-y-20">
             {JOURNEY_STEPS.map((step, idx) => (
               <JourneyMilestone
                 key={step.id}
@@ -80,7 +85,7 @@ export const Journey: React.FC = () => {
 };
 
 const JourneyHeader: React.FC = () => (
-  <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
+  <div className="section-header">
     <div>
       <div className="flex items-center gap-3 mb-3">
         <span className="w-2 h-2 rounded-full bg-[#38BDF8]" />
@@ -88,24 +93,24 @@ const JourneyHeader: React.FC = () => (
           02 — My Journey
         </p>
       </div>
-      <h2 className="text-4xl sm:text-5xl font-black text-[#F5F7FA] tracking-tight">
+      <h2 className="type-section font-black text-[#F5F7FA]">
         A DELIBERATE ENGINEERING PROGRESSION.
       </h2>
     </div>
-    <p className="text-[#94A0B4] text-base max-w-md">
+    <p className="text-[#94A0B4] type-lead section-header__intro">
       I am actively becoming a better engineer with every project — building real software, learning backend systems, and expanding into AI.
     </p>
   </div>
 );
 
 const JourneyFooter: React.FC<{ scrollTo: (id: string) => void }> = ({ scrollTo }) => (
-  <div className="mt-16 flex items-center justify-between pt-8 border-t border-white/[0.06]">
+  <div className="mt-12 md:mt-16 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-8 border-t border-white/[0.06]">
     <span className="font-mono text-xs text-[#94A0B4]">
       Progression feeds directly into capabilities and product work.
     </span>
     <button
       onClick={() => scrollTo('#capabilities')}
-      className="flex items-center gap-2 font-mono text-xs text-[#38BDF8] signal-link group"
+      className="flex items-center gap-2 font-mono text-xs text-[#38BDF8] signal-link group touch-target !min-w-0 self-start sm:self-auto"
     >
       <span>View Capabilities</span>
       <ArrowDown className="w-3.5 h-3.5 transition-transform group-hover:translate-y-0.5" />
@@ -166,7 +171,7 @@ const JourneyMilestone: React.FC<MilestoneProps> = ({
 
       <article
         className={`bg-[#0E1320] p-6 sm:p-8 rounded-2xl border border-white/10 group-hover:border-[#38BDF8]/40 transition-colors duration-300 shadow-xl space-y-4 ${
-          fromLeft ? 'md:mr-8' : 'md:ml-8'
+          fromLeft ? 'lg:mr-8' : 'lg:ml-8'
         }`}
       >
         <JourneyCardContent step={step} idx={idx} scrollTo={scrollTo} />
@@ -182,7 +187,7 @@ const JourneyCardContent: React.FC<{
 }> = ({ step, idx, scrollTo }) => (
   <>
     <div className="flex flex-wrap items-center justify-between gap-3">
-      <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-center gap-3">
         <span className="font-mono text-sm font-black text-[#38BDF8] bg-[#38BDF8]/10 px-3 py-1 rounded-md border border-[#38BDF8]/20">
           {step.year}
         </span>
@@ -194,7 +199,7 @@ const JourneyCardContent: React.FC<{
     </div>
 
     <div>
-      <h3 className="text-2xl font-extrabold text-[#F5F7FA] tracking-tight">{step.title}</h3>
+      <h3 className="text-xl sm:text-2xl font-extrabold text-[#F5F7FA] tracking-tight">{step.title}</h3>
       <p className="font-mono text-xs text-[#38BDF8] mt-1">{step.subtitle}</p>
     </div>
 
@@ -214,7 +219,7 @@ const JourneyCardContent: React.FC<{
       {step.linkedProjectId && (
         <button
           onClick={() => scrollTo('#projects')}
-          className="inline-flex items-center gap-1.5 font-mono text-xs text-[#38BDF8] signal-link group/link"
+          className="inline-flex items-center gap-1.5 font-mono text-xs text-[#38BDF8] signal-link group/link touch-target !min-w-0 !min-h-[36px]"
         >
           <span>Explore Case Study</span>
           <ArrowUpRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />

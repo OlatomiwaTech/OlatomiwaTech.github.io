@@ -27,12 +27,13 @@ export function usePointerDepth({
       };
     }
 
+    const tierScale = deviceTier === 'tablet' ? 0.45 : 1;
     const dx = (pointer.nx - 0.5) * 2;
     const dy = (pointer.ny - 0.5) * 2;
-    const tx = dx * maxTranslate * depth * 10;
-    const ty = dy * maxTranslate * depth * 10;
-    const rx = -dy * maxRotate * depth * 10;
-    const ry = dx * maxRotate * depth * 10;
+    const tx = dx * maxTranslate * depth * 10 * tierScale;
+    const ty = dy * maxTranslate * depth * 10 * tierScale;
+    const rx = -dy * maxRotate * depth * 10 * tierScale;
+    const ry = dx * maxRotate * depth * 10 * tierScale;
 
     return {
       style: {

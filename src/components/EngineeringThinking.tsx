@@ -1,100 +1,170 @@
-import React from 'react';
-import { ArrowRight, Network, Cpu, GitPullRequest } from 'lucide-react';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { PHILOSOPHY_STEPS } from '../data/portfolioData';
+import { SystemTopology } from './SystemTopology';
+import { useMotion } from '../motion/MotionContext';
 
 export const EngineeringThinking: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const activationRef = useRef<HTMLDivElement>(null);
+  const { reducedMotion } = useMotion();
+  const [activated, setActivated] = useState(false);
+
+  const isInView = useInView(activationRef, { once: true, amount: 0.4 });
+
+  useEffect(() => {
+    if (isInView && !activated) setActivated(true);
+  }, [isInView, activated]);
+
   return (
-    <section id="thinking" className="py-20 sm:py-24 relative border-t border-slate-800/60 bg-[#0A0E1A]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="text-left mb-14 space-y-3">
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-xs text-[#38BDF8] tracking-widest uppercase">
-              04 / ENGINEERING MINDSET
-            </span>
-          </div>
+    <section id="thinking" ref={sectionRef} className="section-shell border-t border-white/[0.06] relative overflow-hidden">
+      {/* Activation grid overlay */}
+      <motion.div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          opacity: activated ? 0.05 : 0.02,
+          backgroundImage:
+            'linear-gradient(to right, #38BDF8 1px, transparent 1px), linear-gradient(to bottom, #38BDF8 1px, transparent 1px)',
+          backgroundSize: activated && !reducedMotion ? '48px 48px' : '80px 80px',
+          transition: 'background-size 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease',
+        }}
+        aria-hidden="true"
+      />
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#F8FAFC] tracking-tight">
-            HOW I THINK
-          </h2>
+      <div className="section-container relative z-10">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="w-2 h-2 rounded-full bg-[#38BDF8]" />
+          <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#38BDF8]">05 — How I Think</p>
+        </div>
 
-          <p className="text-base sm:text-lg text-[#94A3B8] max-w-2xl font-normal">
-            Engineering maturity is not about technical jargon — it is about deconstructing real problems, modeling boundaries, and building clean, measurable systems.
+        <h2 className="type-section font-black text-[#F5F7FA] mb-4">
+          HOW I THINK ABOUT SOFTWARE.
+        </h2>
+
+        <div className="bg-[#0E1320] p-6 sm:p-8 rounded-2xl border border-white/10 mb-16 max-w-3xl">
+          <p className="text-[#F5F7FA] font-medium text-base sm:text-lg leading-relaxed">
+            "I try to understand the problem before choosing the technology. I care about data models, system boundaries, reliability, maintainability, and actual user needs."
           </p>
         </div>
 
-        {/* Workflow Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 relative z-10">
+        {/* Process steps — scroll-linked, no stagger */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-4 md:gap-6 relative mb-12 md:mb-16">
           {PHILOSOPHY_STEPS.map((step, idx) => (
-            <div
-              key={step.step}
-              className="group relative rounded-xl bg-[#111827] border border-slate-800 p-5 text-left transition-all duration-300 hover:border-slate-700 flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="font-mono text-xs font-bold text-[#38BDF8] bg-[#38BDF8]/10 border border-[#38BDF8]/20 px-2 py-0.5 rounded">
-                    {step.step}
-                  </span>
-                  {idx < PHILOSOPHY_STEPS.length - 1 && (
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#38BDF8] transition-colors hidden lg:block" />
-                  )}
-                </div>
-
-                <h3 className="text-base font-bold text-[#F8FAFC] group-hover:text-[#38BDF8] transition-colors mb-1 font-mono">
-                  {step.title}
-                </h3>
-
-                <p className="text-[11px] font-mono text-[#38BDF8] mb-2">
-                  {step.subtitle}
-                </p>
-
-                <p className="text-xs text-[#94A3B8] leading-relaxed mb-4">
-                  {step.description}
-                </p>
-              </div>
-
-              <div className="p-2 rounded bg-[#0A0E1A] border border-slate-800 text-[10px] font-mono text-slate-400 overflow-x-auto">
-                <code>{step.codeSnippet}</code>
-              </div>
-            </div>
+            <ProcessStep key={step.step} step={step} idx={idx} />
           ))}
         </div>
 
-        {/* Core Principles */}
-        <div className="mt-12 p-6 rounded-2xl bg-[#111827] border border-slate-800 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-          <div className="flex items-start gap-3">
-            <div className="p-2.5 rounded-lg bg-[#0A0E1A] border border-slate-800 text-[#38BDF8]">
-              <Network className="w-4 h-4" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-[#F8FAFC] font-mono">Domain Modeling First</h4>
-              <p className="text-xs text-[#94A3B8] leading-relaxed">Defining clean data schemas, user constraints, and explicit type contracts before writing code.</p>
-            </div>
-          </div>
+        {/* System Activation moment */}
+        <div ref={activationRef} className="relative">
+          <motion.div
+            className="absolute -inset-4 pointer-events-none"
+            initial={false}
+            animate={
+              activated && !reducedMotion
+                ? {
+                    opacity: 1,
+                    boxShadow: '0 0 0 1px rgba(56,189,248,0.2)',
+                  }
+                : { opacity: 0 }
+            }
+            transition={{ duration: 0.8 }}
+            aria-hidden="true"
+          >
+            {/* HUD corners */}
+            {['top-0 left-0', 'top-0 right-0', 'bottom-0 left-0', 'bottom-0 right-0'].map((pos) => (
+              <span
+                key={pos}
+                className={`absolute ${pos} w-6 h-6 border-[#38BDF8]/60 ${
+                  pos.includes('top') ? 'border-t-2' : 'border-b-2'
+                } ${pos.includes('left') ? 'border-l-2' : 'border-r-2'}`}
+              />
+            ))}
+          </motion.div>
 
-          <div className="flex items-start gap-3">
-            <div className="p-2.5 rounded-lg bg-[#0A0E1A] border border-slate-800 text-[#38BDF8]">
-              <Cpu className="w-4 h-4" />
+          <motion.div
+            initial={reducedMotion ? false : { opacity: 0, clipPath: 'inset(0 0 100% 0)' }}
+            animate={
+              activated
+                ? { opacity: 1, clipPath: 'inset(0 0 0 0)' }
+                : { opacity: 0, clipPath: 'inset(0 0 100% 0)' }
+            }
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="mb-4 flex items-center gap-3">
+              <motion.span
+                className="font-mono text-[10px] tracking-[0.25em] uppercase text-[#38BDF8]"
+                animate={activated ? { x: [0, 4, 0] } : {}}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                System Topology — Activated
+              </motion.span>
             </div>
-            <div>
-              <h4 className="text-sm font-bold text-[#F8FAFC] font-mono">Pragmatic Abstraction</h4>
-              <p className="text-xs text-[#94A3B8] leading-relaxed">Avoiding premature optimization while maintaining clean, modular, and maintainable architecture.</p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <div className="p-2.5 rounded-lg bg-[#0A0E1A] border border-slate-800 text-[#38BDF8]">
-              <GitPullRequest className="w-4 h-4" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-[#F8FAFC] font-mono">Evidence-Based Iteration</h4>
-              <p className="text-xs text-[#94A3B8] leading-relaxed">Using real runtime behavior, performance benchmarks, and user feedback to refine software.</p>
-            </div>
-          </div>
+            <SystemTopology />
+          </motion.div>
         </div>
 
+        {/* Principles */}
+        <div className="mt-12 md:mt-16 pt-8 md:pt-10 border-t border-white/[0.08] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {[
+            {
+              h: 'Domain Modeling First',
+              b: 'Define clean entity relationships, SQL schemas, and explicit API contracts before touching UI component code.',
+            },
+            {
+              h: 'Pragmatic Architecture',
+              b: 'Avoid premature optimization while keeping the system clearly modular and maintainable.',
+            },
+            {
+              h: 'Evidence-Based Refinement',
+              b: 'Observe real network latency, bundle size metrics, and database execution plans to guide iterative improvements.',
+            },
+          ].map(({ h, b }) => (
+            <article key={h} className="bg-[#0E1320] p-6 rounded-xl border border-white/[0.06] h-full">
+              <h4 className="font-bold text-[#F5F7FA] text-base mb-2">{h}</h4>
+              <p className="text-[#94A0B4] text-xs leading-relaxed">{b}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
+  );
+};
+
+const ProcessStep: React.FC<{
+  step: (typeof PHILOSOPHY_STEPS)[0];
+  idx: number;
+}> = ({ step, idx }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { reducedMotion } = useMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start 0.9', 'start 0.5'],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
+  const y = useTransform(scrollYProgress, [0, 1], [16, 0]);
+
+  return (
+    <motion.article
+      ref={ref}
+      className="relative bg-[#0E1320] p-6 rounded-2xl border border-white/10 flex flex-col justify-between h-full"
+      style={reducedMotion ? undefined : { opacity, y }}
+    >
+      <div>
+        <div className="flex items-center justify-between mb-4">
+          <span className="font-mono text-xs font-bold text-[#38BDF8] bg-[#38BDF8]/10 px-2.5 py-1 rounded border border-[#38BDF8]/20">
+            STEP {step.step}
+          </span>
+          <span className="font-mono text-[10px] text-[#94A0B4]">0{idx + 1}/06</span>
+        </div>
+        <h3 className="font-black text-[#F5F7FA] text-xl mb-1 tracking-tight">{step.title}</h3>
+        <p className="font-mono text-[11px] text-[#38BDF8] mb-3">{step.subtitle}</p>
+        <p className="text-xs text-[#94A0B4] leading-relaxed mb-4">{step.description}</p>
+      </div>
+      <div className="bg-[#080B14] p-2.5 rounded-lg border border-white/[0.06] font-mono text-[10px] text-[#94A0B4] overflow-x-auto">
+        <code className="text-[#F5F7FA]">{step.codeSnippet}</code>
+      </div>
+    </motion.article>
   );
 };

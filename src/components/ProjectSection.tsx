@@ -17,12 +17,12 @@ const PetraSchoolVisual: React.FC = () => (
   <div className="h-full w-full bg-[var(--surface)] rounded-2xl overflow-hidden p-4 sm:p-6 font-mono text-xs flex flex-col justify-between border border-white/10 shadow-2xl space-y-4 min-h-0">
     <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.08] pb-3">
       <div className="flex items-center gap-2 min-w-0">
-        <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57] shrink-0" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E] shrink-0" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#28C840] shrink-0" />
+        <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-red)] shrink-0" />
+        <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-yellow)] shrink-0" />
+        <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-green)] shrink-0" />
         <span className="ml-1 sm:ml-2 text-[var(--text-muted)] text-[10px] sm:text-[11px] truncate">nuvora.school / platform / admin</span>
       </div>
-      <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 shrink-0">Term 2 Active</span>
+      <span className="text-[10px] text-[var(--success)] bg-[var(--success)]/10 px-2 py-0.5 rounded border border-[var(--success)]/20 shrink-0">Term 2 Active</span>
     </div>
     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
       <div className="min-w-0">
@@ -37,7 +37,7 @@ const PetraSchoolVisual: React.FC = () => (
     <div className="project-preview__stats grid gap-3">
       <div className="bg-[var(--surface-card)] p-3 rounded-xl border border-white/[0.06]">
         <p className="text-[10px] text-[var(--text-muted)]">ATTENDANCE AUDIT</p>
-        <p className="text-base font-bold text-emerald-400"><CountUpNumber value={97.8} decimals={1} suffix="%" /></p>
+        <p className="text-base font-bold text-[var(--success)]"><CountUpNumber value={97.8} decimals={1} suffix="%" /></p>
       </div>
       <div className="bg-[var(--surface-card)] p-3 rounded-xl border border-white/[0.06]">
         <p className="text-[10px] text-[var(--text-muted)]">CALCULATED GPA</p>
@@ -55,9 +55,9 @@ const SoloHubVisual: React.FC = () => (
   <div className="h-full w-full bg-[var(--surface)] rounded-2xl overflow-hidden p-6 font-mono text-xs flex flex-col justify-between border border-white/10 shadow-2xl space-y-4">
     <div className="flex items-center justify-between border-b border-white/[0.08] pb-3">
       <div className="flex items-center gap-2">
-        <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
+        <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-red)]" />
+        <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-yellow)]" />
+        <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-green)]" />
         <span className="ml-2 text-[var(--text-muted)] text-[11px]">app.solohub.dev / board</span>
       </div>
       <span className="text-[10px] text-[var(--accent)] bg-[var(--accent)]/10 px-2 py-0.5 rounded border border-[var(--accent)]/20">Sprint Active</span>
@@ -66,7 +66,7 @@ const SoloHubVisual: React.FC = () => (
       {[
         { col: 'BACKLOG', items: ['Prisma indexing', 'Auth middleware'], color: 'text-[var(--text-muted)]' },
         { col: 'IN PROGRESS', items: ['Kanban DnD Engine', 'Commit Linker'], color: 'text-[var(--accent)]' },
-        { col: 'SHIPPED', items: ['Project CRUD', 'Dark Theme Tokens'], color: 'text-emerald-400' },
+        { col: 'SHIPPED', items: ['Project CRUD', 'Dark Theme Tokens'], color: 'text-[var(--success)]' },
       ].map(({ col, items, color }) => (
         <div key={col} className="bg-[var(--surface-card)] p-3 rounded-xl border border-white/[0.06] flex flex-col gap-2">
           <p className={`text-[9px] font-bold uppercase tracking-wider ${color}`}>{col}</p>
@@ -83,9 +83,9 @@ const MariaStitchesVisual: React.FC = () => (
   <div className="h-full w-full bg-[var(--surface)] rounded-2xl overflow-hidden p-6 font-mono text-xs flex flex-col justify-between border border-white/10 shadow-2xl space-y-4">
     <div className="flex items-center justify-between border-b border-white/[0.08] pb-3">
       <div className="flex items-center gap-2">
-        <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
+        <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-red)]" />
+        <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-yellow)]" />
+        <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-green)]" />
         <span className="ml-2 text-[var(--text-muted)] text-[11px]">mariastitches.shop / order-pipeline</span>
       </div>
       <span className="text-[10px] text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Order Pipeline Live</span>
@@ -104,7 +104,7 @@ const MariaStitchesVisual: React.FC = () => (
         ))}
       </div>
       <div className="bg-[var(--surface-card)] p-3.5 rounded-xl border border-white/[0.06] space-y-3">
-        <div className="flex items-center justify-between text-xs text-emerald-400">
+        <div className="flex items-center justify-between text-xs text-[var(--success)]">
           <span className="font-bold">Order Progress Tracker</span>
           <Scissors className="w-4 h-4" />
         </div>

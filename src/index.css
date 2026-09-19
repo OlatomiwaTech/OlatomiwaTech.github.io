@@ -44,6 +44,11 @@
     --danger: #EF4444;
     --info: #3B82F6;
     
+    /* Traffic Light Colors (for browser chrome dots) */
+    --traffic-red: #FF5F57;
+    --traffic-yellow: #FEBC2E;
+    --traffic-green: #28C840;
+    
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);

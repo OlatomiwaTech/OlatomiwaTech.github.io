@@ -58,7 +58,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
                   <Layers className="w-4 h-4 text-[#38BDF8]" />
                   <span className="font-semibold text-[#F8FAFC]">SoloHub Workspace Engine</span>
                 </div>
-                <span className="bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded text-[10px] border border-emerald-500/20">
+                <span className="bg-[var(--success)]/10 text-[var(--success)] px-2 py-0.5 rounded text-[10px] border border-[var(--success)]/20">
                   Sprint #4 Active
                 </span>
               </div>
@@ -81,12 +81,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
                 <div className="bg-[#111827] p-3 rounded-lg border border-slate-800 space-y-2">
                   <div className="flex items-center justify-between text-[11px] text-[#94A3B8]">
                     <span>SHIPPED</span>
-                    <span className="text-emerald-400">8</span>
+                    <span className="text-[var(--success)]">8</span>
                   </div>
                   <div className="bg-[#0A0E1A] p-2.5 rounded border border-slate-800 text-xs text-[#F8FAFC]">
                     <div className="flex items-center justify-between mb-1">
                       <span className="font-medium text-xs">Kanban Matrix UI</span>
-                      <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                      <CheckCircle2 className="w-3 h-3 text-[var(--success)]" />
                     </div>
                     <p className="text-[10px] text-[#94A3B8]">Optimized React 19 state sync</p>
                   </div>
@@ -115,7 +115,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
                 </div>
                 <div className="bg-[#111827] p-2.5 rounded-lg border border-slate-800">
                   <p className="text-[10px] text-[#94A3B8]">ATTENDANCE</p>
-                  <p className="text-base font-bold text-emerald-400">97.8%</p>
+                  <p className="text-base font-bold text-[var(--success)]">97.8%</p>
                 </div>
                 <div className="bg-[#111827] p-2.5 rounded-lg border border-slate-800">
                   <p className="text-[10px] text-[#94A3B8]">API LATENCY</p>
@@ -128,7 +128,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
                   <BarChart3 className="w-3.5 h-3.5 text-[#38BDF8]" />
                   <span className="text-[#F8FAFC]">Grade Calculation Engine: Auto GPA</span>
                 </div>
-                <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">REST 200 OK</span>
+                <span className="text-[10px] text-[var(--success)] bg-[var(--success)]/10 px-1.5 py-0.5 rounded">REST 200 OK</span>
               </div>
             </div>
           )}
@@ -141,7 +141,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
                   <Scissors className="w-4 h-4 text-[#38BDF8]" />
                   <span className="font-semibold text-[#F8FAFC]">Maria Stitches Custom Orders</span>
                 </div>
-                <span className="bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded text-[10px] border border-emerald-500/20">
+                <span className="bg-[var(--success)]/10 text-[var(--success)] px-2 py-0.5 rounded text-[10px] border border-[var(--success)]/20">
                   Order #MS-482 Live
                 </span>
               </div>
@@ -156,7 +156,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
                 </div>
 
                 <div className="bg-[#111827] p-2.5 rounded-lg border border-slate-800">
-                  <div className="flex items-center gap-1.5 text-xs text-emerald-400 mb-1">
+                  <div className="flex items-center gap-1.5 text-xs text-[var(--success)] mb-1">
                     <ShieldCheck className="w-3.5 h-3.5" />
                     <span className="font-semibold">Order Status</span>
                   </div>

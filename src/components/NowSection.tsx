@@ -10,8 +10,8 @@ export const NowSection: React.FC = () => {
         <FadeUp className="section-header">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-              <p className="font-mono text-xs tracking-[0.2em] uppercase text-emerald-400">
+              <span className="w-2.5 h-2.5 rounded-full bg-[var(--success)] animate-pulse" />
+              <p className="font-mono text-xs tracking-[0.2em] uppercase text-[var(--success)]">
                 07 \u2014 Now (Live Snapshot)
               </p>
             </div>
@@ -51,7 +51,7 @@ export const NowSection: React.FC = () => {
                 </div>
 
                 <div className="pt-3 border-t border-white/[0.06] flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--success)]" />
                   <span className="font-mono text-[10px] text-[var(--text-muted)]">Active Focus</span>
                 </div>
               </HoverCard>

@@ -149,12 +149,12 @@ export const Hero: React.FC = () => {
             >
               <div className="bg-[#090D18] px-3 sm:px-4 py-3 border-b border-white/[0.08] flex items-center justify-between gap-2 min-w-0">
                 <div className="flex items-center gap-1.5 shrink-0">
-                  <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FF5F57] inline-block" />
-                  <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FEBC2E] inline-block" />
-                  <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#28C840] inline-block" />
+                  <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[var(--traffic-red)] inline-block" />
+                  <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[var(--traffic-yellow)] inline-block" />
+                  <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[var(--traffic-green)] inline-block" />
                 </div>
                 <div className="hidden sm:flex bg-[#080B14] rounded-md px-3 py-1 text-xs font-mono text-[var(--text-muted)] border border-white/[0.06] items-center gap-2 min-w-0 truncate">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
+                  <span className="w-2 h-2 rounded-full bg-[var(--success)] shrink-0" />
                   <span className="truncate">nuvora.school / admin</span>
                 </div>
                 <div className="flex items-center gap-1 text-[10px] sm:text-[11px] font-mono text-[var(--accent)] bg-[var(--accent)]/10 px-2 py-0.5 rounded border border-[var(--accent)]/20 shrink-0">
@@ -177,7 +177,7 @@ export const Hero: React.FC = () => {
                       </p>
                     </div>
                   </div>
-                  <span className="font-mono text-xs text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20 self-start sm:self-auto shrink-0">
+                  <span className="font-mono text-xs text-[var(--success)] bg-[var(--success)]/10 px-2.5 py-1 rounded-md border border-[var(--success)]/20 self-start sm:self-auto shrink-0">
                     Term 2 Active
                   </span>
                 </div>
@@ -185,7 +185,7 @@ export const Hero: React.FC = () => {
                 <div className="grid grid-cols-1 min-[400px]:grid-cols-3 gap-2 sm:gap-3">
                   {[
                     { label: 'RECORDS', icon: Users, val: 'Student Data', sub: 'Centralized Database', color: 'text-[var(--text-primary)]' },
-                    { label: 'ATTENDANCE', icon: CheckCircle2, val: 'Daily Logger', sub: 'Real-Time Audit', color: 'text-emerald-400' },
+                    { label: 'ATTENDANCE', icon: CheckCircle2, val: 'Daily Logger', sub: 'Real-Time Audit', color: 'text-[var(--success)]' },
                     { label: 'BACKEND', icon: Clock, val: 'Express REST', sub: 'Role Middleware', color: 'text-[var(--accent)]' },
                   ].map(({ label, icon: Icon, val, sub, color }) => (
                     <div key={label} className="bg-[var(--surface-card)] p-3 rounded-xl border border-white/[0.06] space-y-1 min-w-0">
@@ -203,7 +203,7 @@ export const Hero: React.FC = () => {
                   <div className="bg-[var(--surface-card)] p-3.5 rounded-xl border border-white/[0.06] space-y-1">
                     <div className="flex items-center justify-between text-xs gap-2">
                       <span className="font-mono text-[11px] text-[var(--accent)] font-bold">GPA COMPUTATION</span>
-                      <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded shrink-0">REST API</span>
+                      <span className="text-[10px] font-mono text-[var(--success)] bg-[var(--success)]/10 px-1.5 py-0.5 rounded shrink-0">REST API</span>
                     </div>
                     <p className="text-xs text-[var(--text-muted)] leading-relaxed">
                       Automated grade calculation engine processing transcripts across terms.
@@ -212,7 +212,7 @@ export const Hero: React.FC = () => {
                   <div className="bg-[var(--surface-card)] p-3.5 rounded-xl border border-white/[0.06] space-y-1">
                     <div className="flex items-center justify-between text-xs">
                       <span className="font-mono text-[11px] text-[var(--accent)] font-bold">ROLE PERMISSIONS</span>
-                      <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <ShieldCheck className="w-4 h-4 text-[var(--success)] shrink-0" />
                     </div>
                     <p className="text-xs text-[var(--text-muted)] leading-relaxed">
                       Strict authentication middleware for Administrators, Teachers, and Students.
@@ -243,7 +243,7 @@ export const Hero: React.FC = () => {
 
         <div className="mt-[clamp(2rem,5vh,3.5rem)] flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-[var(--text-muted)]">
           <div className="flex items-center gap-3 min-w-0">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
+            <span className="w-2 h-2 rounded-full bg-[var(--success)] shrink-0" />
             <span className="font-mono text-[11px]">Available for software engineering roles & product builds</span>
           </div>
           <button

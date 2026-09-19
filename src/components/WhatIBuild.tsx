@@ -70,7 +70,7 @@ export const WhatIBuild: React.FC = () => {
                   <span
                     className={`font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-md font-semibold ${
                       pillar.level === 'Production Proven'
-                        ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                        ? 'bg-[var(--success)]/10 text-[var(--success)] border border-[var(--success)]/20'
                         : 'bg-sky-500/10 text-[var(--accent)] border border-sky-500/20'
                     }`}
                   >

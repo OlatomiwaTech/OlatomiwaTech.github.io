@@ -65,7 +65,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project, onOpenMod
                   <Scissors className="w-4 h-4 text-[#38BDF8]" />
                   <span className="font-semibold text-[#F8FAFC]">Maria Stitches Bespoke Order & Measurement Telemetry</span>
                 </div>
-                <span className="bg-emerald-500/10 text-emerald-400 px-2.5 py-0.5 rounded text-[10px] border border-emerald-500/20">
+                <span className="bg-[var(--success)]/10 text-[var(--success)] px-2.5 py-0.5 rounded text-[10px] border border-[var(--success)]/20">
                   Order #MS-482 Active
                 </span>
               </div>
@@ -80,7 +80,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project, onOpenMod
                 </div>
 
                 <div className="bg-[#111827] p-4 rounded-xl border border-slate-800 space-y-1">
-                  <div className="flex items-center gap-2 text-xs text-emerald-400 font-bold">
+                  <div className="flex items-center gap-2 text-xs text-[var(--success)] font-bold">
                     <ShieldCheck className="w-4 h-4" />
                     <span>Status Pipeline</span>
                   </div>
@@ -119,7 +119,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project, onOpenMod
             </div>
 
             <div className="p-5 rounded-xl bg-[#0A0E1A] border border-slate-800">
-              <span className="font-mono text-emerald-400 font-bold text-xs uppercase tracking-wider block mb-2">
+              <span className="font-mono text-[var(--success)] font-bold text-xs uppercase tracking-wider block mb-2">
                 OUTCOME
               </span>
               <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
@@ -145,7 +145,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project, onOpenMod
                       <Layers className="w-4 h-4 text-[#38BDF8]" />
                       <span className="font-semibold text-[#F8FAFC]">SoloHub Workspace Engine</span>
                     </div>
-                    <span className="bg-emerald-500/10 text-emerald-400 px-2.5 py-0.5 rounded text-[10px] border border-emerald-500/20">
+                    <span className="bg-[var(--success)]/10 text-[var(--success)] px-2.5 py-0.5 rounded text-[10px] border border-[var(--success)]/20">
                       Sprint #4
                     </span>
                   </div>
@@ -165,7 +165,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project, onOpenMod
                     <div className="bg-[#111827] p-3.5 rounded-xl border border-slate-800 space-y-2">
                       <div className="flex items-center justify-between text-[11px] text-[#94A3B8]">
                         <span>SHIPPED</span>
-                        <span className="text-emerald-400">8</span>
+                        <span className="text-[var(--success)]">8</span>
                       </div>
                       <div className="bg-[#0A0E1A] p-2.5 rounded border border-slate-800 text-xs text-[#F8FAFC]">
                         <p className="font-medium text-xs">Kanban Matrix UI</p>
@@ -194,7 +194,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project, onOpenMod
                     </div>
                     <div className="bg-[#111827] p-3 rounded-xl border border-slate-800">
                       <p className="text-[10px] text-[#94A3B8]">ATTENDANCE</p>
-                      <p className="text-base font-bold text-emerald-400">97.8%</p>
+                      <p className="text-base font-bold text-[var(--success)]">97.8%</p>
                     </div>
                     <div className="bg-[#111827] p-3 rounded-xl border border-slate-800">
                       <p className="text-[10px] text-[#94A3B8]">DATABASE</p>
@@ -228,7 +228,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project, onOpenMod
             </div>
 
             <div className="p-4 rounded-xl bg-[#0A0E1A] border border-slate-800">
-              <span className="font-mono text-emerald-400 font-bold text-xs uppercase tracking-wider block mb-1">
+              <span className="font-mono text-[var(--success)] font-bold text-xs uppercase tracking-wider block mb-1">
                 OUTCOME
               </span>
               <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">

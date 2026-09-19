@@ -125,8 +125,8 @@ export const Contact: React.FC = () => {
           <FadeUp delay={0.15} className="lg:col-span-6 bg-[var(--surface-card)] p-8 sm:p-10 rounded-2xl border border-white/10 shadow-2xl">
             {state === 'success' ? (
               <div className="flex flex-col items-start gap-4 py-8">
-                <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center">
-                  <CheckCircle2 className="w-6 h-6 text-emerald-400" />
+                <div className="w-12 h-12 rounded-full bg-[var(--success)]/10 border border-[var(--success)]/30 flex items-center justify-center">
+                  <CheckCircle2 className="w-6 h-6 text-[var(--success)]" />
                 </div>
                 <h3 className="text-2xl font-bold text-[var(--text-primary)]">Message Sent</h3>
                 <p className="text-[var(--text-secondary)] text-sm leading-relaxed">

@@ -36,7 +36,7 @@ export const CurrentFrontier: React.FC = () => {
                     <span className="font-mono text-xs text-[var(--accent)] font-bold">
                       FRONTIER 0{idx + 1}
                     </span>
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded border border-emerald-500/20">
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--success)] bg-[var(--success)]/10 px-2.5 py-0.5 rounded border border-[var(--success)]/20">
                       {area.status}
                     </span>
                   </div>

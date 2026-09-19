@@ -160,7 +160,7 @@ export const Contact: React.FC = () => {
                     className={inputClass('name')}
                   />
                   {errors.name && (
-                    <p className="text-xs text-rose-400 flex items-center gap-1 pt-1">
+                    <p className="text-xs text-[var(--danger)] flex items-center gap-1 pt-1">
                       <AlertCircle className="w-3 h-3" />{errors.name}
                     </p>
                   )}
@@ -181,7 +181,7 @@ export const Contact: React.FC = () => {
                     className={inputClass('email')}
                   />
                   {errors.email && (
-                    <p className="text-xs text-rose-400 flex items-center gap-1 pt-1">
+                    <p className="text-xs text-[var(--danger)] flex items-center gap-1 pt-1">
                       <AlertCircle className="w-3 h-3" />{errors.email}
                     </p>
                   )}
@@ -202,7 +202,7 @@ export const Contact: React.FC = () => {
                     className={`${inputClass('message')} resize-none`}
                   />
                   {errors.message && (
-                    <p className="text-xs text-rose-400 flex items-center gap-1 pt-1">
+                    <p className="text-xs text-[var(--danger)] flex items-center gap-1 pt-1">
                       <AlertCircle className="w-3 h-3" />{errors.message}
                     </p>
                   )}

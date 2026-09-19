@@ -20,32 +20,29 @@ const PetraSchoolVisual: React.FC = () => (
         <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-red)] shrink-0" />
         <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-yellow)] shrink-0" />
         <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-green)] shrink-0" />
-        <span className="ml-1 sm:ml-2 text-[var(--text-muted)] text-[10px] sm:text-[11px] truncate">nuvora.school / platform / admin</span>
       </div>
-      <span className="text-[10px] text-[var(--success)] bg-[var(--success)]/10 px-2 py-0.5 rounded border border-[var(--success)]/20 shrink-0">Term 2 Active</span>
     </div>
     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
       <div className="min-w-0">
-        <h4 className="text-sm sm:text-base font-bold text-[var(--text-primary)]">Petra School Operations Engine</h4>
-        <p className="text-[11px] text-[var(--text-muted)]">Role-based Access & Transcript Telemetry</p>
+        <div className="w-32 h-4 bg-[var(--surface-card)] rounded-lg opacity-20 animate-pulse" />
+        <div className="w-40 h-3 bg-[var(--surface-card)] rounded-lg opacity-20 animate-pulse mt-1" />
       </div>
-      <div className="flex items-center gap-1.5 text-xs text-[var(--accent)] bg-[var(--accent)]/10 px-2.5 py-1 rounded self-start sm:self-auto shrink-0">
-        <Users className="w-4 h-4" />
-        <span>Centralized Database</span>
+      <div className="flex items-center gap-1.5 text-xs bg-[var(--accent)]/10 px-2.5 py-1 rounded self-start sm:self-auto shrink-0">
+        <Users className="w-4 h-4 text-[var(--accent)]/50" />
       </div>
     </div>
     <div className="project-preview__stats grid gap-3">
-      <div className="bg-[var(--surface-card)] p-3 rounded-xl border border-white/[0.06]">
-        <p className="text-[10px] text-[var(--text-muted)]">ATTENDANCE AUDIT</p>
-        <p className="text-base font-bold text-[var(--success)]"><CountUpNumber value={97.8} decimals={1} suffix="%" /></p>
+      <div className="bg-[var(--surface-card)] p-3 rounded-xl border border-white/[0.06] opacity-40">
+        <div className="w-full h-2 bg-white/[0.04] rounded mb-1" />
+        <div className="w-16 h-3 bg-[var(--success)]/20 rounded" />
       </div>
-      <div className="bg-[var(--surface-card)] p-3 rounded-xl border border-white/[0.06]">
-        <p className="text-[10px] text-[var(--text-muted)]">CALCULATED GPA</p>
-        <p className="text-base font-bold text-[var(--text-primary)]">Auto Engine</p>
+      <div className="bg-[var(--surface-card)] p-3 rounded-xl border border-white/[0.06] opacity-40">
+        <div className="w-full h-2 bg-white/[0.04] rounded mb-1" />
+        <div className="w-20 h-3 bg-[var(--text-primary)]/20 rounded" />
       </div>
-      <div className="bg-[var(--surface-card)] p-3 rounded-xl border border-white/[0.06]">
-        <p className="text-[10px] text-[var(--text-muted)]">API LATENCY</p>
-        <p className="text-base font-bold text-[var(--accent)]"><CountUpNumber value={24} suffix="ms" /></p>
+      <div className="bg-[var(--surface-card)] p-3 rounded-xl border border-white/[0.06] opacity-40">
+        <div className="w-full h-2 bg-white/[0.04] rounded mb-1" />
+        <div className="w-12 h-3 bg-[var(--accent)]/20 rounded" />
       </div>
     </div>
   </div>
@@ -58,9 +55,7 @@ const SoloHubVisual: React.FC = () => (
         <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-red)]" />
         <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-yellow)]" />
         <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-green)]" />
-        <span className="ml-2 text-[var(--text-muted)] text-[11px]">app.solohub.dev / board</span>
       </div>
-      <span className="text-[10px] text-[var(--accent)] bg-[var(--accent)]/10 px-2 py-0.5 rounded border border-[var(--accent)]/20">Sprint Active</span>
     </div>
     <div className="grid grid-cols-3 gap-2.5 flex-1">
       {[
@@ -68,10 +63,12 @@ const SoloHubVisual: React.FC = () => (
         { col: 'IN PROGRESS', items: ['Kanban DnD Engine', 'Commit Linker'], color: 'text-[var(--accent)]' },
         { col: 'SHIPPED', items: ['Project CRUD', 'Dark Theme Tokens'], color: 'text-[var(--success)]' },
       ].map(({ col, items, color }) => (
-        <div key={col} className="bg-[var(--surface-card)] p-3 rounded-xl border border-white/[0.06] flex flex-col gap-2">
-          <p className={`text-[9px] font-bold uppercase tracking-wider ${color}`}>{col}</p>
+        <div key={col} className="bg-[var(--surface-card)] p-3 rounded-xl border border-white/[0.06] flex flex-col gap-2 opacity-40">
+          <div className="w-full h-2 bg-white/[0.04] rounded" />
           {items.map((i) => (
-            <div key={i} className="bg-[var(--surface-elevated)] p-2 rounded-lg text-[10px] text-[var(--text-primary)] border border-white/[0.04]">{i}</div>
+            <div key={i} className="bg-[var(--surface-elevated)] p-2 rounded-lg text-[10px] text-[var(--text-primary)] border border-white/[0.04] opacity-50">
+              <div className="w-full h-2 bg-white/[0.06] rounded" />
+            </div>
           ))}
         </div>
       ))}
@@ -86,31 +83,31 @@ const MariaStitchesVisual: React.FC = () => (
         <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-red)]" />
         <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-yellow)]" />
         <span className="w-2.5 h-2.5 rounded-full bg-[var(--traffic-green)]" />
-        <span className="ml-2 text-[var(--text-muted)] text-[11px]">mariastitches.shop / order-pipeline</span>
       </div>
-      <span className="text-[10px] text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Order Pipeline Live</span>
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div className="bg-[var(--surface-card)] p-3.5 rounded-xl border border-white/[0.06] space-y-2">
+      <div className="bg-[var(--surface-card)] p-3.5 rounded-xl border border-white/[0.06] space-y-2 opacity-40">
         <div className="flex items-center justify-between text-xs text-[var(--accent)]">
-          <span className="font-bold">Measurement Specs</span>
-          <Ruler className="w-4 h-4" />
+          <div className="w-20 h-2 bg-white/[0.04] rounded" />
+          <Ruler className="w-4 h-4 text-[var(--accent)]/50" />
         </div>
         {[['Chest', '38"'], ['Waist', '32"'], ['Shoulder', '18"'], ['Length', '42"']].map(([k, v]) => (
-          <div key={k} className="flex justify-between text-xs border-b border-white/[0.04] pb-1">
-            <span className="text-[var(--text-muted)]">{k}</span>
-            <span className="text-[var(--text-primary)] font-bold">{v}</span>
+          <div key={k} className="flex justify-between text-xs border-b border-white/[0.04] pb-1 opacity-50">
+            <div className="w-12 h-2 bg-white/[0.06] rounded" />
+            <div className="w-8 h-2 bg-white/[0.06] rounded" />
           </div>
         ))}
       </div>
-      <div className="bg-[var(--surface-card)] p-3.5 rounded-xl border border-white/[0.06] space-y-3">
+      <div className="bg-[var(--surface-card)] p-3.5 rounded-xl border border-white/[0.06] space-y-3 opacity-40">
         <div className="flex items-center justify-between text-xs text-[var(--success)]">
-          <span className="font-bold">Order Progress Tracker</span>
-          <Scissors className="w-4 h-4" />
+          <div className="w-24 h-2 bg-white/[0.04] rounded" />
+          <Scissors className="w-4 h-4 text-[var(--success)]/50" />
         </div>
         <div className="grid grid-cols-4 gap-1 pt-2">
           {['Design', 'Cut', 'Stitch', 'Ready'].map((s, idx) => (
-            <div key={s} className={`py-1.5 rounded text-center text-[9px] font-bold uppercase ${idx <= 2 ? 'bg-[var(--accent)]/20 text-[var(--accent)]' : 'bg-white/[0.04] text-[var(--text-muted)]'}`}>{s}</div>
+            <div key={s} className={`py-1.5 rounded text-center text-[9px] font-bold uppercase ${idx <= 2 ? 'bg-[var(--accent)]/20 text-[var(--accent)]' : 'bg-white/[0.04] text-[var(--text-muted)]'}`}>
+              <div className="w-full h-2 bg-white/[0.06] rounded" />
+            </div>
           ))}
         </div>
       </div>
@@ -174,7 +171,7 @@ const DesktopProjectCard: React.FC<{
     >
       <div className="absolute inset-0 bg-gradient-to-t from-[var(--accent)]/10 via-transparent to-transparent z-10" />
       
-      <div className="relative z-20 p-8 sm:p-10 h-full flex flex-col justify-between">
+      <div className="relative z-20 p-8 sm:p-10 h-full flex flex-col justify-between pointer-events-none">
         <div className="space-y-2">
           <div className="flex items-center gap-3">
             <span className="font-mono text-xs font-bold text-[var(--accent)] bg-[var(--accent)]/10 px-3 py-1 rounded-md tracking-wider">

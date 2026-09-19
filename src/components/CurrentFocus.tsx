@@ -6,26 +6,26 @@ export const CurrentFocus: React.FC = () => {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'Cpu':
-        return <Cpu className="w-5 h-5 text-[#38BDF8]" />;
+        return <Cpu className="w-5 h-5 text-[var(--blue-accent)]" />;
       case 'Server':
-        return <Server className="w-5 h-5 text-[#38BDF8]" />;
+        return <Server className="w-5 h-5 text-[var(--blue-accent)]" />;
       case 'Database':
-        return <Database className="w-5 h-5 text-[#38BDF8]" />;
+        return <Database className="w-5 h-5 text-[var(--blue-accent)]" />;
       case 'Layers':
-        return <Layers className="w-5 h-5 text-[#38BDF8]" />;
+        return <Layers className="w-5 h-5 text-[var(--blue-accent)]" />;
       default:
-        return <Cpu className="w-5 h-5 text-[#38BDF8]" />;
+        return <Cpu className="w-5 h-5 text-[var(--blue-accent)]" />;
     }
   };
 
   return (
-    <section id="focus" className="py-24 relative border-t border-slate-800/60 bg-[#0A0E1A]">
+    <section id="focus" className="py-24 relative border-t border-slate-800/60 bg-[var(--background)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-left mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-[#38BDF8] uppercase tracking-wider">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8]" />
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-[var(--blue-accent)] uppercase tracking-wider">
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--blue-accent)]" />
             Active Growth & Engineering Roadmap
           </div>
 
@@ -43,25 +43,25 @@ export const CurrentFocus: React.FC = () => {
           {FOCUS_AREAS.map((area) => (
             <div
               key={area.id}
-              className="group relative rounded-2xl bg-[#111827] border border-slate-800/90 p-6 sm:p-8 text-left transition-all duration-300 hover:border-[#38BDF8]/40 hover:shadow-[0_0_25px_rgba(56,189,248,0.12)] hover:-translate-y-1 flex flex-col justify-between"
+              className="group relative rounded-2xl bg-[var(--surface-card)] border border-slate-800/90 p-6 sm:p-8 text-left transition-all duration-300 hover:border-[var(--blue-accent)]/40 hover:shadow-[0_0_25px_rgba(56,189,248,0.12)] hover:-translate-y-1 flex flex-col justify-between"
             >
               <div>
                 {/* Header Tag & Icon */}
                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 rounded-xl bg-[#0A0E1A] border border-slate-800 group-hover:border-[#38BDF8]/30 group-hover:bg-[#38BDF8]/10 transition-colors">
+                  <div className="p-3 rounded-xl bg-[var(--background)] border border-slate-800 group-hover:border-[var(--blue-accent)]/30 group-hover:bg-[var(--blue-accent)]/10 transition-colors">
                     {getIcon(area.icon)}
                   </div>
-                  <span className="text-xs font-mono px-3 py-1 rounded-md bg-[#0A0E1A] text-[#38BDF8] border border-slate-800">
+                  <span className="text-xs font-mono px-3 py-1 rounded-md bg-[var(--background)] text-[var(--blue-accent)] border border-slate-800">
                     {area.status}
                   </span>
                 </div>
 
                 {/* Title & Subtitle */}
-                <h3 className="text-xl font-bold text-[#F8FAFC] group-hover:text-[#38BDF8] transition-colors mb-1 font-mono">
+                <h3 className="text-xl font-bold text-[#F8FAFC] group-hover:text-[var(--blue-accent)] transition-colors mb-1 font-mono">
                   {area.title}
                 </h3>
 
-                <p className="text-xs font-mono text-[#38BDF8]/90 mb-3">
+                <p className="text-xs font-mono text-[var(--blue-accent)]/90 mb-3">
                   {area.subtitle}
                 </p>
 
@@ -79,7 +79,7 @@ export const CurrentFocus: React.FC = () => {
                   {area.topics.map((topic) => (
                     <span
                       key={topic}
-                      className="text-xs font-mono px-2.5 py-1 rounded bg-[#0A0E1A] text-[#F8FAFC] border border-slate-800 group-hover:border-slate-700"
+                      className="text-xs font-mono px-2.5 py-1 rounded bg-[var(--background)] text-[#F8FAFC] border border-slate-800 group-hover:border-slate-700"
                     >
                       {topic}
                     </span>

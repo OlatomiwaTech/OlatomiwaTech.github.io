@@ -10,16 +10,16 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }) => {
   return (
-    <div className="group relative rounded-2xl bg-[#111827] border border-slate-800/90 p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#38BDF8]/50 hover:shadow-[0_0_35px_rgba(56,189,248,0.12)] flex flex-col justify-between text-left">
+    <div className="group relative rounded-2xl bg-[var(--surface-card)] border border-slate-800/90 p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--blue-accent)]/50 hover:shadow-[0_0_35px_rgba(56,189,248,0.12)] flex flex-col justify-between text-left">
       
       {/* Background radial gradient accent on hover */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-[#38BDF8]/5 blur-3xl rounded-full pointer-events-none group-hover:bg-[#38BDF8]/10 transition-colors duration-500" />
+      <div className="absolute top-0 right-0 w-72 h-72 bg-[var(--blue-accent)]/5 blur-3xl rounded-full pointer-events-none group-hover:bg-[var(--blue-accent)]/10 transition-colors duration-500" />
 
       <div>
         {/* Top Header: Project Index & Quick Actions */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-bold text-[#38BDF8] bg-[#38BDF8]/10 border border-[#38BDF8]/20 px-3 py-1 rounded-md tracking-wider">
+            <span className="font-mono text-xs font-bold text-[var(--blue-accent)] bg-[var(--blue-accent)]/10 border border-[var(--blue-accent)]/20 px-3 py-1 rounded-md tracking-wider">
               PROJECT {project.number}
             </span>
             <span className="text-xs font-mono text-[#94A3B8] hidden sm:inline">
@@ -32,30 +32,30 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-[#0A0E1A] border border-slate-800 text-[#94A3B8] hover:text-[#38BDF8] hover:border-slate-700 transition-colors"
+              className="p-2 rounded-lg bg-[var(--background)] border border-slate-800 text-[#94A3B8] hover:text-[var(--blue-accent)] hover:border-slate-700 transition-colors"
               aria-label={`View ${project.title} repository on GitHub`}
             >
               <GithubIcon className="w-4 h-4" />
             </a>
             <button
               onClick={() => onOpenModal(project)}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#0A0E1A] border border-slate-800 text-xs font-mono font-semibold text-[#F8FAFC] hover:text-[#38BDF8] hover:border-slate-700 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[var(--background)] border border-slate-800 text-xs font-mono font-semibold text-[#F8FAFC] hover:text-[var(--blue-accent)] hover:border-slate-700 transition-colors"
             >
               <span>Architecture</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#38BDF8]" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-[var(--blue-accent)]" />
             </button>
           </div>
         </div>
 
         {/* Custom Dashboard / Product Visual Frame Composition */}
-        <div className="relative mb-6 rounded-xl bg-[#0A0E1A] border border-slate-800/80 p-4 sm:p-5 overflow-hidden group-hover:border-slate-700 transition-colors">
+        <div className="relative mb-6 rounded-xl bg-[var(--background)] border border-slate-800/80 p-4 sm:p-5 overflow-hidden group-hover:border-slate-700 transition-colors">
           
           {project.previewType === 'solohub' && (
             /* SoloHub UI Dashboard Preview */
             <div className="space-y-4 font-mono transition-transform duration-500 group-hover:scale-[1.01]">
               <div className="flex items-center justify-between border-b border-slate-800/80 pb-3 text-xs text-[#94A3B8]">
                 <div className="flex items-center gap-2">
-                  <Layers className="w-4 h-4 text-[#38BDF8]" />
+                  <Layers className="w-4 h-4 text-[var(--blue-accent)]" />
                   <span className="font-semibold text-[#F8FAFC]">SoloHub Workspace Engine</span>
                 </div>
                 <span className="bg-[var(--success)]/10 text-[var(--success)] px-2 py-0.5 rounded text-[10px] border border-[var(--success)]/20">
@@ -64,26 +64,26 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
               </div>
 
               <div className="grid grid-cols-2 gap-3 text-left">
-                <div className="bg-[#111827] p-3 rounded-lg border border-slate-800 space-y-2">
+                <div className="bg-[var(--surface-card)] p-3 rounded-lg border border-slate-800 space-y-2">
                   <div className="flex items-center justify-between text-[11px] text-[#94A3B8]">
                     <span>IN PROGRESS</span>
-                    <span className="text-[#38BDF8]">3</span>
+                    <span className="text-[var(--blue-accent)]">3</span>
                   </div>
-                  <div className="bg-[#0A0E1A] p-2.5 rounded border border-slate-800 text-xs text-[#F8FAFC]">
+                  <div className="bg-[var(--background)] p-2.5 rounded border border-slate-800 text-xs text-[#F8FAFC]">
                     <div className="flex items-center justify-between mb-1">
                       <span className="font-medium text-xs">Auth Middleware</span>
-                      <Clock className="w-3 h-3 text-[#38BDF8]" />
+                      <Clock className="w-3 h-3 text-[var(--blue-accent)]" />
                     </div>
                     <p className="text-[10px] text-[#94A3B8]">JWT validation & Prisma ORM store</p>
                   </div>
                 </div>
 
-                <div className="bg-[#111827] p-3 rounded-lg border border-slate-800 space-y-2">
+                <div className="bg-[var(--surface-card)] p-3 rounded-lg border border-slate-800 space-y-2">
                   <div className="flex items-center justify-between text-[11px] text-[#94A3B8]">
                     <span>SHIPPED</span>
                     <span className="text-[var(--success)]">8</span>
                   </div>
-                  <div className="bg-[#0A0E1A] p-2.5 rounded border border-slate-800 text-xs text-[#F8FAFC]">
+                  <div className="bg-[var(--background)] p-2.5 rounded border border-slate-800 text-xs text-[#F8FAFC]">
                     <div className="flex items-center justify-between mb-1">
                       <span className="font-medium text-xs">Kanban Matrix UI</span>
                       <CheckCircle2 className="w-3 h-3 text-[var(--success)]" />
@@ -100,32 +100,32 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
             <div className="space-y-4 font-mono transition-transform duration-500 group-hover:scale-[1.01]">
               <div className="flex items-center justify-between border-b border-slate-800/80 pb-3 text-xs text-[#94A3B8]">
                 <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-[#38BDF8]" />
+                  <Users className="w-4 h-4 text-[var(--blue-accent)]" />
                   <span className="font-semibold text-[#F8FAFC]">Nuvora Administration Portal</span>
                 </div>
-                <span className="bg-sky-500/10 text-[#38BDF8] px-2 py-0.5 rounded text-[10px] border border-sky-500/20">
+                <span className="bg-sky-500/10 text-[var(--blue-accent)] px-2 py-0.5 rounded text-[10px] border border-sky-500/20">
                   Term 2 Live Telemetry
                 </span>
               </div>
 
               <div className="grid grid-cols-3 gap-2 text-left">
-                <div className="bg-[#111827] p-2.5 rounded-lg border border-slate-800">
+                <div className="bg-[var(--surface-card)] p-2.5 rounded-lg border border-slate-800">
                   <p className="text-[10px] text-[#94A3B8]">STUDENTS</p>
                   <p className="text-base font-bold text-[#F8FAFC]">1,248</p>
                 </div>
-                <div className="bg-[#111827] p-2.5 rounded-lg border border-slate-800">
+                <div className="bg-[var(--surface-card)] p-2.5 rounded-lg border border-slate-800">
                   <p className="text-[10px] text-[#94A3B8]">ATTENDANCE</p>
                   <p className="text-base font-bold text-[var(--success)]">97.8%</p>
                 </div>
-                <div className="bg-[#111827] p-2.5 rounded-lg border border-slate-800">
+                <div className="bg-[var(--surface-card)] p-2.5 rounded-lg border border-slate-800">
                   <p className="text-[10px] text-[#94A3B8]">API LATENCY</p>
-                  <p className="text-base font-bold text-[#38BDF8]">24ms</p>
+                  <p className="text-base font-bold text-[var(--blue-accent)]">24ms</p>
                 </div>
               </div>
 
-              <div className="bg-[#111827] p-2.5 rounded-lg border border-slate-800 flex items-center justify-between text-xs text-[#94A3B8]">
+              <div className="bg-[var(--surface-card)] p-2.5 rounded-lg border border-slate-800 flex items-center justify-between text-xs text-[#94A3B8]">
                 <div className="flex items-center gap-2">
-                  <BarChart3 className="w-3.5 h-3.5 text-[#38BDF8]" />
+                  <BarChart3 className="w-3.5 h-3.5 text-[var(--blue-accent)]" />
                   <span className="text-[#F8FAFC]">Grade Calculation Engine: Auto GPA</span>
                 </div>
                 <span className="text-[10px] text-[var(--success)] bg-[var(--success)]/10 px-1.5 py-0.5 rounded">REST 200 OK</span>
@@ -138,7 +138,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
             <div className="space-y-4 font-mono transition-transform duration-500 group-hover:scale-[1.01]">
               <div className="flex items-center justify-between border-b border-slate-800/80 pb-3 text-xs text-[#94A3B8]">
                 <div className="flex items-center gap-2">
-                  <Scissors className="w-4 h-4 text-[#38BDF8]" />
+                  <Scissors className="w-4 h-4 text-[var(--blue-accent)]" />
                   <span className="font-semibold text-[#F8FAFC]">Maria Stitches Custom Orders</span>
                 </div>
                 <span className="bg-[var(--success)]/10 text-[var(--success)] px-2 py-0.5 rounded text-[10px] border border-[var(--success)]/20">
@@ -147,15 +147,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
               </div>
 
               <div className="grid grid-cols-2 gap-3 text-left">
-                <div className="bg-[#111827] p-2.5 rounded-lg border border-slate-800">
-                  <div className="flex items-center gap-1.5 text-xs text-[#38BDF8] mb-1">
+                <div className="bg-[var(--surface-card)] p-2.5 rounded-lg border border-slate-800">
+                  <div className="flex items-center gap-1.5 text-xs text-[var(--blue-accent)] mb-1">
                     <Ruler className="w-3.5 h-3.5" />
                     <span className="font-semibold">Profile Metrics</span>
                   </div>
                   <p className="text-[10px] text-[#94A3B8]">Chest: 38" · Waist: 32" · Length: 42"</p>
                 </div>
 
-                <div className="bg-[#111827] p-2.5 rounded-lg border border-slate-800">
+                <div className="bg-[var(--surface-card)] p-2.5 rounded-lg border border-slate-800">
                   <div className="flex items-center gap-1.5 text-xs text-[var(--success)] mb-1">
                     <ShieldCheck className="w-3.5 h-3.5" />
                     <span className="font-semibold">Order Status</span>
@@ -164,9 +164,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
                 </div>
               </div>
 
-              <div className="bg-[#111827] p-2.5 rounded-lg border border-slate-800 flex items-center justify-between text-xs text-[#94A3B8]">
+              <div className="bg-[var(--surface-card)] p-2.5 rounded-lg border border-slate-800 flex items-center justify-between text-xs text-[#94A3B8]">
                 <div className="flex items-center gap-2">
-                  <Cpu className="w-3.5 h-3.5 text-[#38BDF8]" />
+                  <Cpu className="w-3.5 h-3.5 text-[var(--blue-accent)]" />
                   <span className="text-[#F8FAFC]">Client Portal: Custom Measurement Sync</span>
                 </div>
                 <span className="text-[10px] text-sky-400 bg-sky-500/10 px-1.5 py-0.5 rounded">Active State</span>
@@ -178,18 +178,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
 
         {/* Case Study Header & Title */}
         <div className="mb-4">
-          <h3 className="text-2xl font-extrabold text-[#F8FAFC] group-hover:text-[#38BDF8] transition-colors mb-1">
+          <h3 className="text-2xl font-extrabold text-[#F8FAFC] group-hover:text-[var(--blue-accent)] transition-colors mb-1">
             {project.title}
           </h3>
-          <p className="text-xs font-mono text-[#38BDF8]">
+          <p className="text-xs font-mono text-[var(--blue-accent)]">
             {project.tagline}
           </p>
         </div>
 
         {/* Case Study Problem & What I Built Breakdown */}
         <div className="space-y-3 mb-6">
-          <div className="p-3.5 rounded-xl bg-[#0A0E1A] border border-slate-800/80 text-xs">
-            <span className="font-mono text-[#38BDF8] font-bold block mb-1 uppercase tracking-wider text-[10px]">
+          <div className="p-3.5 rounded-xl bg-[var(--background)] border border-slate-800/80 text-xs">
+            <span className="font-mono text-[var(--blue-accent)] font-bold block mb-1 uppercase tracking-wider text-[10px]">
               PROBLEM SOLVED
             </span>
             <p className="text-[#94A3B8] leading-relaxed">
@@ -197,7 +197,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
             </p>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-[#0A0E1A] border border-slate-800/80 text-xs">
+          <div className="p-3.5 rounded-xl bg-[var(--background)] border border-slate-800/80 text-xs">
             <span className="font-mono text-[#F8FAFC] font-bold block mb-1 uppercase tracking-wider text-[10px]">
               WHAT I BUILT
             </span>
@@ -212,7 +212,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-xs font-mono px-3 py-1 rounded-md bg-[#0A0E1A] text-[#94A3B8] border border-slate-800 group-hover:border-slate-700 group-hover:text-[#F8FAFC] transition-colors"
+              className="text-xs font-mono px-3 py-1 rounded-md bg-[var(--background)] text-[#94A3B8] border border-slate-800 group-hover:border-slate-700 group-hover:text-[#F8FAFC] transition-colors"
             >
               {tag}
             </span>
@@ -224,7 +224,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
       <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
         <button
           onClick={() => onOpenModal(project)}
-          className="inline-flex items-center gap-2 text-sm font-semibold text-[#38BDF8] hover:text-[#7DD3FC] transition-colors"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue-accent)] hover:text-[#7DD3FC] transition-colors"
         >
           <span>Explore Architecture</span>
           <ArrowUpRight className="w-4 h-4" />
@@ -236,7 +236,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 text-xs font-mono text-[#94A3B8] hover:text-[#F8FAFC] transition-colors"
         >
-          <GithubIcon className="w-3.5 h-3.5 text-[#38BDF8]" />
+          <GithubIcon className="w-3.5 h-3.5 text-[var(--blue-accent)]" />
           <span>Repository</span>
         </a>
       </div>

@@ -49,6 +49,10 @@
     --traffic-yellow: #FEBC2E;
     --traffic-green: #28C840;
     
+    /* Legacy Blue Accent (for existing components using #38BDF8) */
+    --blue-accent: #38BDF8;
+    --blue-glow: rgba(56, 189, 248, 0.15);
+    
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);

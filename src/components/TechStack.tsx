@@ -12,14 +12,14 @@ export const TechStack: React.FC = () => {
     : TECH_STACK.filter(t => t.category === filter);
 
   return (
-    <section id="stack" className="py-24 relative border-t border-slate-800/60 bg-[#0A0E1A]">
+    <section id="stack" className="py-24 relative border-t border-slate-800/60 bg-[var(--background)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 text-left">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 text-xs font-mono text-[#38BDF8] uppercase tracking-wider">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8]" />
+            <div className="inline-flex items-center gap-2 text-xs font-mono text-[var(--blue-accent)] uppercase tracking-wider">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--blue-accent)]" />
               Technical Competencies
             </div>
 
@@ -40,8 +40,8 @@ export const TechStack: React.FC = () => {
                 onClick={() => setFilter(cat)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 ${
                   filter === cat
-                    ? 'bg-[#38BDF8] text-[#0A0E1A] font-semibold shadow-[0_0_12px_rgba(56,189,248,0.3)]'
-                    : 'bg-[#111827] text-[#94A3B8] border border-slate-800 hover:text-[#F8FAFC] hover:border-slate-700'
+                    ? 'bg-[var(--blue-accent)] text-[#0A0E1A] font-semibold shadow-[0_0_12px_rgba(56,189,248,0.3)]'
+                    : 'bg-[var(--surface-card)] text-[#94A3B8] border border-slate-800 hover:text-[#F8FAFC] hover:border-slate-700'
                 }`}
               >
                 {cat}

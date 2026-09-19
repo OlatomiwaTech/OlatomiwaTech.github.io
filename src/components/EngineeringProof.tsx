@@ -6,26 +6,26 @@ export const EngineeringProof: React.FC = () => {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'Code2':
-        return <Code2 className="w-5 h-5 text-[#38BDF8]" />;
+        return <Code2 className="w-5 h-5 text-[var(--blue-accent)]" />;
       case 'Database':
-        return <Database className="w-5 h-5 text-[#38BDF8]" />;
+        return <Database className="w-5 h-5 text-[var(--blue-accent)]" />;
       case 'Layers':
-        return <Layers className="w-5 h-5 text-[#38BDF8]" />;
+        return <Layers className="w-5 h-5 text-[var(--blue-accent)]" />;
       case 'Cpu':
-        return <Cpu className="w-5 h-5 text-[#38BDF8]" />;
+        return <Cpu className="w-5 h-5 text-[var(--blue-accent)]" />;
       default:
-        return <Code2 className="w-5 h-5 text-[#38BDF8]" />;
+        return <Code2 className="w-5 h-5 text-[var(--blue-accent)]" />;
     }
   };
 
   return (
-    <section id="proof" className="py-20 relative border-t border-slate-800/60 bg-[#0A0E1A]">
+    <section id="proof" className="py-20 relative border-t border-slate-800/60 bg-[var(--background)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
         <div className="text-left mb-12 space-y-2">
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-[#38BDF8] uppercase tracking-wider">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8]" />
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-[var(--blue-accent)] uppercase tracking-wider">
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--blue-accent)]" />
             Engineering Proof & Capabilities
           </div>
 
@@ -43,25 +43,25 @@ export const EngineeringProof: React.FC = () => {
           {PROOF_CATEGORIES.map((category) => (
             <div
               key={category.title}
-              className="group relative rounded-xl bg-[#111827] border border-slate-800/90 p-6 text-left transition-all duration-300 hover:border-[#38BDF8]/40 hover:shadow-[0_0_20px_rgba(56,189,248,0.12)] hover:-translate-y-1 flex flex-col justify-between"
+              className="group relative rounded-xl bg-[var(--surface-card)] border border-slate-800/90 p-6 text-left transition-all duration-300 hover:border-[var(--blue-accent)]/40 hover:shadow-[0_0_20px_rgba(56,189,248,0.12)] hover:-translate-y-1 flex flex-col justify-between"
             >
               <div>
                 {/* Header */}
                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-2.5 rounded-lg bg-[#0A0E1A] border border-slate-800 group-hover:border-[#38BDF8]/30 group-hover:bg-[#38BDF8]/10 transition-colors">
+                  <div className="p-2.5 rounded-lg bg-[var(--background)] border border-slate-800 group-hover:border-[var(--blue-accent)]/30 group-hover:bg-[var(--blue-accent)]/10 transition-colors">
                     {getIcon(category.icon)}
                   </div>
-                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[#0A0E1A] text-[#38BDF8] border border-slate-800">
+                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[var(--background)] text-[var(--blue-accent)] border border-slate-800">
                     {category.badge}
                   </span>
                 </div>
 
                 {/* Title & Subtitle */}
-                <h3 className="text-lg font-bold text-[#F8FAFC] group-hover:text-[#38BDF8] transition-colors mb-1 font-mono">
+                <h3 className="text-lg font-bold text-[#F8FAFC] group-hover:text-[var(--blue-accent)] transition-colors mb-1 font-mono">
                   {category.title}
                 </h3>
                 
-                <p className="text-xs text-[#38BDF8]/90 font-mono mb-3">
+                <p className="text-xs text-[var(--blue-accent)]/90 font-mono mb-3">
                   {category.subtitle}
                 </p>
 
@@ -76,7 +76,7 @@ export const EngineeringProof: React.FC = () => {
                   <div key={idx} className="flex items-center justify-between">
                     <span className="text-[#94A3B8]">{m.label}</span>
                     <span className="text-[#F8FAFC] font-semibold flex items-center gap-1">
-                      <CheckCircle2 className="w-3 h-3 text-[#38BDF8]" />
+                      <CheckCircle2 className="w-3 h-3 text-[var(--blue-accent)]" />
                       {m.value}
                     </span>
                   </div>

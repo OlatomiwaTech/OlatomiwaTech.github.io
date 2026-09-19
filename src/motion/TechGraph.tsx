@@ -60,9 +60,9 @@ export const TechGraph: React.FC<TechGraphProps> = ({ nodes, edges, className = 
       >
         <defs>
           <linearGradient id="edgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.15" />
-            <stop offset="50%" stopColor="#38BDF8" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#38BDF8" stopOpacity="0.15" />
+            <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.15" />
+            <stop offset="50%" stopColor="var(--accent)" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="var(--accent)" stopOpacity="0.15" />
           </linearGradient>
         </defs>
 
@@ -82,7 +82,7 @@ export const TechGraph: React.FC<TechGraphProps> = ({ nodes, edges, className = 
               y1={from.y}
               x2={to.x}
               y2={to.y}
-              stroke={active ? 'url(#edgeGrad)' : 'rgba(148,160,180,0.08)'}
+              stroke={active ? 'url(#edgeGrad)' : 'rgba(100, 116, 139, 0.08)'}
               strokeWidth={active && hovered ? 2 : 1}
               className={reducedMotion ? '' : 'transition-all duration-300'}
             />
@@ -109,15 +109,15 @@ export const TechGraph: React.FC<TechGraphProps> = ({ nodes, edges, className = 
               tabIndex={0}
               aria-pressed={isHovered}
               aria-label={`${node.label}${node.category ? `, ${node.category}` : ''}`}
-              className="cursor-pointer outline-none focus-visible:[&>circle]:stroke-[#38BDF8] focus-visible:[&>circle]:stroke-[2.5]"
+              className="cursor-pointer outline-none focus-visible:[&>circle]:stroke-[var(--accent)] focus-visible:[&>circle]:stroke-[2.5]"
               style={{ opacity: active ? 1 : 0.25 }}
             >
               <circle
                 cx={node.x}
                 cy={node.y}
                 r={isHovered ? 28 : 22}
-                fill={isHovered ? 'rgba(56,189,248,0.15)' : 'rgba(14,19,32,0.9)'}
-                stroke={isHovered ? '#38BDF8' : 'rgba(255,255,255,0.12)'}
+                fill={isHovered ? 'rgba(249, 115, 22, 0.15)' : 'rgba(15, 23, 42, 0.9)'}
+                stroke={isHovered ? 'var(--accent)' : 'rgba(255,255,255,0.12)'}
                 strokeWidth={isHovered ? 2 : 1}
                 className={reducedMotion ? '' : 'transition-all duration-300'}
               />
@@ -126,7 +126,7 @@ export const TechGraph: React.FC<TechGraphProps> = ({ nodes, edges, className = 
                 y={node.y + 1}
                 textAnchor="middle"
                 dominantBaseline="middle"
-                className="fill-[#F5F7FA] font-mono pointer-events-none select-none"
+                className="fill-[var(--text-primary)] font-mono pointer-events-none select-none"
                 style={{ fontSize: isHovered ? 12 : 11 }}
               >
                 {node.label}
@@ -136,7 +136,7 @@ export const TechGraph: React.FC<TechGraphProps> = ({ nodes, edges, className = 
                   x={node.x}
                   y={node.y + 16}
                   textAnchor="middle"
-                  className="fill-[#94A0B4] pointer-events-none select-none"
+                  className="fill-[var(--text-muted)] pointer-events-none select-none"
                   style={{ fontSize: 8 }}
                 >
                   {node.category}
@@ -149,3 +149,5 @@ export const TechGraph: React.FC<TechGraphProps> = ({ nodes, edges, className = 
     </div>
   );
 };
+
+export default TechGraph;

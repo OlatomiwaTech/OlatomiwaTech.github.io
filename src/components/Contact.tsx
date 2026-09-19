@@ -49,15 +49,15 @@ export const Contact: React.FC = () => {
   };
 
   const inputClass = (field: keyof ContactFormData) =>
-    `w-full px-4 py-3.5 bg-[#080B14] rounded-xl border text-[#F5F7FA] text-sm placeholder-[#94A0B4]/50 focus:outline-none transition-colors ${
+    `w-full px-4 py-3.5 bg-[var(--surface-card)] rounded-xl border text-[var(--text-primary)] text-sm placeholder-[var(--text-muted)]/50 focus:outline-none transition-colors ${
       errors[field]
         ? 'border-rose-500/80 focus:border-rose-500'
-        : 'border-white/10 focus:border-[#38BDF8]'
+        : 'border-white/10 focus:border-[var(--accent)]'
     }`;
 
   return (
-    <section id="contact" className="bg-[#0E1320] section-shell relative overflow-hidden border-t border-white/[0.06]">
-      {/* Background wordmark — clipped to section */}
+    <section id="contact" className="bg-[var(--surface)] section-shell relative overflow-hidden border-t border-white/[0.06]">
+      {/* Background wordmark \u2014 clipped to section */}
       <div
         className="absolute bottom-0 right-0 font-black text-white/[0.015] leading-none tracking-tighter select-none pointer-events-none translate-x-[10%] translate-y-[10%]"
         style={{ fontSize: 'clamp(6rem, 18vw, 22rem)', lineHeight: 0.8 }}
@@ -72,30 +72,30 @@ export const Contact: React.FC = () => {
           {/* Left Column: Direct Links & Headline */}
           <FadeUp className="lg:col-span-6 space-y-6">
             <div className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-[#38BDF8]" />
-              <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#38BDF8]">
-                09 — Contact
+              <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
+              <p className="font-mono text-xs tracking-[0.2em] uppercase text-[var(--accent)]">
+                09 \u2014 Contact
               </p>
             </div>
 
-            <h2 className="type-display font-black text-[#F5F7FA] max-w-[12ch]">
+            <h2 className="type-display max-w-[12ch]">
               LET'S BUILD{' '}
-              <span className="text-[#38BDF8]">SOMETHING</span>{' '}
+              <span className="text-[var(--accent)]">SOMETHING</span>{' '}
               USEFUL.
             </h2>
 
-            <p className="text-[#94A0B4] text-base sm:text-lg max-w-md leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-base sm:text-lg max-w-md leading-relaxed">
               Interested in software engineering roles, discussing architecture, or building products together?
             </p>
 
             <div className="pt-4 space-y-3 font-mono text-sm">
               <div>
-                <p className="text-[10px] text-[#94A0B4] uppercase tracking-wider mb-1">DIRECT EMAIL</p>
+                <p className="text-[10px] text-[var(--text-muted)] uppercase tracking-wider mb-1">DIRECT EMAIL</p>
                 <a
                   href={`mailto:${PERSONAL_INFO.contactEmail}`}
-                  className="text-[#38BDF8] hover:text-[#7DD3FC] font-semibold transition-colors"
+                  className="text-[var(--accent)] hover:text-[var(--accent-hover)] font-semibold transition-colors"
                 >
-                  {PERSONAL_INFO.contactEmail} ↗
+                  {PERSONAL_INFO.contactEmail} \u2197
                 </a>
               </div>
 
@@ -104,49 +104,49 @@ export const Contact: React.FC = () => {
                   href={PERSONAL_INFO.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-[#94A0B4] hover:text-[#F5F7FA] transition-colors"
+                  className="flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
                 >
-                  <GithubIcon className="w-4 h-4 text-[#38BDF8]" />
-                  <span>GitHub ↗</span>
+                  <GithubIcon className="w-4 h-4 text-[var(--accent)]" />
+                  <span>GitHub \u2197</span>
                 </a>
                 <a
                   href={PERSONAL_INFO.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#94A0B4] hover:text-[#F5F7FA] transition-colors"
+                  className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
                 >
-                  <span>LinkedIn ↗</span>
+                  <span>LinkedIn \u2197</span>
                 </a>
               </div>
             </div>
           </FadeUp>
 
           {/* Right Column: Contact Form Container */}
-          <FadeUp delay={0.15} className="lg:col-span-6 bg-[#080B14] p-8 sm:p-10 rounded-2xl border border-white/10 shadow-2xl">
+          <FadeUp delay={0.15} className="lg:col-span-6 bg-[var(--surface-card)] p-8 sm:p-10 rounded-2xl border border-white/10 shadow-2xl">
             {state === 'success' ? (
               <div className="flex flex-col items-start gap-4 py-8">
                 <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center">
                   <CheckCircle2 className="w-6 h-6 text-emerald-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-[#F5F7FA]">Message Sent</h3>
-                <p className="text-[#94A0B4] text-sm leading-relaxed">
+                <h3 className="text-2xl font-bold text-[var(--text-primary)]">Message Sent</h3>
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
                   Thank you for reaching out. Olatomiwa will respond to your message promptly.
                 </p>
                 <button
                   onClick={() => setState('idle')}
-                  className="font-mono text-xs text-[#38BDF8] hover:underline mt-2"
+                  className="font-mono text-xs text-[var(--accent)] hover:underline mt-2"
                 >
-                  Send another message →
+                  Send another message \u2192
                 </button>
               </div>
             ) : (
               <form onSubmit={onSubmit} noValidate className="space-y-6">
-                <h3 className="text-xl font-bold text-[#F5F7FA] tracking-tight">
+                <h3 className="text-xl font-bold text-[var(--text-primary)] tracking-tight">
                   Send a Direct Message
                 </h3>
 
                 <div className="space-y-1">
-                  <label htmlFor="name" className="block text-xs font-mono text-[#94A0B4] uppercase">
+                  <label htmlFor="name" className="block text-xs font-mono text-[var(--text-muted)] uppercase">
                     Your Name
                   </label>
                   <input
@@ -167,7 +167,7 @@ export const Contact: React.FC = () => {
                 </div>
 
                 <div className="space-y-1">
-                  <label htmlFor="email" className="block text-xs font-mono text-[#94A0B4] uppercase">
+                  <label htmlFor="email" className="block text-xs font-mono text-[var(--text-muted)] uppercase">
                     Email Address
                   </label>
                   <input
@@ -188,7 +188,7 @@ export const Contact: React.FC = () => {
                 </div>
 
                 <div className="space-y-1">
-                  <label htmlFor="message" className="block text-xs font-mono text-[#94A0B4] uppercase">
+                  <label htmlFor="message" className="block text-xs font-mono text-[var(--text-muted)] uppercase">
                     Project / Inquiry Details
                   </label>
                   <textarea
@@ -230,3 +230,5 @@ export const Contact: React.FC = () => {
     </section>
   );
 };
+
+export default Contact;

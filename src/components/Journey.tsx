@@ -37,7 +37,7 @@ export const Journey: React.FC = () => {
               {JOURNEY_STEPS.map((step, idx) => (
                 <article
                   key={step.id}
-                  className="snap-center shrink-0 w-[min(85vw,calc(var(--container-max)*0.85))] max-w-sm bg-[#0E1320] p-6 rounded-2xl border border-white/10 space-y-4"
+                  className="snap-center shrink-0 w-[min(85vw,calc(var(--container-max)*0.85))] max-w-sm bg-[var(--surface)] p-6 rounded-2xl border border-white/10 space-y-4"
                 >
                   <JourneyCardContent step={step} idx={idx} scrollTo={scrollTo} />
                 </article>
@@ -58,7 +58,7 @@ export const Journey: React.FC = () => {
         <div className="relative pl-6 md:pl-10 ml-2 md:ml-6">
           <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-white/[0.06] overflow-hidden">
             <motion.div
-              className="absolute inset-0 origin-top bg-gradient-to-b from-[#38BDF8] via-[#38BDF8]/50 to-transparent"
+              className="absolute inset-0 origin-top bg-gradient-to-b from-[var(--accent)] via-[var(--accent)]/50 to-transparent"
               style={{ scaleY: reducedMotion ? 1 : lineScale }}
             />
           </div>
@@ -88,143 +88,122 @@ const JourneyHeader: React.FC = () => (
   <div className="section-header">
     <div>
       <div className="flex items-center gap-3 mb-3">
-        <span className="w-2 h-2 rounded-full bg-[#38BDF8]" />
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#38BDF8]">
-          02 — My Journey
+        <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-[var(--accent)]">
+          02 \u2014 My Journey
         </p>
       </div>
-      <h2 className="type-section font-black text-[#F5F7FA]">
+      <h2 className="type-section">
         A DELIBERATE ENGINEERING PROGRESSION.
       </h2>
     </div>
-    <p className="text-[#94A0B4] type-lead section-header__intro">
-      I am actively becoming a better engineer with every project — building real software, learning backend systems, and expanding into AI.
+    <p className="type-lead section-header__intro">
+      From foundational projects to production systems, each milestone represents intentional growth in solving real-world problems with better engineering.
     </p>
   </div>
 );
 
+const JourneyCardContent: React.FC<{
+  step: typeof JOURNEY_STEPS[number];
+  idx: number;
+  scrollTo: (id: string) => void;
+}> = ({ step, idx, scrollTo }) => (
+  <>
+    <div className="flex items-center justify-between gap-4 min-w-0">
+      <div className="flex items-center gap-3 min-w-0">
+        <span className="font-mono text-xs text-[var(--text-muted)] uppercase tracking-wider">
+          {step.year}
+        </span>
+        <span className="w-px h-3 bg-white/[0.08]" />
+        <span className="font-mono text-[10px] text-[var(--accent)] bg-[var(--accent)]/10 px-2 py-0.5 rounded border border-[var(--accent)]/20">
+          {step.label}
+        </span>
+      </div>
+      {step.linkedProjectId && (
+        <a
+          href={`#project-${step.linkedProjectId}`}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollTo(`#project-${step.linkedProjectId}`);
+          }}
+          className="p-2 rounded-lg bg-[var(--surface-card)] border border-white/[0.06] text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)]/30 transition-colors"
+        >
+          <ArrowUpRight className="w-3.5 h-3.5" />
+        </a>
+      )}
+    </div>
+
+    <h3 className="text-lg font-extrabold text-[var(--text-primary)] tracking-tight">
+      {step.title}
+    </h3>
+    <p className="text-xs font-mono text-[var(--text-muted)] uppercase tracking-wider">
+      {step.subtitle}
+    </p>
+
+    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">{step.description}</p>
+
+    <div className="flex flex-wrap gap-1.5 pt-2">
+      {step.tags.map((t) => (
+        <span
+          key={t}
+          className="font-mono text-[10px] px-2 py-0.5 rounded bg-[var(--surface-card)] border border-white/[0.06] text-[var(--text-muted)]"
+        >
+          {t}
+        </span>
+      ))}
+    </div>
+  </>
+);
+
+const JourneyMilestone: React.FC<{
+  step: typeof JOURNEY_STEPS[number];
+  idx: number;
+  total: number;
+  scrollYProgress: any;
+  reducedMotion: boolean;
+  scrollTo: (id: string) => void;
+}> = ({ step, idx, total, scrollYProgress, reducedMotion, scrollTo }) => {
+  const yThresholdStart = idx / (total - 1);
+  const yThresholdEnd = (idx + 0.5) / (total - 1);
+
+  const opacity = useTransform(scrollYProgress, [yThresholdStart, yThresholdEnd], [0.4, 1]);
+  const y = useTransform(scrollYProgress, [yThresholdStart, yThresholdEnd], [30, 0]);
+  const scale = useTransform(scrollYProgress, [yThresholdStart, yThresholdEnd], [0.95, 1]);
+
+  return (
+    <motion.article
+      className="relative pl-8 md:pl-16 min-w-0"
+      style={{
+        opacity: reducedMotion ? 1 : opacity,
+        y: reducedMotion ? 0 : y,
+        scale: reducedMotion ? 1 : scale,
+      }}
+      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <div className="absolute left-0 top-2 w-3.5 h-3.5 rounded-full border-2 border-dashed border-white/[0.12] flex items-center justify-center">
+        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-[var(--accent)] to-emerald-400" />
+      </div>
+      
+      <div className="bg-[var(--surface)] p-6 rounded-2xl border border-white/10 space-y-4">
+        <JourneyCardContent step={step} idx={idx} scrollTo={scrollTo} />
+      </div>
+    </motion.article>
+  );
+};
+
 const JourneyFooter: React.FC<{ scrollTo: (id: string) => void }> = ({ scrollTo }) => (
-  <div className="mt-12 md:mt-16 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-8 border-t border-white/[0.06]">
-    <span className="font-mono text-xs text-[#94A0B4]">
-      Progression feeds directly into capabilities and product work.
-    </span>
+  <div className="mt-12 md:mt-16 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <p className="text-sm text-[var(--text-muted)]">
+      Every project, every system, every line of code \u2014 part of a continuous journey.
+    </p>
     <button
       onClick={() => scrollTo('#capabilities')}
-      className="flex items-center gap-2 font-mono text-xs text-[#38BDF8] signal-link group touch-target !min-w-0 self-start sm:self-auto"
+      className="flex items-center gap-2 font-mono text-[11px] text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors group signal-link touch-target !min-w-0 self-start sm:self-auto"
     >
-      <span>View Capabilities</span>
+      <span>What I Build</span>
       <ArrowDown className="w-3.5 h-3.5 transition-transform group-hover:translate-y-0.5" />
     </button>
   </div>
 );
 
-interface MilestoneProps {
-  step: (typeof JOURNEY_STEPS)[0];
-  idx: number;
-  total: number;
-  scrollYProgress: ReturnType<typeof useScroll>['scrollYProgress'];
-  reducedMotion: boolean;
-  scrollTo: (id: string) => void;
-}
-
-const JourneyMilestone: React.FC<MilestoneProps> = ({
-  step,
-  idx,
-  total,
-  scrollYProgress,
-  reducedMotion,
-  scrollTo,
-}) => {
-  const segmentStart = idx / total;
-  const segmentEnd = (idx + 1) / total;
-  const segmentMid = (segmentStart + segmentEnd) / 2;
-
-  const opacity = useTransform(
-    scrollYProgress,
-    [segmentStart, segmentMid - 0.05, segmentMid + 0.05, segmentEnd],
-    [0.35, 1, 1, idx === total - 1 ? 1 : 0.45],
-  );
-
-  const translateX = useTransform(
-    scrollYProgress,
-    [segmentStart, segmentMid, segmentEnd],
-    [idx % 2 === 0 ? -24 : 24, 0, idx % 2 === 0 ? -8 : 8],
-  );
-
-  const dotScale = useTransform(
-    scrollYProgress,
-    [segmentMid - 0.08, segmentMid, segmentMid + 0.08],
-    [1, 1.5, 1],
-  );
-
-  const fromLeft = idx % 2 === 0;
-
-  return (
-    <motion.div
-      className="relative group"
-      style={reducedMotion ? undefined : { opacity, x: translateX }}
-    >
-      <motion.div
-        className="absolute -left-[31px] md:-left-[47px] top-2.5 w-4 h-4 rounded-full bg-[#080B14] border-2 border-[#38BDF8] shadow-[0_0_12px_rgba(56,189,248,0.4)]"
-        style={reducedMotion ? undefined : { scale: dotScale }}
-      />
-
-      <article
-        className={`bg-[#0E1320] p-6 sm:p-8 rounded-2xl border border-white/10 group-hover:border-[#38BDF8]/40 transition-colors duration-300 shadow-xl space-y-4 ${
-          fromLeft ? 'lg:mr-8' : 'lg:ml-8'
-        }`}
-      >
-        <JourneyCardContent step={step} idx={idx} scrollTo={scrollTo} />
-      </article>
-    </motion.div>
-  );
-};
-
-const JourneyCardContent: React.FC<{
-  step: (typeof JOURNEY_STEPS)[0];
-  idx: number;
-  scrollTo: (id: string) => void;
-}> = ({ step, idx, scrollTo }) => (
-  <>
-    <div className="flex flex-wrap items-center justify-between gap-3">
-      <div className="flex flex-wrap items-center gap-3">
-        <span className="font-mono text-sm font-black text-[#38BDF8] bg-[#38BDF8]/10 px-3 py-1 rounded-md border border-[#38BDF8]/20">
-          {step.year}
-        </span>
-        <span className="font-mono text-[11px] text-[#94A0B4] uppercase tracking-wider">
-          {step.label}
-        </span>
-      </div>
-      <span className="font-mono text-xs text-[#94A0B4]">0{idx + 1} / 05</span>
-    </div>
-
-    <div>
-      <h3 className="text-xl sm:text-2xl font-extrabold text-[#F5F7FA] tracking-tight">{step.title}</h3>
-      <p className="font-mono text-xs text-[#38BDF8] mt-1">{step.subtitle}</p>
-    </div>
-
-    <p className="text-sm text-[#94A0B4] leading-relaxed max-w-3xl">{step.description}</p>
-
-    <div className="pt-3 flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.06]">
-      <div className="flex flex-wrap gap-2">
-        {step.tags.map((t) => (
-          <span
-            key={t}
-            className="font-mono text-[11px] px-2.5 py-1 rounded bg-[#080B14] text-[#94A0B4] border border-white/[0.08]"
-          >
-            {t}
-          </span>
-        ))}
-      </div>
-      {step.linkedProjectId && (
-        <button
-          onClick={() => scrollTo('#projects')}
-          className="inline-flex items-center gap-1.5 font-mono text-xs text-[#38BDF8] signal-link group/link touch-target !min-w-0 !min-h-[36px]"
-        >
-          <span>Explore Case Study</span>
-          <ArrowUpRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-        </button>
-      )}
-    </div>
-  </>
-);
+export default Journey;

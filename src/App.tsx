@@ -19,7 +19,7 @@ export function App() {
 
   return (
     <MotionProvider>
-      <div className="relative min-h-[100dvh] text-[#F5F7FA] font-sans">
+      <div className="relative min-h-[100dvh] text-[var(--text-primary)] font-sans">
         <DepthField />
         <ScrollSpine />
 

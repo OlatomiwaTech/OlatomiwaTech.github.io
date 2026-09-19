@@ -4,7 +4,7 @@ import { FadeUp, StaggerContainer, StaggerItem, HoverCard } from './motion/Motio
 
 export const NowSection: React.FC = () => {
   return (
-    <section id="now" className="bg-[#080B14] section-shell border-t border-white/[0.06]">
+    <section id="now" className="bg-[var(--surface)] section-shell border-t border-white/[0.06]">
       <div className="section-container">
 
         <FadeUp className="section-header">
@@ -12,14 +12,14 @@ export const NowSection: React.FC = () => {
             <div className="flex items-center gap-3 mb-3">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
               <p className="font-mono text-xs tracking-[0.2em] uppercase text-emerald-400">
-                07 — Now (Live Snapshot)
+                07 \u2014 Now (Live Snapshot)
               </p>
             </div>
-            <h2 className="type-section font-black text-[#F5F7FA]">
+            <h2 className="type-section">
               WHAT I'M DOING TODAY.
             </h2>
           </div>
-          <p className="text-[#94A0B4] type-lead section-header__intro">
+          <p className="type-lead section-header__intro">
             An active snapshot of my current engineering focus, building projects, study areas, and upcoming experiments.
           </p>
         </FadeUp>
@@ -30,29 +30,29 @@ export const NowSection: React.FC = () => {
         >
           {NOW_DATA.map((item) => (
             <StaggerItem key={item.category}>
-              <HoverCard className="bg-[#0E1320] p-6 rounded-2xl border border-white/10 hover:border-[#38BDF8]/40 transition-all flex flex-col justify-between space-y-4 h-full min-w-0">
+              <HoverCard className="bg-[var(--surface-card)] p-6 rounded-2xl border border-white/10 hover:border-[var(--accent)]/40 transition-all flex flex-col justify-between space-y-4 h-full min-w-0">
                 <div className="space-y-3">
                   <div className="flex flex-wrap items-center justify-between gap-2">
-                    <span className="font-mono text-xs font-bold text-[#38BDF8] bg-[#38BDF8]/10 px-2.5 py-0.5 rounded border border-[#38BDF8]/20">
+                    <span className="font-mono text-xs font-bold text-[var(--accent)] bg-[var(--accent)]/10 px-2.5 py-0.5 rounded border border-[var(--accent)]/20">
                       {item.category}
                     </span>
-                    <span className="font-mono text-[10px] text-[#94A0B4]">
+                    <span className="font-mono text-[10px] text-[var(--text-muted)]">
                       {item.tag}
                     </span>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-bold text-[#F5F7FA] tracking-tight">
+                  <h3 className="text-base sm:text-lg font-bold text-[var(--text-primary)] tracking-tight">
                     {item.title}
                   </h3>
 
-                  <p className="text-xs text-[#94A0B4] leading-relaxed">
+                  <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
                     {item.description}
                   </p>
                 </div>
 
                 <div className="pt-3 border-t border-white/[0.06] flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                  <span className="font-mono text-[10px] text-[#94A0B4]">Active Focus</span>
+                  <span className="font-mono text-[10px] text-[var(--text-muted)]">Active Focus</span>
                 </div>
               </HoverCard>
             </StaggerItem>
@@ -63,3 +63,5 @@ export const NowSection: React.FC = () => {
     </section>
   );
 };
+
+export default NowSection;

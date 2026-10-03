@@ -15,7 +15,7 @@ export const WhatIBuild: React.FC = () => {
               <div className="flex items-center gap-3 mb-3">
                 <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
                 <p className="font-mono text-xs tracking-[0.2em] uppercase text-[var(--accent)]">
-                  03 \u2014 What I Build
+                  03 — What I Build
                 </p>
               </div>
               <h2 className="type-section">

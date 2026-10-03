@@ -88,9 +88,9 @@ export const Hero: React.FC = () => {
             </div>
 
             <h1 className="type-hero max-w-[22ch] sm:max-w-none">
-              I build software around real problems \u2014{' '}
+              I build software around real problems —{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--text-primary)] via-[var(--text-primary)] to-[var(--accent)]">
-                and I\u2019m using every project to become a better engineer.
+                and I’m using every project to become a better engineer.
               </span>
             </h1>
 

@@ -90,7 +90,7 @@ const JourneyHeader: React.FC = () => (
       <div className="flex items-center gap-3 mb-3">
         <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-[var(--accent)]">
-          02 \u2014 My Journey
+          02 — My Journey
         </p>
       </div>
       <h2 className="type-section">
@@ -192,7 +192,7 @@ const JourneyMilestone: React.FC<{
 const JourneyFooter: React.FC<{ scrollTo: (id: string) => void }> = ({ scrollTo }) => (
   <div className="mt-12 md:mt-16 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
     <p className="text-sm text-[var(--text-muted)]">
-      Every project, every system, every line of code \u2014 part of a continuous journey.
+      Every project, every system, every line of code — part of a continuous journey.
     </p>
     <button
       onClick={() => scrollTo('#capabilities')}

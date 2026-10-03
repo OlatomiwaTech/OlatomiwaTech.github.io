@@ -34,7 +34,7 @@ export const EngineeringThinking: React.FC = () => {
       <div className="section-container relative z-10">
         <div className="flex items-center gap-3 mb-4">
           <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
-          <p className="font-mono text-xs tracking-[0.2em] uppercase text-[var(--accent)]">05 \u2014 How I Think</p>
+          <p className="font-mono text-xs tracking-[0.2em] uppercase text-[var(--accent)]">05 — How I Think</p>
         </div>
 
         <h2 className="type-section mb-4">
@@ -47,7 +47,7 @@ export const EngineeringThinking: React.FC = () => {
           </p>
         </div>
 
-        {/* Process steps \u2014 scroll-linked, no stagger */}
+        {/* Process steps — scroll-linked, no stagger */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-4 md:gap-6 relative mb-12 md:mb-16">
           {PHILOSOPHY_STEPS.map((step, idx) => (
             <ProcessStep key={step.step} step={step} idx={idx} />
@@ -96,7 +96,7 @@ export const EngineeringThinking: React.FC = () => {
                 animate={activated ? { x: [0, 4, 0] } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                System Topology \u2014 Activated
+                System Topology — Activated
               </motion.span>
             </div>
 

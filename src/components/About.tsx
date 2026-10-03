@@ -9,7 +9,7 @@ export const About: React.FC = () => {
         <FadeUp className="flex items-center gap-3 mb-8 md:mb-10">
           <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
           <p className="font-mono text-xs tracking-[0.2em] uppercase text-[var(--accent)]">
-            08 \u2014 About Me
+            08 — About Me
           </p>
         </FadeUp>
 

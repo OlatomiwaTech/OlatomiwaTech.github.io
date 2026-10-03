@@ -12,7 +12,7 @@ export const NowSection: React.FC = () => {
             <div className="flex items-center gap-3 mb-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[var(--success)] animate-pulse" />
               <p className="font-mono text-xs tracking-[0.2em] uppercase text-[var(--success)]">
-                07 \u2014 Now (Live Snapshot)
+                07 — Now (Live Snapshot)
               </p>
             </div>
             <h2 className="type-section">

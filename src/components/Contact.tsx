@@ -57,7 +57,7 @@ export const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="bg-[var(--surface)] section-shell relative overflow-hidden border-t border-white/[0.06]">
-      {/* Background wordmark \u2014 clipped to section */}
+      {/* Background wordmark — clipped to section */}
       <div
         className="absolute bottom-0 right-0 font-black text-white/[0.015] leading-none tracking-tighter select-none pointer-events-none translate-x-[10%] translate-y-[10%]"
         style={{ fontSize: 'clamp(6rem, 18vw, 22rem)', lineHeight: 0.8 }}
@@ -74,7 +74,7 @@ export const Contact: React.FC = () => {
             <div className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
               <p className="font-mono text-xs tracking-[0.2em] uppercase text-[var(--accent)]">
-                09 \u2014 Contact
+                09 — Contact
               </p>
             </div>
 

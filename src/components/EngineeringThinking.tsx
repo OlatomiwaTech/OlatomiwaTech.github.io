@@ -2,8 +2,8 @@ import React from 'react';
 import { StaggerContainer, StaggerItem } from './motion/MotionPrimitives';
 
 const principles = [
-  ['01', 'Understand the problem', 'I work out what the software needs to do before choosing a solution.'],
-  ['02', 'Break it into steps', 'I split bigger tasks into smaller pieces and work through them one at a time.'],
+  ['01', 'Notice everyday problems', 'I pay attention to the things people around me say are difficult.'],
+  ['02', 'Work through the problem', 'I break it into smaller steps and figure out what an app could do to help.'],
   ['03', 'Keep the code clear', 'I want the code to be easy to read and change later.'],
   ['04', 'Check the details', 'I pay attention to errors, forms, and smaller screens.'],
 ];

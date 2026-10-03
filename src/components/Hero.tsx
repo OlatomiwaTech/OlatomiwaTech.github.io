@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { ArrowDown, ArrowRight, BriefcaseBusiness, MapPin, Scissors, School } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { GithubIcon } from './icons/GithubIcon';
@@ -41,11 +41,11 @@ export const Hero: React.FC = () => {
           </motion.div>
 
           <motion.h1 variants={entrance} className="type-hero max-w-[22ch]">
-            I build web apps for schools, freelancers, and small businesses.
+            I build apps for problems I notice around me.
           </motion.h1>
 
           <motion.p variants={entrance} className="type-lead max-w-2xl text-[var(--text-secondary)]">
-            I’m Olatomiwa, a software engineer in Nigeria. I work on both the frontend and backend of web apps.
+            I’m Olatomiwa, a young entrepreneur and software developer in Nigeria. I look for everyday problems people talk about and think about how an app could help.
           </motion.p>
 
           <motion.div variants={entrance} className="flex flex-wrap items-center gap-3 pt-1">

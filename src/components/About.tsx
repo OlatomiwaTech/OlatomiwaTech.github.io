@@ -4,9 +4,8 @@ import { FadeUp } from './motion/MotionPrimitives';
 
 const details = [
   ['Based in', 'Nigeria'],
-  ['Age', '14'],
-  ['I work on', 'Frontend and backend'],
-  ['Learning', 'PostgreSQL and Prisma'],
+  ['Currently learning', 'Backend development'],
+  ['Next up', 'Rust and C'],
 ];
 
 export const About: React.FC = () => {
@@ -17,10 +16,10 @@ export const About: React.FC = () => {
     <div className="section-container grid gap-10 lg:grid-cols-12 lg:gap-16">
       <FadeUp className="lg:col-span-7">
         <p className="mb-4 text-sm font-medium text-[var(--text-muted)]">About</p>
-        <h2 className="type-section max-w-[20ch]">I work on both sides of a web app.</h2>
+        <h2 className="type-section max-w-[20ch]">I build apps around problems I notice.</h2>
         <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-[var(--text-secondary)]">
-          <p>I’m 14 and based in Nigeria. I build web apps for schools, freelancers, and small businesses.</p>
-          <p>I like breaking a problem into smaller steps, then working through them to build a solution.</p>
+          <p>I’m a young entrepreneur and software developer in Nigeria. I pay attention to problems people around me talk about and think about how an app could help.</p>
+          <p>SewFlow is personal to me because my mum is a tailor. I worked on its measurement feature to help tailors keep customer measurements organized.</p>
         </div>
       </FadeUp>
 

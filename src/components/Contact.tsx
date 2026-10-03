@@ -72,7 +72,7 @@ export const Contact: React.FC = () => {
             </h2>
 
             <p className="text-[var(--text-secondary)] text-base sm:text-lg max-w-md leading-relaxed">
-              Contact me about software roles or a project.
+              I’m open to jobs and freelance work.
             </p>
 
             <div className="pt-4 space-y-3 font-mono text-sm">

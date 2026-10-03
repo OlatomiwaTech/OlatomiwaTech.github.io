@@ -31,7 +31,7 @@ export const About: React.FC = () => {
         className="grid grid-cols-1 gap-0 self-start border-y border-[var(--border)] sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1"
       >
         {details.map(([label, value]) => (
-          <motion.div key={label} variants={{ hidden: { opacity: 0, x: 14 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } }} className="grid grid-cols-2 gap-4 border-b border-[var(--border)] py-4 last:border-b-0 sm:border-b-0 sm:py-5 lg:border-b">
+          <motion.div key={label} variants={{ hidden: { opacity: reduceMotion ? 1 : 0, x: reduceMotion ? 0 : 14 }, show: { opacity: 1, x: 0, transition: { duration: reduceMotion ? 0 : 0.45 } } }} className="grid grid-cols-2 gap-4 border-b border-[var(--border)] py-4 last:border-b-0 sm:border-b-0 sm:py-5 lg:border-b">
             <dt className="text-sm text-[var(--text-muted)]">{label}</dt>
             <dd className="text-sm font-medium text-[var(--text-primary)]">{value}</dd>
           </motion.div>

@@ -88,14 +88,11 @@ export const Hero: React.FC = () => {
             </div>
 
             <h1 className="type-hero max-w-[22ch] sm:max-w-none">
-              I build software around real problems —{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--text-primary)] via-[var(--text-primary)] to-[var(--accent)]">
-                and I’m using every project to become a better engineer.
-              </span>
+              I build software for businesses, freelancers, and schools.
             </h1>
 
             <p className="type-lead font-normal prose-width">
-              Full-stack software engineer and product builder from Nigeria, focused on web applications, backend services, and database architectures that solve genuine domain friction.
+              I’m a full-stack software engineer from Nigeria. I build web applications and business software.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
@@ -120,7 +117,7 @@ export const Hero: React.FC = () => {
                 onClick={() => scrollTo('#about')}
                 className="signal-link text-xs font-mono text-[var(--text-muted)] sm:ml-2 touch-target !min-w-0 px-2"
               >
-                About Me \u2192
+                About Me →
               </button>
             </div>
 
@@ -184,9 +181,9 @@ export const Hero: React.FC = () => {
 
                 <div className="grid grid-cols-1 min-[400px]:grid-cols-3 gap-2 sm:gap-3">
                   {[
-                    { label: 'RECORDS', icon: Users, val: 'Student Data', sub: 'Centralized Database', color: 'text-[var(--text-primary)]' },
-                    { label: 'ATTENDANCE', icon: CheckCircle2, val: 'Daily Logger', sub: 'Real-Time Audit', color: 'text-[var(--success)]' },
-                    { label: 'BACKEND', icon: Clock, val: 'Express REST', sub: 'Role Middleware', color: 'text-[var(--accent)]' },
+                    { label: 'SCHOOL RECORDS', icon: Users, val: 'Students', sub: 'School operations', color: 'text-[var(--text-primary)]' },
+                    { label: 'ACADEMICS', icon: CheckCircle2, val: 'Attendance', sub: 'Assessments and results', color: 'text-[var(--success)]' },
+                    { label: 'TECHNOLOGY', icon: Clock, val: 'React and Express', sub: 'Prisma and PostgreSQL', color: 'text-[var(--accent)]' },
                   ].map(({ label, icon: Icon, val, sub, color }) => (
                     <div key={label} className="bg-[var(--surface-card)] p-3 rounded-xl border border-white/[0.06] space-y-1 min-w-0">
                       <div className="flex items-center justify-between text-[11px] font-mono text-[var(--text-muted)]">
@@ -202,20 +199,20 @@ export const Hero: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="bg-[var(--surface-card)] p-3.5 rounded-xl border border-white/[0.06] space-y-1">
                     <div className="flex items-center justify-between text-xs gap-2">
-                      <span className="font-mono text-[11px] text-[var(--accent)] font-bold">GPA COMPUTATION</span>
-                      <span className="text-[10px] font-mono text-[var(--success)] bg-[var(--success)]/10 px-1.5 py-0.5 rounded shrink-0">REST API</span>
+                      <span className="font-mono text-[11px] text-[var(--accent)] font-bold">SCHOOL FINANCE</span>
+                      <span className="text-[10px] font-mono text-[var(--success)] bg-[var(--success)]/10 px-1.5 py-0.5 rounded shrink-0">PRODUCT AREA</span>
                     </div>
                     <p className="text-xs text-[var(--text-muted)] leading-relaxed">
-                      Automated grade calculation engine processing transcripts across terms.
+                      Fees, invoices, payments, and receipts are part of the product.
                     </p>
                   </div>
                   <div className="bg-[var(--surface-card)] p-3.5 rounded-xl border border-white/[0.06] space-y-1">
                     <div className="flex items-center justify-between text-xs">
-                      <span className="font-mono text-[11px] text-[var(--accent)] font-bold">ROLE PERMISSIONS</span>
+                      <span className="font-mono text-[11px] text-[var(--accent)] font-bold">COLLABORATION</span>
                       <ShieldCheck className="w-4 h-4 text-[var(--success)] shrink-0" />
                     </div>
                     <p className="text-xs text-[var(--text-muted)] leading-relaxed">
-                      Strict authentication middleware for Administrators, Teachers, and Students.
+                      Petra is a collaborative project owned by Michael-aal.
                     </p>
                   </div>
                 </div>
@@ -228,11 +225,11 @@ export const Hero: React.FC = () => {
                   </div>
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-xs font-bold text-[var(--text-primary)]">SoloHub Developer Workspace</span>
+                      <span className="text-xs font-bold text-[var(--text-primary)]">SoloHub</span>
                       <span className="text-[9px] font-mono bg-[var(--accent)]/20 text-[var(--accent)] px-1.5 py-0.5 rounded">PROJECT 02</span>
                     </div>
                     <p className="text-[11px] text-[var(--text-muted)] line-clamp-2">
-                      Kanban sprint matrix, Prisma ORM queries & drag-and-drop state sync.
+                      Client management, project tracking, invoicing, and payments.
                     </p>
                   </div>
                 </div>

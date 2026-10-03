@@ -94,7 +94,7 @@ const JourneyHeader: React.FC = () => (
         </p>
       </div>
       <h2 className="type-section">
-        A DELIBERATE ENGINEERING PROGRESSION.
+        PROJECTS AND EXPERIENCE.
       </h2>
     </div>
     <p className="type-lead section-header__intro">
@@ -192,7 +192,7 @@ const JourneyMilestone: React.FC<{
 const JourneyFooter: React.FC<{ scrollTo: (id: string) => void }> = ({ scrollTo }) => (
   <div className="mt-12 md:mt-16 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
     <p className="text-sm text-[var(--text-muted)]">
-      Every project, every system, every line of code — part of a continuous journey.
+      These projects reflect the kinds of software I work on.
     </p>
     <button
       onClick={() => scrollTo('#capabilities')}

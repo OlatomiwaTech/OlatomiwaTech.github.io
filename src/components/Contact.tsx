@@ -95,7 +95,7 @@ export const Contact: React.FC = () => {
                   href={`mailto:${PERSONAL_INFO.contactEmail}`}
                   className="text-[var(--accent)] hover:text-[var(--accent-hover)] font-semibold transition-colors"
                 >
-                  {PERSONAL_INFO.contactEmail} \u2197
+                  {PERSONAL_INFO.contactEmail} ↗
                 </a>
               </div>
 
@@ -107,7 +107,7 @@ export const Contact: React.FC = () => {
                   className="flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
                 >
                   <GithubIcon className="w-4 h-4 text-[var(--accent)]" />
-                  <span>GitHub \u2197</span>
+                  <span>GitHub ↗</span>
                 </a>
                 <a
                   href={PERSONAL_INFO.linkedinUrl}
@@ -115,7 +115,7 @@ export const Contact: React.FC = () => {
                   rel="noopener noreferrer"
                   className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
                 >
-                  <span>LinkedIn \u2197</span>
+                  <span>LinkedIn ↗</span>
                 </a>
               </div>
             </div>

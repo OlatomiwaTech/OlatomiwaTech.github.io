@@ -23,7 +23,7 @@ export const WhatIBuild: React.FC = () => {
               </h2>
             </div>
             <p className="type-lead section-header__intro">
-              I work across frontend applications, APIs, databases, and product features.
+              I build frontend applications, APIs, and database-backed software.
             </p>
           </div>
 

@@ -125,7 +125,7 @@ export const Hero: React.FC = () => {
               <span className="font-mono text-[10px] text-[var(--text-muted)] uppercase tracking-wider mr-1 w-full sm:w-auto">
                 STACK:
               </span>
-              {['React 19', 'Node.js', 'PostgreSQL', 'Prisma ORM', 'AI Integrations'].map((tech) => (
+              {['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma'].map((tech) => (
                 <span
                   key={tech}
                   className="font-mono text-[11px] px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-[var(--text-primary)]"

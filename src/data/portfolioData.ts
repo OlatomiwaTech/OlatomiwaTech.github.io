@@ -191,26 +191,20 @@ export const TECH_GRAPH_EDGES: TechGraphEdge[] = [
 export const NOW_DATA: NowItem[] = [
   {
     category: 'BUILDING',
-    title: 'Personal Story Portfolio & Open-Source Tools',
-    description: 'Refining portfolio architecture and developing lightweight open-source utility tools for developer productivity.',
-    tag: 'Active Build',
+    title: 'Portfolio website',
+    description: 'Working on this website and its project information.',
+    tag: 'Building',
   },
   {
     category: 'LEARNING',
-    title: 'PostgreSQL Index Tuning & Advanced Prisma Querying',
-    description: 'Studying query execution plans, B-tree vs GIN indexes, and transactional isolation levels in PostgreSQL.',
-    tag: 'Deep Study',
-  },
-  {
-    category: 'EXPLORING',
-    title: 'Gemini API Function Calling & RAG Context Pipelines',
-    description: 'Experimenting with structured JSON output, dynamic schema function calling, and vector context retrieval.',
-    tag: 'Active Lab',
+    title: 'PostgreSQL and Prisma',
+    description: 'Learning how to work with databases and queries.',
+    tag: 'Learning',
   },
   {
     category: 'NEXT',
-    title: 'Real-Time State Sync & Event-Driven Architecture',
-    description: 'Investigating WebSockets and event brokers for real-time collaborative state synchronization in web apps.',
-    tag: 'Upcoming Focus',
+    title: 'Backend development',
+    description: 'Learning more about APIs and server-side code.',
+    tag: 'Learning',
   },
 ];

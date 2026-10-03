@@ -41,7 +41,7 @@ export const About: React.FC = () => {
               },
               {
                 label: "WHAT I'M LEARNING",
-                body: 'PostgreSQL index tuning, Prisma query optimization, AI function calling, and systems design.',
+                body: 'PostgreSQL, Prisma, and backend development.',
               },
               {
                 label: 'WHERE I\'M HEADED',

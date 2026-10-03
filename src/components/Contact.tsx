@@ -56,16 +56,7 @@ export const Contact: React.FC = () => {
     }`;
 
   return (
-    <section id="contact" className="bg-[var(--surface)] section-shell relative overflow-hidden border-t border-white/[0.06]">
-      {/* Background wordmark — clipped to section */}
-      <div
-        className="absolute bottom-0 right-0 font-black text-white/[0.015] leading-none tracking-tighter select-none pointer-events-none translate-x-[10%] translate-y-[10%]"
-        style={{ fontSize: 'clamp(6rem, 18vw, 22rem)', lineHeight: 0.8 }}
-        aria-hidden="true"
-      >
-        BUILD
-      </div>
-
+    <section id="contact" className="section-shell border-t border-[var(--border)]">
       <div className="relative z-10 section-container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-[var(--section-gap)] items-start">
 
@@ -73,24 +64,20 @@ export const Contact: React.FC = () => {
           <FadeUp className="lg:col-span-6 space-y-6">
             <div className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
-              <p className="font-mono text-xs tracking-[0.2em] uppercase text-[var(--accent)]">
-                09 — Contact
-              </p>
+              <p className="text-sm font-medium text-[var(--text-muted)]">Contact</p>
             </div>
 
             <h2 className="type-display max-w-[12ch]">
-              LET'S BUILD{' '}
-              <span className="text-[var(--accent)]">SOMETHING</span>{' '}
-              USEFUL.
+              Get in touch.
             </h2>
 
             <p className="text-[var(--text-secondary)] text-base sm:text-lg max-w-md leading-relaxed">
-              Contact me about software roles or project work.
+              Contact me about software roles or a project.
             </p>
 
             <div className="pt-4 space-y-3 font-mono text-sm">
               <div>
-                <p className="text-[10px] text-[var(--text-muted)] uppercase tracking-wider mb-1">DIRECT EMAIL</p>
+                <p className="mb-1 text-sm text-[var(--text-muted)]">Email</p>
                 <a
                   href={`mailto:${PERSONAL_INFO.contactEmail}`}
                   className="text-[var(--accent)] hover:text-[var(--accent-hover)] font-semibold transition-colors"
@@ -141,8 +128,8 @@ export const Contact: React.FC = () => {
               </div>
             ) : (
               <form onSubmit={onSubmit} noValidate className="space-y-6">
-                <h3 className="text-xl font-bold text-[var(--text-primary)] tracking-tight">
-                  Send a Direct Message
+            <h3 className="text-xl font-semibold text-[var(--text-primary)]">
+                  Send a message
                 </h3>
 
                 <div className="space-y-1">

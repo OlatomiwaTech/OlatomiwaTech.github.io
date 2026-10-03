@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Journey } from './components/Journey';
 import { WhatIBuild } from './components/WhatIBuild';
 import { ProjectSection } from './components/ProjectSection';
 import { EngineeringThinking } from './components/EngineeringThinking';
@@ -22,11 +21,10 @@ export function App() {
 
         <main className="relative z-10">
           <Hero />
-          <ProjectSection onOpenModal={setSelectedProject} />
-          <WhatIBuild />
-          <Journey />
-          <EngineeringThinking />
           <About />
+          <ProjectSection onOpenModal={setSelectedProject} />
+          <EngineeringThinking />
+          <WhatIBuild />
           <Contact />
         </main>
 

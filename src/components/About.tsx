@@ -1,69 +1,33 @@
 import React from 'react';
-import { FadeUp, StaggerContainer, StaggerItem, HoverCard } from './motion/MotionPrimitives';
 
-export const About: React.FC = () => {
-  return (
-    <section id="about" className="bg-[var(--surface)] section-shell border-t border-white/[0.06]">
-      <div className="section-container">
+const details = [
+  ['Based in', 'Nigeria'],
+  ['I work on', 'Frontend and backend'],
+  ['Learning', 'PostgreSQL and Prisma'],
+];
 
-        <FadeUp className="flex items-center gap-3 mb-8 md:mb-10">
-          <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
-          <p className="font-mono text-xs tracking-[0.2em] uppercase text-[var(--accent)]">
-            About me
-          </p>
-        </FadeUp>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-[var(--section-gap)] items-start">
-
-          <FadeUp className="lg:col-span-7 space-y-[var(--content-gap)] min-w-0">
-            <h2 className="type-section leading-tight max-w-[28ch] lg:max-w-none">
-              I build web apps for businesses and schools.
-            </h2>
-
-            <p className="type-lead">
-              I enjoy building products and working on both frontend and backend code.
-            </p>
-
-            <p className="leading-relaxed prose-width text-[var(--text-secondary)]">
-              Based in Nigeria, I build web applications and business software. I try to keep the code clear and easy to maintain.
-            </p>
-          </FadeUp>
-
-          <StaggerContainer staggerDelay={0.08} className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 bg-[var(--surface-card)] p-6 sm:p-8 rounded-2xl border border-white/10 min-w-0">
-            {[
-              {
-                label: 'WHO I AM',
-                body: 'Software engineer building web apps and business products.',
-              },
-              {
-                label: 'WHAT I BUILD',
-                body: 'Full-stack applications, SaaS products, and school software.',
-              },
-              {
-                label: "WHAT I'M LEARNING",
-                body: 'PostgreSQL, Prisma, and backend development.',
-              },
-              {
-                label: 'HOW I WORK',
-                body: 'I focus on practical problems, clear code, and maintainable solutions.',
-              },
-            ].map(({ label, body }) => (
-              <StaggerItem key={label}>
-                <HoverCard className="space-y-2 p-2 rounded-lg h-full">
-                  <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-[var(--accent)] font-bold">
-                    {label}
-                  </p>
-                  <p className="text-xs text-[var(--text-secondary)] leading-relaxed font-medium">{body}</p>
-                </HoverCard>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-
+export const About: React.FC = () => (
+  <section id="about" className="section-shell border-t border-[var(--border)]">
+    <div className="section-container grid gap-10 lg:grid-cols-12 lg:gap-16">
+      <div className="lg:col-span-7">
+        <p className="mb-4 text-sm font-medium text-[var(--text-muted)]">About</p>
+        <h2 className="type-section max-w-[20ch]">I like building the parts of an app that make it useful.</h2>
+        <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-[var(--text-secondary)]">
+          <p>I’m a software engineer from Nigeria. I work on web apps for schools, freelancers, and small businesses.</p>
+          <p>I enjoy working across the frontend and backend, and I’m still learning as I build.</p>
         </div>
-
       </div>
-    </section>
-  );
-};
+
+      <dl className="grid grid-cols-1 gap-0 self-start border-y border-[var(--border)] sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1">
+        {details.map(([label, value]) => (
+          <div key={label} className="grid grid-cols-2 gap-4 border-b border-[var(--border)] py-4 last:border-b-0 sm:border-b-0 sm:py-5 lg:border-b">
+            <dt className="text-sm text-[var(--text-muted)]">{label}</dt>
+            <dd className="text-sm font-medium text-[var(--text-primary)]">{value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+);
 
 export default About;

@@ -54,7 +54,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             {/* Header */}
             <div className="mb-6">
               <span className="font-mono text-xs font-bold text-[var(--accent)] bg-[var(--accent)]/10 border border-[var(--accent)]/20 px-3 py-1 rounded-md tracking-wider inline-block mb-3">
-                PROJECT DETAILS
+                Project details
               </span>
 
               <h3 id="project-modal-title" className="text-3xl font-extrabold text-[var(--text-primary)]">

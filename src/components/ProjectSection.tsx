@@ -3,10 +3,8 @@ import {
   ArrowUpRight,
   AppWindow,
   BriefcaseBusiness,
-  GitFork,
   GraduationCap,
   Scissors,
-  Star,
   type LucideIcon,
 } from 'lucide-react';
 import { PROJECTS } from '../data/projects';
@@ -58,11 +56,6 @@ export const ProjectSection: React.FC<Props> = ({ onOpenModal }) => (
             </div>
 
             <div className="mt-auto pt-6">
-              <div className="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[var(--text-muted)]">
-                <span className="inline-flex items-center gap-1.5"><Star size={13} aria-hidden="true" />{project.stars}</span>
-                <span className="inline-flex items-center gap-1.5"><GitFork size={13} aria-hidden="true" />{project.forks}</span>
-                <span>Updated {new Date(project.updatedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}</span>
-              </div>
               <div className="flex flex-wrap gap-2 border-t border-[var(--border)] pt-5">
                 <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-primary text-xs !py-2.5 !px-4">
                   View project <ArrowUpRight className="w-4 h-4" aria-hidden="true" />

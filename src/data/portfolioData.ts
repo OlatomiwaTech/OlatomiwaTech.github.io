@@ -18,7 +18,7 @@ export const PERSONAL_INFO = {
   handle: 'OlatomiwaTech',
   role: 'Software Engineer · Product Builder · Entrepreneur',
   eyebrow: 'SOFTWARE ENGINEER & PRODUCT BUILDER',
-  headline: 'I build software around real problems — and I’m using every project to become a better engineer.',
+  headline: 'I build web applications and business software.',
   bio: 'I build full-stack applications and practical software for business, education, and everyday workflows, while continuing to grow as an engineer.',
   contactHeading: 'Have a problem worth solving?',
   contactCopy: 'Interested in working together, discussing software architecture, or exploring product opportunities? Send a direct message.',
@@ -33,7 +33,7 @@ export const JOURNEY_STEPS: JourneyMilestone[] = [
   {
     id: 'building-now',
     year: '2026',
-    label: 'CURRENT STAGE',
+    label: 'CURRENT',
     title: 'Independent Software Engineer & Product Builder',
     subtitle: 'Building real applications & exploring full-stack systems',
     description: 'Building full-stack web applications and practical software products while continuing to deepen my engineering skills.',
@@ -62,7 +62,7 @@ export const JOURNEY_STEPS: JourneyMilestone[] = [
   {
     id: 'exploring-systems',
     year: 'ONGOING',
-    label: 'ACTIVE FRONTIER',
+    label: 'LEARNING',
     title: 'Deepening Backend Systems & Practical AI',
     subtitle: 'Continuous growth in systems design & database optimization',
     description: 'Deliberately expanding capabilities in PostgreSQL index tuning, backend security middleware, RAG context pipelines, and LLM function calling.',
@@ -75,7 +75,7 @@ export const CAPABILITY_PILLARS: CapabilityPillar[] = [
     id: 'product-eng',
     title: 'PRODUCT ENGINEERING',
     tag: 'Core Focus',
-    description: 'Turning real-world problems into useful software products with clean interfaces, intuitive user flows, and tight feedback loops.',
+    description: 'Building software products with clear interfaces and practical workflows.',
     technologies: ['React 19', 'TypeScript', 'Tailwind CSS', 'UX Architecture', 'State Management'],
     level: 'Active Domain',
     icon: 'Box',
@@ -142,7 +142,7 @@ export const PHILOSOPHY_STEPS: PhilosophyStep[] = [
     step: '05',
     title: 'MEASURE',
     subtitle: 'Observe Real Behavior',
-    description: 'Audit network latency, bundle footprint, UI response times, and real-world runtime behavior.',
+    description: 'Review performance, bundle size, and application behavior.',
     codeSnippet: 'const metrics = auditPerformance({ latency, bundleSize });',
   },
   {
@@ -194,12 +194,12 @@ export const FRONTIER_AREAS: FrontierItem[] = [
 ];
 
 export const TOPOLOGY_NODES: TopologyNode[] = [
-  { id: 'product', label: 'Product Layer', category: 'Client UX', status: 'Active', latency: '12ms', x: 15, y: 30 },
-  { id: 'frontend', label: 'React Client', category: 'SPA Engine', status: 'Active', latency: '8ms', x: 45, y: 15 },
-  { id: 'api', label: 'REST API', category: 'Express Gateway', status: 'Active', latency: '24ms', x: 45, y: 55 },
-  { id: 'database', label: 'PostgreSQL', category: 'Persistence', status: 'Active', latency: '18ms', x: 80, y: 25 },
-  { id: 'ai', label: 'AI Pipeline', category: 'LLM / RAG', status: 'Exploring', latency: '340ms', x: 80, y: 70 },
-  { id: 'infra', label: 'Deploy & CI', category: 'Infrastructure', status: 'Stable', latency: '45ms', x: 45, y: 85 },
+  { id: 'product', label: 'Product Layer', category: 'Client UX', status: 'Current tools', latency: '', x: 15, y: 30 },
+  { id: 'frontend', label: 'React Client', category: 'Frontend', status: 'Current tools', latency: '', x: 45, y: 15 },
+  { id: 'api', label: 'REST API', category: 'Backend', status: 'Current tools', latency: '', x: 45, y: 55 },
+  { id: 'database', label: 'PostgreSQL', category: 'Data', status: 'Current tools', latency: '', x: 80, y: 25 },
+  { id: 'ai', label: 'AI Tools', category: 'Learning', status: 'Exploring', latency: '', x: 80, y: 70 },
+  { id: 'infra', label: 'Deploy & CI', category: 'Infrastructure', status: 'Current tools', latency: '', x: 45, y: 85 },
 ];
 
 export const TECH_GRAPH_NODES: TechGraphNode[] = [

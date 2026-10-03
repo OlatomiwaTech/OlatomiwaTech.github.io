@@ -15,27 +15,27 @@
        ======================================== */
     
     /* Backgrounds */
-    --background: #FAFAFA;
-    --surface: #F4F4F5;
-    --surface-elevated: #E4E4E7;
+    --background: #F8F7F3;
+    --surface: #F0EEE8;
+    --surface-elevated: #E6E2D8;
     --surface-card: #FFFFFF;
     
     /* Text */
-    --text-primary: #18181B;
-    --text-secondary: #3F3F46;
-    --text-muted: #71717A;
-    --text-subtle: #52525B;
+    --text-primary: #202126;
+    --text-secondary: #484A50;
+    --text-muted: #777980;
+    --text-subtle: #5F6269;
     
     /* Accent - Restrained Orange (Brand) */
-    --accent: #18181B;
-    --accent-hover: #3F3F46;
-    --accent-subtle: #71717A;
-    --accent-glow: rgba(24, 24, 27, 0.06);
+    --accent: #E76043;
+    --accent-hover: #C84B32;
+    --accent-subtle: #B9D879;
+    --accent-glow: rgba(231, 96, 67, 0.12);
     
     /* Borders */
-    --border: #E4E4E7;
-    --border-strong: #D4D4D8;
-    --border-accent: rgba(24, 24, 27, 0.35);
+    --border: #E4E1D9;
+    --border-strong: #D4D0C7;
+    --border-accent: rgba(231, 96, 67, 0.45);
     
     /* Status Colors */
     --success: #22C55E;
@@ -50,8 +50,8 @@
     --traffic-green: #28C840;
     
     /* Legacy Blue Accent (for existing components using #38BDF8) */
-    --blue-accent: #3F3F46;
-    --blue-glow: rgba(24, 24, 27, 0.06);
+    --blue-accent: #5969A6;
+    --blue-glow: rgba(89, 105, 166, 0.1);
     
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(24, 24, 27, 0.04);
@@ -238,15 +238,6 @@ main [class*="border-slate-800"] {
 
 main [class*="text-white/"] {
   color: rgba(24, 24, 27, 0.025);
-}
-
-main .group:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-main .group:hover > div:first-child {
-  background-color: transparent;
 }
 
 main article,

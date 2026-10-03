@@ -4,7 +4,8 @@
   "homepage": "https://OlatomiwaTech.github.io",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "sync:projects": "node scripts/github/repositories.mjs",
+    "build": "npm run sync:projects && tsc && vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"

@@ -20,7 +20,7 @@ export const CurrentFrontier: React.FC = () => {
             </h2>
           </div>
           <p className="type-lead section-header__intro font-normal">
-            Current areas of study include backend development, databases, and practical uses of AI.
+            I am learning more about APIs and databases.
           </p>
         </FadeUp>
 

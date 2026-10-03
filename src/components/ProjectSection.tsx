@@ -12,7 +12,7 @@ export const ProjectSection: React.FC<Props> = ({ onOpenModal }) => (
         <p className="font-mono text-xs text-[var(--accent)] tracking-widest uppercase">Selected work</p>
         <h2 className="type-section mt-2 text-[var(--text-primary)]">Software for practical problems</h2>
         <p className="type-lead mt-4 text-[var(--text-secondary)]">
-          Products for freelance work, tailoring businesses, and school operations. Project details and repository activity are refreshed from GitHub during the site build.
+          Software for freelance work, tailoring businesses, and schools. Project details update from GitHub when the site is built.
         </p>
       </header>
 

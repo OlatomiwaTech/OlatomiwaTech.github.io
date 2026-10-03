@@ -58,7 +58,7 @@ export const TechBadge: React.FC<TechBadgeProps> = ({ tech }) => {
 
       {/* Subtle indicator dot */}
       <div className="mt-4 pt-3 border-t border-slate-800/60 flex items-center justify-between text-[11px] font-mono text-[#94A3B8]">
-        <span className="group-hover:text-[#F8FAFC] transition-colors">Production Ready</span>
+        <span className="group-hover:text-[#F8FAFC] transition-colors">In use</span>
         <span className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-[#38BDF8] transition-colors" />
       </div>
     </div>

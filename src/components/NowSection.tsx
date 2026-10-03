@@ -20,7 +20,7 @@ export const NowSection: React.FC = () => {
             </h2>
           </div>
           <p className="type-lead section-header__intro">
-            A short summary of my current projects and learning interests.
+            Projects and topics I am working on now.
           </p>
         </FadeUp>
 

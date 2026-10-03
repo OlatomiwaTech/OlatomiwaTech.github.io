@@ -1,5 +1,6 @@
 import React from 'react';
-import { FadeUp, StaggerContainer, StaggerItem } from './motion/MotionPrimitives';
+import { motion, useReducedMotion } from 'framer-motion';
+import { FadeUp } from './motion/MotionPrimitives';
 
 const details = [
   ['Based in', 'Nigeria'],
@@ -7,7 +8,10 @@ const details = [
   ['Learning', 'PostgreSQL and Prisma'],
 ];
 
-export const About: React.FC = () => (
+export const About: React.FC = () => {
+  const reduceMotion = useReducedMotion();
+
+  return (
   <section id="about" className="section-shell border-t border-[var(--border)]">
     <div className="section-container grid gap-10 lg:grid-cols-12 lg:gap-16">
       <FadeUp className="lg:col-span-7">
@@ -19,16 +23,23 @@ export const About: React.FC = () => (
         </div>
       </FadeUp>
 
-      <StaggerContainer className="grid grid-cols-1 gap-0 self-start border-y border-[var(--border)] sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1">
+      <motion.dl
+        initial={reduceMotion ? false : 'hidden'}
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}
+        className="grid grid-cols-1 gap-0 self-start border-y border-[var(--border)] sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1"
+      >
         {details.map(([label, value]) => (
-          <StaggerItem key={label} className="grid grid-cols-2 gap-4 border-b border-[var(--border)] py-4 last:border-b-0 sm:border-b-0 sm:py-5 lg:border-b">
-            <span className="text-sm text-[var(--text-muted)]">{label}</span>
-            <span className="text-sm font-medium text-[var(--text-primary)]">{value}</span>
-          </StaggerItem>
+          <motion.div key={label} variants={{ hidden: { opacity: 0, x: 14 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } }} className="grid grid-cols-2 gap-4 border-b border-[var(--border)] py-4 last:border-b-0 sm:border-b-0 sm:py-5 lg:border-b">
+            <dt className="text-sm text-[var(--text-muted)]">{label}</dt>
+            <dd className="text-sm font-medium text-[var(--text-primary)]">{value}</dd>
+          </motion.div>
         ))}
-      </StaggerContainer>
+      </motion.dl>
     </div>
   </section>
-);
+  );
+};
 
 export default About;

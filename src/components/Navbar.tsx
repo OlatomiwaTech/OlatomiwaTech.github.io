@@ -7,9 +7,10 @@ import { useMotion } from '../motion/MotionContext';
 import type { ScrollPhase } from '../motion/MotionContext';
 
 const PHASE_NAV: { label: string; phase: ScrollPhase; href: string }[] = [
-  { label: 'Projects', phase: 'journey', href: '#journey' },
-  { label: 'Work', phase: 'projects', href: '#projects' },
-  { label: 'Thinking', phase: 'thinking', href: '#thinking' },
+  { label: 'Projects', phase: 'projects', href: '#projects' },
+  { label: 'Services', phase: 'capabilities', href: '#capabilities' },
+  { label: 'Experience', phase: 'journey', href: '#journey' },
+  { label: 'Approach', phase: 'thinking', href: '#thinking' },
   { label: 'About', phase: 'about', href: '#about' },
   { label: 'Contact', phase: 'contact', href: '#contact' },
 ];

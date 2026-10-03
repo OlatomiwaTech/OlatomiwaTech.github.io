@@ -43,12 +43,10 @@ const MotionContext = createContext<MotionContextValue | null>(null);
 
 const PHASE_IDS: ScrollPhase[] = [
   'home',
-  'journey',
-  'capabilities',
   'projects',
+  'capabilities',
+  'journey',
   'thinking',
-  'frontier',
-  'now',
   'about',
   'contact',
 ];

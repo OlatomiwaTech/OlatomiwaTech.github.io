@@ -22,9 +22,9 @@ export function App() {
 
         <main className="relative z-10">
           <Hero />
-          <Journey />
-          <WhatIBuild />
           <ProjectSection onOpenModal={setSelectedProject} />
+          <WhatIBuild />
+          <Journey />
           <EngineeringThinking />
           <About />
           <Contact />

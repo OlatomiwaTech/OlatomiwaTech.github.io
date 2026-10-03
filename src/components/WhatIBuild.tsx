@@ -1,4 +1,5 @@
 import React from 'react';
+import { StaggerContainer, StaggerItem } from './motion/MotionPrimitives';
 
 const toolGroups = [
   { category: 'Frontend', tools: ['React', 'JavaScript', 'TypeScript', 'Tailwind CSS'] },
@@ -17,9 +18,9 @@ export const WhatIBuild: React.FC = () => (
         <p className="type-lead section-header__intro">A few tools you’ll find in my projects.</p>
       </header>
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10">
+      <StaggerContainer className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10">
         {toolGroups.map(({ category, tools }, index) => (
-          <section key={category} className="border-t border-[var(--border)] pt-4">
+          <StaggerItem key={category} className="border-t border-[var(--border)] pt-4">
             <div className="mb-5 flex items-center justify-between">
               <h3 className="text-base font-semibold text-[var(--text-primary)]">{category}</h3>
               <span className="font-mono text-xs text-[var(--text-muted)]">0{index + 1}</span>
@@ -32,9 +33,9 @@ export const WhatIBuild: React.FC = () => (
                 </li>
               ))}
             </ul>
-          </section>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
     </div>
   </section>
 );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { StaggerContainer, StaggerItem } from './motion/MotionPrimitives';
 
 const principles = [
   ['01', 'Understand the task', 'I try to understand the problem before choosing how to build it.'],
@@ -17,17 +18,17 @@ export const EngineeringThinking: React.FC = () => (
         </div>
       </header>
 
-      <div className="grid grid-cols-1 gap-x-10 sm:grid-cols-2">
+      <StaggerContainer className="grid grid-cols-1 gap-x-10 sm:grid-cols-2">
         {principles.map(([number, title, description]) => (
-          <article key={number} className="grid grid-cols-[2.5rem_1fr] gap-4 border-t border-[var(--border)] py-6">
+          <StaggerItem key={number} className="grid grid-cols-[2.5rem_1fr] gap-4 border-t border-[var(--border)] py-6">
             <span className="font-mono text-xs text-[var(--text-muted)]">{number}</span>
             <div>
               <h3 className="text-base font-semibold text-[var(--text-primary)]">{title}</h3>
               <p className="mt-2 max-w-md text-sm leading-relaxed text-[var(--text-secondary)]">{description}</p>
             </div>
-          </article>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
     </div>
   </section>
 );

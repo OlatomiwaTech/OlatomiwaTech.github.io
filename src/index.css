@@ -15,10 +15,10 @@
        ======================================== */
     
     /* Backgrounds */
-    --background: #0A0E1A;
-    --surface: #0F172A;
-    --surface-elevated: #1E293B;
-    --surface-card: #111827;
+    --background: #0B0D12;
+    --surface: #12151C;
+    --surface-elevated: #1A1E27;
+    --surface-card: #12151C;
     
     /* Text */
     --text-primary: #F8FAFC;
@@ -33,9 +33,9 @@
     --accent-glow: rgba(249, 115, 22, 0.15);
     
     /* Borders */
-    --border: rgba(255, 255, 255, 0.08);
-    --border-strong: rgba(255, 255, 255, 0.12);
-    --border-accent: rgba(249, 115, 22, 0.3);
+    --border: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.16);
+    --border-accent: rgba(249, 115, 22, 0.45);
     
     /* Status Colors */
     --success: #22C55E;
@@ -313,22 +313,19 @@
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.01em;
-  transition: transform var(--transition-fast), background var(--transition), box-shadow var(--transition);
+  transition: background var(--transition-fast), color var(--transition-fast);
   text-decoration: none;
   cursor: pointer;
   border: none;
-  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.2);
+  box-shadow: none;
 }
 
 .btn-primary:hover {
   background: var(--accent-hover);
-  box-shadow: 0 8px 30px rgba(249, 115, 22, 0.35);
-  transform: translateY(-1px);
+  box-shadow: none;
 }
 
-.btn-primary:active { 
-  transform: translateY(0) scale(0.96); 
-}
+.btn-primary:active { background: var(--accent-hover); }
 
 .btn-primary:focus-visible {
   outline: 2px solid var(--accent);
@@ -349,7 +346,7 @@
   color: var(--text-primary);
   font-weight: 600;
   font-size: 14px;
-  transition: transform var(--transition-fast), border-color var(--transition), background var(--transition), color var(--transition);
+  transition: border-color var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
   text-decoration: none;
   cursor: pointer;
 }
@@ -358,12 +355,9 @@
   border-color: var(--border-accent);
   background: rgba(249, 115, 22, 0.06);
   color: var(--accent);
-  transform: translateY(-1px);
 }
 
-.btn-ghost:active { 
-  transform: translateY(0) scale(0.96); 
-}
+.btn-ghost:active { background: var(--surface-elevated); }
 
 .btn-ghost:focus-visible {
   outline: 2px solid var(--accent);

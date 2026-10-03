@@ -16,7 +16,7 @@ export const Journey: React.FC = () => {
           <div className="absolute left-0 top-0 bottom-0 w-px bg-[var(--border)]" />
 
           <div className="space-y-12 md:space-y-20">
-            {JOURNEY_STEPS.map((step, idx) => (
+            {JOURNEY_STEPS.map((step) => (
               <JourneyMilestone
                 key={step.id}
                 step={step}
@@ -53,9 +53,8 @@ const JourneyHeader: React.FC = () => (
 
 const JourneyCardContent: React.FC<{
   step: typeof JOURNEY_STEPS[number];
-  idx: number;
   scrollTo: (id: string) => void;
-}> = ({ step, idx, scrollTo }) => (
+}> = ({ step, scrollTo }) => (
   <>
     <div className="flex items-center justify-between gap-4 min-w-0">
       <div className="flex items-center gap-3 min-w-0">

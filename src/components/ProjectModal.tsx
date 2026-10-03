@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useReducedMotion } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { X, CheckCircle2, Cpu, Layers } from 'lucide-react';
 import type { Project } from '../types/portfolio';
 import { GithubIcon } from './icons/GithubIcon';
@@ -159,3 +159,4 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 };
 
 export default ProjectModal;
+

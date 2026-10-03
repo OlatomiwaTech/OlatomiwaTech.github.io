@@ -15,27 +15,27 @@
        ======================================== */
     
     /* Backgrounds */
-    --background: #0B0D12;
-    --surface: #12151C;
-    --surface-elevated: #1A1E27;
-    --surface-card: #12151C;
+    --background: #FAFAFA;
+    --surface: #F4F4F5;
+    --surface-elevated: #E4E4E7;
+    --surface-card: #FFFFFF;
     
     /* Text */
-    --text-primary: #F8FAFC;
-    --text-secondary: #CBD5E1;
-    --text-muted: #64748B;
-    --text-subtle: #475569;
+    --text-primary: #18181B;
+    --text-secondary: #3F3F46;
+    --text-muted: #71717A;
+    --text-subtle: #52525B;
     
     /* Accent - Restrained Orange (Brand) */
-    --accent: #F97316;
-    --accent-hover: #FB923C;
-    --accent-subtle: #FCD34D;
-    --accent-glow: rgba(249, 115, 22, 0.15);
+    --accent: #18181B;
+    --accent-hover: #3F3F46;
+    --accent-subtle: #71717A;
+    --accent-glow: rgba(24, 24, 27, 0.06);
     
     /* Borders */
-    --border: rgba(255, 255, 255, 0.1);
-    --border-strong: rgba(255, 255, 255, 0.16);
-    --border-accent: rgba(249, 115, 22, 0.45);
+    --border: #E4E4E7;
+    --border-strong: #D4D4D8;
+    --border-accent: rgba(24, 24, 27, 0.35);
     
     /* Status Colors */
     --success: #22C55E;
@@ -50,15 +50,15 @@
     --traffic-green: #28C840;
     
     /* Legacy Blue Accent (for existing components using #38BDF8) */
-    --blue-accent: #38BDF8;
-    --blue-glow: rgba(56, 189, 248, 0.15);
+    --blue-accent: #3F3F46;
+    --blue-glow: rgba(24, 24, 27, 0.06);
     
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
-    --shadow-accent: 0 0 35px rgba(249, 115, 22, 0.15);
+    --shadow-sm: 0 1px 2px 0 rgba(24, 24, 27, 0.04);
+    --shadow: 0 4px 6px -1px rgba(24, 24, 27, 0.06), 0 2px 4px -2px rgba(24, 24, 27, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(24, 24, 27, 0.08), 0 4px 6px -4px rgba(24, 24, 27, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(24, 24, 27, 0.1), 0 8px 10px -6px rgba(24, 24, 27, 0.06);
+    --shadow-accent: 0 0 35px rgba(24, 24, 27, 0.06);
     
     /* Radii */
     --radius-sm: 6px;
@@ -137,6 +137,7 @@
   html {
     scroll-behavior: smooth;
     overflow-x: clip;
+    color-scheme: light;
   }
 
   body {
@@ -151,11 +152,11 @@
     min-width: 0;
   }
 
-  body[data-scroll-phase='projects'] { 
-    --accent-glow: rgba(249, 115, 22, 0.12); 
+  body[data-scroll-phase='projects'] {
+    --accent-glow: rgba(24, 24, 27, 0.05);
   }
-  body[data-scroll-phase='thinking'] { 
-    --accent-glow: rgba(249, 115, 22, 0.18); 
+  body[data-scroll-phase='thinking'] {
+    --accent-glow: rgba(24, 24, 27, 0.07);
   }
 
   img, video, svg { 
@@ -174,8 +175,8 @@
   
   /* Selection */
   ::selection { 
-    background: rgba(249, 115, 22, 0.25); 
-    color: var(--text-primary); 
+    background: rgba(24, 24, 27, 0.14);
+    color: var(--text-primary);
   }
 }
 
@@ -184,8 +185,8 @@
 }
 
 ::selection { 
-  background: rgba(249, 115, 22, 0.25); 
-  color: var(--text-primary); 
+  background: rgba(24, 24, 27, 0.14);
+  color: var(--text-primary);
 }
 
 ::-webkit-scrollbar { 
@@ -199,7 +200,7 @@
   border-radius: 3px; 
 }
 ::-webkit-scrollbar-thumb:hover { 
-  background: var(--accent); 
+  background: var(--accent);
 }
 
 /* ========================================
@@ -218,6 +219,25 @@
 .section-shell,
 .section-shell > div {
   background-color: transparent;
+}
+
+main [class~="text-[#F8FAFC]"],
+main [class~="text-white"] {
+  color: var(--text-primary);
+}
+
+main [class~="text-[#94A3B8]"],
+main [class~="text-[#94A0B4]"] {
+  color: var(--text-muted);
+}
+
+main [class*="border-white"],
+main [class*="border-slate-800"] {
+  border-color: var(--border);
+}
+
+main [class*="text-white/"] {
+  color: rgba(24, 24, 27, 0.025);
 }
 
 main .group:hover {
@@ -306,7 +326,7 @@ main .bg-\[var\(--surface-card\)\] {
 /* Links */
 .signal-link {
   text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.2);
+  text-decoration-color: rgba(24, 24, 27, 0.2);
   text-underline-offset: 4px;
   transition: color var(--transition), text-decoration-color var(--transition);
 }
@@ -374,7 +394,7 @@ main .bg-\[var\(--surface-card\)\] {
 
 .btn-ghost:hover {
   border-color: var(--border-accent);
-  background: rgba(249, 115, 22, 0.06);
+  background: rgba(24, 24, 27, 0.04);
   color: var(--accent);
 }
 
@@ -405,7 +425,7 @@ main .bg-\[var\(--surface-card\)\] {
   border-radius: var(--radius-xl);
   border: 1px solid var(--border);
   background: var(--surface);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--border);
+  box-shadow: 0 12px 32px -8px rgba(24, 24, 27, 0.08), 0 0 0 1px var(--border);
   overflow: hidden;
 }
 

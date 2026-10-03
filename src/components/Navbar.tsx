@@ -98,7 +98,7 @@ export const Navbar: React.FC = () => {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden touch-target p-2 -mr-2 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors rounded-lg"
+          className="md:hidden min-h-[44px] min-w-[44px] p-2 -mr-2 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors rounded-lg"
           aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={mobileOpen}
         >

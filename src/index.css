@@ -54,11 +54,11 @@
     --blue-glow: rgba(89, 105, 166, 0.1);
     
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(24, 24, 27, 0.04);
-    --shadow: 0 4px 6px -1px rgba(24, 24, 27, 0.06), 0 2px 4px -2px rgba(24, 24, 27, 0.04);
-    --shadow-lg: 0 10px 15px -3px rgba(24, 24, 27, 0.08), 0 4px 6px -4px rgba(24, 24, 27, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(24, 24, 27, 0.1), 0 8px 10px -6px rgba(24, 24, 27, 0.06);
-    --shadow-accent: 0 0 35px rgba(24, 24, 27, 0.06);
+    --shadow-sm: 0 1px 2px 0 rgba(32, 33, 38, 0.04);
+    --shadow: 0 4px 8px -2px rgba(32, 33, 38, 0.07);
+    --shadow-lg: 0 14px 28px -10px rgba(32, 33, 38, 0.12);
+    --shadow-xl: 0 22px 44px -18px rgba(32, 33, 38, 0.16);
+    --shadow-accent: 0 0 35px rgba(231, 96, 67, 0.12);
     
     /* Radii */
     --radius-sm: 6px;
@@ -153,10 +153,10 @@
   }
 
   body[data-scroll-phase='projects'] {
-    --accent-glow: rgba(24, 24, 27, 0.05);
+    --accent-glow: rgba(231, 96, 67, 0.08);
   }
   body[data-scroll-phase='thinking'] {
-    --accent-glow: rgba(24, 24, 27, 0.07);
+    --accent-glow: rgba(231, 96, 67, 0.1);
   }
 
   img, video, svg { 
@@ -175,7 +175,7 @@
   
   /* Selection */
   ::selection { 
-    background: rgba(24, 24, 27, 0.14);
+    background: rgba(231, 96, 67, 0.2);
     color: var(--text-primary);
   }
 }
@@ -185,7 +185,7 @@
 }
 
 ::selection { 
-  background: rgba(24, 24, 27, 0.14);
+  background: rgba(231, 96, 67, 0.2);
   color: var(--text-primary);
 }
 
@@ -533,8 +533,10 @@ main .bg-\[var\(--surface-card\)\] {
   position: absolute;
   top: -43px;
   right: 2%;
+  left: auto;
   width: 190px;
   height: 190px;
+  transform: none;
   border: 1px solid color-mix(in srgb, var(--project-accent) 34%, transparent);
   border-radius: 50%;
 }
@@ -643,7 +645,7 @@ main .bg-\[var\(--surface-card\)\] {
 
 .signal-link:hover {
   color: var(--accent);
-  text-decoration-color: rgba(249, 115, 22, 0.5);
+  text-decoration-color: rgba(231, 96, 67, 0.55);
 }
 
 .nav-link { 

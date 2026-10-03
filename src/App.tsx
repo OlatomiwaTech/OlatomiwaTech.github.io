@@ -5,8 +5,6 @@ import { Journey } from './components/Journey';
 import { WhatIBuild } from './components/WhatIBuild';
 import { ProjectSection } from './components/ProjectSection';
 import { EngineeringThinking } from './components/EngineeringThinking';
-import { CurrentFrontier } from './components/CurrentFrontier';
-import { NowSection } from './components/NowSection';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -31,8 +29,6 @@ export function App() {
           <WhatIBuild />
           <ProjectSection onOpenModal={setSelectedProject} />
           <EngineeringThinking />
-          <CurrentFrontier />
-          <NowSection />
           <About />
           <Contact />
         </main>

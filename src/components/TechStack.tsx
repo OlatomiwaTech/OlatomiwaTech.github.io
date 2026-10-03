@@ -28,7 +28,7 @@ export const TechStack: React.FC = () => {
             </h2>
 
             <p className="text-base sm:text-lg text-[#94A3B8] max-w-xl">
-              Tools and technologies I use to build, ship, and maintain software.
+              Tools I use in my projects.
             </p>
           </div>
 

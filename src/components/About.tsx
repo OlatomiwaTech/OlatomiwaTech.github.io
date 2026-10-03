@@ -17,11 +17,11 @@ export const About: React.FC = () => {
 
           <FadeUp className="lg:col-span-7 space-y-[var(--content-gap)] min-w-0">
             <h2 className="type-section leading-tight max-w-[28ch] lg:max-w-none">
-              I build software for business and education.
+              I build web apps for businesses and schools.
             </h2>
 
             <p className="type-lead">
-              I enjoy solving product problems and working across frontend and backend code.
+              I enjoy building products and working on both frontend and backend code.
             </p>
 
             <p className="leading-relaxed prose-width text-[var(--text-secondary)]">
@@ -44,8 +44,8 @@ export const About: React.FC = () => {
                 body: 'PostgreSQL, Prisma, and backend development.',
               },
               {
-                label: 'WHERE I\'M HEADED',
-                body: 'More experience with software architecture and backend systems.',
+                label: 'WHAT I\'M LEARNING',
+                body: 'Backend development and database design.',
               },
             ].map(({ label, body }) => (
               <StaggerItem key={label}>

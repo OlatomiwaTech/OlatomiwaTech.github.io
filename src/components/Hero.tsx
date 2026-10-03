@@ -244,10 +244,10 @@ export const Hero: React.FC = () => {
             <span className="font-mono text-[11px]">Available for software engineering roles & product builds</span>
           </div>
           <button
-            onClick={() => scrollTo('#journey')}
+            onClick={() => scrollTo('#projects')}
             className="flex items-center gap-2 font-mono text-[11px] text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors group signal-link touch-target !min-w-0 self-start sm:self-auto"
           >
-            <span>My Journey</span>
+            <span>Selected projects</span>
             <ArrowDown className="w-3.5 h-3.5 transition-transform group-hover:translate-y-0.5" />
           </button>
         </div>

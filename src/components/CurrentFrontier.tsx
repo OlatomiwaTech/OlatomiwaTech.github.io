@@ -12,15 +12,15 @@ export const CurrentFrontier: React.FC = () => {
             <div className="flex items-center gap-3 mb-3">
               <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
               <p className="font-mono text-xs tracking-[0.2em] uppercase text-[var(--accent)]">
-                06 — Current Frontier
+                06 — Learning
               </p>
             </div>
             <h2 className="type-section">
-              WHERE I'M GOING.
+              WHAT I'M LEARNING.
             </h2>
           </div>
           <p className="type-lead section-header__intro font-normal">
-            I am actively expanding my engineering depth across AI integrations, backend reliability, database internals, and developer tools.
+            Current areas of study include backend development, databases, and practical uses of AI.
           </p>
         </FadeUp>
 
@@ -34,7 +34,7 @@ export const CurrentFrontier: React.FC = () => {
                 <div className="space-y-3">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <span className="font-mono text-xs text-[var(--accent)] font-bold">
-                      FRONTIER 0{idx + 1}
+                      AREA 0{idx + 1}
                     </span>
                     <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--success)] bg-[var(--success)]/10 px-2.5 py-0.5 rounded border border-[var(--success)]/20">
                       {area.status}

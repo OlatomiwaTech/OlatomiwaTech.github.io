@@ -17,7 +17,7 @@ export const About: React.FC = () => {
 
           <FadeUp className="lg:col-span-7 space-y-[var(--content-gap)] min-w-0">
             <h2 className="type-section leading-tight max-w-[28ch] lg:max-w-none">
-              "I'm a software engineer and builder interested in turning real-world problems into practical software."
+              I build software for business and education.
             </h2>
 
             <p className="type-lead">
@@ -37,7 +37,7 @@ export const About: React.FC = () => {
               },
               {
                 label: 'WHAT I BUILD',
-                body: 'Full-stack applications, SaaS products, business software, and school systems.',
+                body: 'Full-stack applications, SaaS products, and school software.',
               },
               {
                 label: "WHAT I'M LEARNING",
@@ -45,7 +45,7 @@ export const About: React.FC = () => {
               },
               {
                 label: 'WHERE I\'M HEADED',
-                body: 'Deeper experience in software architecture, backend systems, and useful product development.',
+                body: 'More experience with software architecture and backend systems.',
               },
             ].map(({ label, body }) => (
               <StaggerItem key={label}>

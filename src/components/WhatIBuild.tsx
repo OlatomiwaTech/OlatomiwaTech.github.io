@@ -23,7 +23,7 @@ export const WhatIBuild: React.FC = () => {
               </h2>
             </div>
             <p className="type-lead section-header__intro">
-              Focusing on concrete software disciplines across client state engines, server APIs, data modeling, and AI integrations.
+              I work across frontend applications, APIs, databases, and product features.
             </p>
           </div>
 
@@ -33,11 +33,11 @@ export const WhatIBuild: React.FC = () => {
           >
             <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
               <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[var(--accent)]">
-                Tech Stack Topology
+                Technologies
               </p>
               <span className="font-mono text-[10px] text-[var(--text-muted)]">
-                <span className="tech-graph__hint-desktop">Hover to illuminate connections</span>
-                <span className="tech-graph__hint-touch">Tap a node to explore connections</span>
+                <span className="tech-graph__hint-desktop">Select a technology to view related tools</span>
+                <span className="tech-graph__hint-touch">Tap a technology to view related tools</span>
               </span>
             </div>
             <TechGraph nodes={TECH_GRAPH_NODES} edges={TECH_GRAPH_EDGES} />

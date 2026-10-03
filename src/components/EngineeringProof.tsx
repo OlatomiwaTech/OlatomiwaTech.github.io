@@ -26,15 +26,15 @@ export const EngineeringProof: React.FC = () => {
         <div className="text-left mb-12 space-y-2">
           <div className="inline-flex items-center gap-2 text-xs font-mono text-[var(--blue-accent)] uppercase tracking-wider">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--blue-accent)]" />
-            Engineering Proof & Capabilities
+            Skills and tools
           </div>
 
           <h2 className="text-3xl font-extrabold text-[#F8FAFC] tracking-tight">
-            Systems & Technical Foundations
+            Engineering skills
           </h2>
 
           <p className="text-sm text-[#94A3B8] max-w-xl">
-            Core engineering categories grounding my product architecture and backend development.
+            Areas I use when building web applications and business software.
           </p>
         </div>
 

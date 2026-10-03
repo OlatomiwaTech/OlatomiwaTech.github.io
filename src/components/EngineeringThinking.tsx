@@ -96,7 +96,7 @@ export const EngineeringThinking: React.FC = () => {
                 animate={activated ? { x: [0, 4, 0] } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                System Topology — Activated
+                Software architecture
               </motion.span>
             </div>
 

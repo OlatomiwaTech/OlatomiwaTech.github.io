@@ -48,11 +48,10 @@ export const SystemTopology: React.FC = () => {
       <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-800 text-xs text-[#94A3B8]">
         <div className="flex items-center gap-2 min-w-0">
           <span className="w-2 h-2 rounded-full bg-[#38BDF8] shrink-0" />
-          <span className="font-semibold text-[#F8FAFC] text-[11px] sm:text-xs">SYSTEM ARCHITECTURE TOPOLOGY</span>
-          <span className="text-slate-600 text-[10px] hidden sm:inline">[0x01_MAP]</span>
+          <span className="font-semibold text-[#F8FAFC] text-[11px] sm:text-xs">TECHNOLOGY CONNECTIONS</span>
         </div>
         <span className="text-[#38BDF8] bg-[#38BDF8]/10 px-2 py-0.5 rounded border border-[#38BDF8]/20 text-[10px] sm:text-[11px] shrink-0">
-          {isTouch ? 'Tap nodes' : 'Interactive Nodes'}
+          {isTouch ? 'Tap to explore' : 'Select to explore'}
         </span>
       </div>
 
@@ -98,21 +97,14 @@ export const SystemTopology: React.FC = () => {
 
       <div className="relative z-10 pt-3 border-t border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs min-w-0">
         <div className="min-w-0">
-          <span className="text-[10px] text-[#94A3B8] tracking-widest uppercase block">SELECTED NODE INSPECTOR:</span>
+          <span className="text-[10px] text-[#94A3B8] tracking-widest uppercase block">SELECTED TECHNOLOGY</span>
           <p className="text-sm font-bold text-[#F8FAFC] flex flex-wrap items-center gap-2">
             <span>{selectedNode.label}</span>
             <span className="text-xs text-[#38BDF8]">({selectedNode.category})</span>
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs w-full sm:w-auto">
-          <div className="bg-[#0A0E1A] px-3 py-1.5 rounded-lg border border-slate-800 flex items-center gap-2">
-            <span className="text-[#94A3B8]">Status:</span>
-            <span className="text-emerald-400 font-semibold">{selectedNode.status}</span>
-          </div>
-          <div className="bg-[#0A0E1A] px-3 py-1.5 rounded-lg border border-slate-800 flex items-center gap-2">
-            <span className="text-[#94A3B8]">Latency:</span>
-            <span className="text-[#38BDF8] font-semibold">{selectedNode.latency}</span>
-          </div>
+          <span className="text-[#94A3B8]">Related tools are shown above.</span>
         </div>
       </div>
     </div>

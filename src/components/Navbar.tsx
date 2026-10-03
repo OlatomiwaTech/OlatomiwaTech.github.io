@@ -74,8 +74,9 @@ export const Navbar: React.FC = () => {
                 }`}
               >
                 {label}
-                {active && (
-                  <motion.span layoutId="active-nav" transition={{ type: 'spring', stiffness: 360, damping: 30 }} className="absolute bottom-1 left-0 right-0 h-0.5 origin-left bg-[var(--accent)]" />
+                {active && (reduceMotion
+                  ? <span className="absolute bottom-1 left-0 right-0 h-0.5 bg-[var(--accent)]" />
+                  : <motion.span layoutId="active-nav" transition={{ type: 'spring', stiffness: 360, damping: 30 }} className="absolute bottom-1 left-0 right-0 h-0.5 origin-left bg-[var(--accent)]" />
                 )}
               </a>
             );

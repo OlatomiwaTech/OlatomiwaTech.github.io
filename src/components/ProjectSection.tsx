@@ -114,7 +114,7 @@ const AnimatedProjectCard: React.FC<{ project: Project; index: number; onOpenMod
             initial={reduceMotion ? false : { opacity: 0, x: -8 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.35, delay: reduceMotion ? 0 : index * 0.1 + featureIndex * 0.06 }}
+            transition={{ duration: reduceMotion ? 0 : 0.35, delay: reduceMotion ? 0 : index * 0.1 + featureIndex * 0.06 }}
             className="flex items-start gap-2"
           >
             <span className="mt-0.5 text-[var(--accent)]" aria-hidden="true">↗</span>

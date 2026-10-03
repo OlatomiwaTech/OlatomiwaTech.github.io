@@ -1,8 +1,9 @@
 import React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { ArrowDown, ArrowRight, BriefcaseBusiness, MapPin, Scissors, School } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { GithubIcon } from './icons/GithubIcon';
+import { MagneticButton } from './motion/MotionPrimitives';
 
 const focusAreas = [
   { label: 'Schools', detail: 'School management software', Icon: School },
@@ -10,7 +11,7 @@ const focusAreas = [
   { label: 'Tailoring businesses', detail: 'Orders and measurements', Icon: Scissors },
 ];
 
-const entrance = {
+const entrance: Variants = {
   hidden: { opacity: 0, y: 18 },
   show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
 };
@@ -48,9 +49,11 @@ export const Hero: React.FC = () => {
           </motion.p>
 
           <motion.div variants={entrance} className="flex flex-wrap items-center gap-3 pt-1">
-            <button type="button" onClick={() => scrollTo('#projects')} className="btn-primary">
-              View selected work <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </button>
+            <MagneticButton>
+              <button type="button" onClick={() => scrollTo('#projects')} className="btn-primary">
+                View selected work <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </button>
+            </MagneticButton>
             <a href={PERSONAL_INFO.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost">
               <GithubIcon className="h-4 w-4" /> GitHub
             </a>

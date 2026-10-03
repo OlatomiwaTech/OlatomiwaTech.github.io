@@ -214,6 +214,27 @@
   padding-block: var(--section-py);
 }
 
+/* Keep section backgrounds and hover states calm and consistent. */
+.section-shell,
+.section-shell > div {
+  background-color: transparent;
+}
+
+main .group:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+main .group:hover > div:first-child {
+  background-color: transparent;
+}
+
+main article,
+main .bg-\[var\(--surface\)\],
+main .bg-\[var\(--surface-card\)\] {
+  box-shadow: none;
+}
+
 .section-header {
   display: flex;
   flex-direction: column;

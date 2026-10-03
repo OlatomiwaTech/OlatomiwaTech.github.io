@@ -9,7 +9,7 @@ export const About: React.FC = () => {
         <FadeUp className="flex items-center gap-3 mb-8 md:mb-10">
           <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
           <p className="font-mono text-xs tracking-[0.2em] uppercase text-[var(--accent)]">
-            08 — About Me
+            About me
           </p>
         </FadeUp>
 
@@ -44,8 +44,8 @@ export const About: React.FC = () => {
                 body: 'PostgreSQL, Prisma, and backend development.',
               },
               {
-                label: 'WHAT I\'M LEARNING',
-                body: 'Backend development and database design.',
+                label: 'HOW I WORK',
+                body: 'I focus on practical problems, clear code, and maintainable solutions.',
               },
             ].map(({ label, body }) => (
               <StaggerItem key={label}>

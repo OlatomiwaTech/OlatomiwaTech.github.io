@@ -108,7 +108,7 @@ const JourneyMilestone: React.FC<{
       <div className="absolute left-0 top-2 h-2.5 w-2.5 rounded-full bg-[var(--accent)]" />
       
       <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 space-y-4">
-        <JourneyCardContent step={step} idx={idx} scrollTo={scrollTo} />
+        <JourneyCardContent step={step} scrollTo={scrollTo} />
       </div>
     </article>
   );

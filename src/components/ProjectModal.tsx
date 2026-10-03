@@ -28,11 +28,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   }, [project, onClose]);
 
   return (
-    <AnimatePresence>
+    <>
       {project && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
           {/* Backdrop */}
-          <motion.div
+          <div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -42,7 +42,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           />
 
           {/* Modal Container */}
-          <motion.div
+          <div
             initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.96, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.96, y: 12 }}
@@ -151,12 +151,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               </button>
             </div>
 
-          </motion.div>
+          </div>
         </div>
       )}
-    </AnimatePresence>
+    </>
   );
 };
 
 export default ProjectModal;
+
 

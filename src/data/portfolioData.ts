@@ -9,6 +9,9 @@ import type {
   TechGraphNode,
   TechGraphEdge,
 } from '../types/portfolio';
+import { PROJECTS } from './projects';
+
+export { PROJECTS };
 
 export const PERSONAL_INFO = {
   brand: 'OLATOMIWA',
@@ -117,7 +120,8 @@ export const CAPABILITY_PILLARS: CapabilityPillar[] = [
   },
 ];
 
-export const PROJECTS: Project[] = [
+/* Legacy project copy removed: featured project metadata lives in src/data/featuredProjects.ts. */
+const LEGACY_PROJECTS: Project[] = [
   {
     id: 'nuvora',
     number: '01',

@@ -66,8 +66,8 @@ export const Hero: React.FC = () => {
               <Workflow className="h-5 w-5" aria-hidden="true" />
             </span>
             <div>
-            <p className="text-xs font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">A little about me</p>
-              <h2 className="mt-1 text-lg font-semibold text-[var(--text-primary)]">Olatomiwa / Software engineer</h2>
+              <p className="text-xs font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">Project areas</p>
+              <h2 className="mt-1 text-lg font-semibold text-[var(--text-primary)]">Web apps</h2>
             </div>
           </div>
           <ul className="divide-y divide-[var(--border)]">
@@ -88,7 +88,7 @@ export const Hero: React.FC = () => {
             onClick={() => scrollTo('#capabilities')}
             className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
           >
-            See what I’m working on <ArrowDown className="h-4 w-4" aria-hidden="true" />
+            See the tools I use <ArrowDown className="h-4 w-4" aria-hidden="true" />
           </button>
         </aside>
       </div>

@@ -40,7 +40,7 @@ export function useScrollSpine() {
   return { scrollYProgress, markers };
 }
 
-export function useSectionProgress(sectionId: string): {
+export function useSectionProgress(): {
   ref: React.RefObject<HTMLElement | null>;
   progress: MotionValue<number>;
 } {

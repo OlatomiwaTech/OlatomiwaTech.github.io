@@ -11,10 +11,10 @@ export const About: React.FC = () => (
     <div className="section-container grid gap-10 lg:grid-cols-12 lg:gap-16">
       <div className="lg:col-span-7">
         <p className="mb-4 text-sm font-medium text-[var(--text-muted)]">About</p>
-        <h2 className="type-section max-w-[20ch]">I like building the parts of an app that make it useful.</h2>
+        <h2 className="type-section max-w-[20ch]">I work on both sides of a web app.</h2>
         <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-[var(--text-secondary)]">
-          <p>I’m a software engineer from Nigeria. I work on web apps for schools, freelancers, and small businesses.</p>
-          <p>I enjoy working across the frontend and backend, and I’m still learning as I build.</p>
+          <p>I’m a software engineer from Nigeria. I build web apps for schools, freelancers, and small businesses.</p>
+          <p>I work on the interface, backend, and database, depending on what a project needs.</p>
         </div>
       </div>
 

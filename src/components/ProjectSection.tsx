@@ -9,7 +9,7 @@ import {
   Star,
   type LucideIcon,
 } from 'lucide-react';
-import { DISCOVERED_PROJECTS, PROJECTS, PROJECTS_UPDATED_AT } from '../data/projects';
+import { PROJECTS } from '../data/projects';
 import type { Project } from '../types/portfolio';
 
 interface Props { onOpenModal: (project: Project) => void }
@@ -25,15 +25,11 @@ export const ProjectSection: React.FC<Props> = ({ onOpenModal }) => (
     <div className="section-container section-shell !py-[clamp(3rem,6vw,5rem)]">
       <header className="max-w-3xl mb-10 md:mb-14">
         <p className="text-sm font-medium text-[var(--accent)]">Selected work</p>
-        <h2 className="type-section mt-2 text-[var(--text-primary)]">Software for practical problems</h2>
+        <h2 className="type-section mt-2 text-[var(--text-primary)]">Selected projects</h2>
         <p className="type-lead mt-4 text-[var(--text-secondary)]">
-          A selection of products and collaborations for freelancers, tailoring businesses, and schools.
+          Projects for freelancers, tailoring businesses, and schools.
         </p>
       </header>
-
-      <p className="mb-6 text-xs text-[var(--text-muted)]" title={PROJECTS_UPDATED_AT}>
-        {PROJECTS.length} selected projects · {DISCOVERED_PROJECTS.length} public repositories
-      </p>
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
         {PROJECTS.map((project) => (

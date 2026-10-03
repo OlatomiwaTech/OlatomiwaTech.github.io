@@ -117,7 +117,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-[var(--text-primary)]">Message Sent</h3>
                 <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
-                  Thank you for reaching out. Olatomiwa will respond to your message promptly.
+                  Thanks for your message. I’ll get back to you when I can.
                 </p>
                 <button
                   onClick={() => setState('idle')}

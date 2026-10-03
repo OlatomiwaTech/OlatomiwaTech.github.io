@@ -14,8 +14,14 @@ export interface Project {
   architectureBreakdown?: string[];
   composition: 'left-preview' | 'right-preview' | 'full-width';
   githubUrl: string;
-  liveUrl: string;
-  previewType: 'solohub' | 'nuvora' | 'maria-stitches';
+  liveUrl?: string;
+  owner: string;
+  role?: string;
+  status: 'In development' | 'Active development' | 'Collaborative project';
+  stars: number;
+  forks: number;
+  updatedAt: string;
+  archived: boolean;
 }
 
 export interface CapabilityPillar {

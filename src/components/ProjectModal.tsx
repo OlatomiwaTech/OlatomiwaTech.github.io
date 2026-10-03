@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { useReducedMotion } from 'framer-motion';
 import { X, CheckCircle2, Cpu, Layers } from 'lucide-react';
 import type { Project } from '../types/portfolio';
 import { GithubIcon } from './icons/GithubIcon';

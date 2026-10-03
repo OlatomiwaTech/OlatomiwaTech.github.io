@@ -1,50 +1,371 @@
 {
-  "generatedAt": "2026-10-03T00:00:00.000Z",
+  "generatedAt": "2026-10-03T06:21:05.545Z",
   "repositories": [
+    {
+      "name": "OlatomiwaTech.github.io",
+      "full_name": "OlatomiwaTech/OlatomiwaTech.github.io",
+      "description": "Interactive portfolio & software showcase by Olatomiwa Olabode — Full-Stack Developer & Entrepreneur.",
+      "html_url": "https://github.com/OlatomiwaTech/OlatomiwaTech.github.io",
+      "homepage": "https://olatomiwatech.github.io/",
+      "language": "TypeScript",
+      "topics": [],
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "updated_at": "2026-10-03T06:19:54Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "PetraStats",
+      "full_name": "OlatomiwaTech/PetraStats",
+      "description": "PetraStats is a modern football statistics platform for Petra School, providing real-time insights into matches, players, teams, goals, assists, and performance. ⚽📊",
+      "html_url": "https://github.com/OlatomiwaTech/PetraStats",
+      "homepage": "",
+      "language": "TypeScript",
+      "topics": [
+        "code",
+        "football",
+        "ideas",
+        "software-engineering",
+        "solutions"
+      ],
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "updated_at": "2026-10-02T16:40:49Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "makayla-malaka-platform",
+      "full_name": "OlatomiwaTech/makayla-malaka-platform",
+      "description": "A full-stack digital platform for Makayla Malaka, combining music, content, events, fan engagement, community features, notifications, and administrative tools into one dedicated artist ecosystem.",
+      "html_url": "https://github.com/OlatomiwaTech/makayla-malaka-platform",
+      "homepage": "",
+      "language": "TypeScript",
+      "topics": [
+        "music",
+        "software"
+      ],
+      "stargazers_count": 3,
+      "forks_count": 0,
+      "updated_at": "2026-10-01T16:19:15Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "Task-manager-main",
+      "full_name": "OlatomiwaTech/Task-manager-main",
+      "description": "Daymark is a calm, responsive task manager built with vanilla HTML, CSS, and JavaScript. Organize tasks by category, due date, and priority; track progress, schedule recurring tasks, and manage browser-local profiles.",
+      "html_url": "https://github.com/OlatomiwaTech/Task-manager-main",
+      "homepage": "",
+      "language": "JavaScript",
+      "topics": [
+        "frontend",
+        "html-css-javascript",
+        "js",
+        "productivity",
+        "task-manager",
+        "todo-app",
+        "vanilla-javascript",
+        "webapp"
+      ],
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "updated_at": "2026-10-01T15:20:41Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "Application-for-Joshua-Corporation",
+      "full_name": "OlatomiwaTech/Application-for-Joshua-Corporation",
+      "description": null,
+      "html_url": "https://github.com/OlatomiwaTech/Application-for-Joshua-Corporation",
+      "homepage": null,
+      "language": "JavaScript",
+      "topics": [],
+      "stargazers_count": 2,
+      "forks_count": 0,
+      "updated_at": "2026-09-27T13:10:53Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "Makayla-lyrics-generator",
+      "full_name": "OlatomiwaTech/Makayla-lyrics-generator",
+      "description": "This project is courtesy Of Makayla Malaka",
+      "html_url": "https://github.com/OlatomiwaTech/Makayla-lyrics-generator",
+      "homepage": "https://olatomiwatech.github.io/Makayla-lyrics-generator/",
+      "language": "HTML",
+      "topics": [
+        "code",
+        "lyrics",
+        "music",
+        "software"
+      ],
+      "stargazers_count": 2,
+      "forks_count": 0,
+      "updated_at": "2026-09-27T06:27:20Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "html-css-course",
+      "full_name": "OlatomiwaTech/html-css-course",
+      "description": "Watch the course: https://youtu.be/G3e-cpL7ofc",
+      "html_url": "https://github.com/OlatomiwaTech/html-css-course",
+      "homepage": "",
+      "language": "HTML",
+      "topics": [],
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "updated_at": "2026-09-27T05:28:35Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "FlowBase",
+      "full_name": "OlatomiwaTech/FlowBase",
+      "description": null,
+      "html_url": "https://github.com/OlatomiwaTech/FlowBase",
+      "homepage": null,
+      "language": "HTML",
+      "topics": [],
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "updated_at": "2026-09-25T18:09:46Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "CourseSignal",
+      "full_name": "OlatomiwaTech/CourseSignal",
+      "description": "AI-powered study intelligence platform that turns course materials into personalized study plans, adaptive practice, mastery tracking, and exam readiness insights.",
+      "html_url": "https://github.com/OlatomiwaTech/CourseSignal",
+      "homepage": "",
+      "language": "TypeScript",
+      "topics": [],
+      "stargazers_count": 2,
+      "forks_count": 0,
+      "updated_at": "2026-09-23T19:03:47Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "OlatomiwaTech",
+      "full_name": "OlatomiwaTech/OlatomiwaTech",
+      "description": "👋 Hi there! I'm Olatomiwa. Welcome to my GitHub profile.",
+      "html_url": "https://github.com/OlatomiwaTech/OlatomiwaTech",
+      "homepage": null,
+      "language": null,
+      "topics": [],
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "updated_at": "2026-09-21T19:20:58Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "ecommerce-backend-ai",
+      "full_name": "OlatomiwaTech/ecommerce-backend-ai",
+      "description": "Ecommerce backend created with AI. Video tutorial: https://youtu.be/vBprybSmJs8",
+      "html_url": "https://github.com/OlatomiwaTech/ecommerce-backend-ai",
+      "homepage": "",
+      "language": null,
+      "topics": [],
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "updated_at": "2026-09-21T16:55:15Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "my-first-react-app",
+      "full_name": "OlatomiwaTech/my-first-react-app",
+      "description": null,
+      "html_url": "https://github.com/OlatomiwaTech/my-first-react-app",
+      "homepage": "https://www.youtube.com/watch?v=dCLhUialKPQ&t=3s",
+      "language": "JavaScript",
+      "topics": [
+        "code",
+        "reactjs"
+      ],
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "updated_at": "2026-09-19T09:22:07Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
     {
       "name": "SewFlow",
       "full_name": "OlatomiwaTech/SewFlow",
       "description": "A functioning SaaS foundation with authentication and customer management, moving into the domain-specific tailoring workflow.",
       "html_url": "https://github.com/OlatomiwaTech/SewFlow",
-      "homepage": "https://sew-flow-frontend.vercel.app/",
+      "homepage": "https://sew-flow-frontend.vercel.app",
       "language": "TypeScript",
       "topics": [],
-      "stargazers_count": 0,
+      "stargazers_count": 3,
       "forks_count": 0,
-      "updated_at": "2026-09-09T11:07:00Z",
+      "updated_at": "2026-09-13T16:41:10Z",
       "archived": false,
       "visibility": "public",
-      "owner": { "login": "OlatomiwaTech" }
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
     },
     {
       "name": "SoloHub",
       "full_name": "OlatomiwaTech/SoloHub",
       "description": "SoloHub is a modern, all-in-one freelance management platform built for African freelancers. Manage clients, track projects, send professional invoices, and accept payments via Paystack — all from one place.",
       "html_url": "https://github.com/OlatomiwaTech/SoloHub",
-      "homepage": "https://solo-hub-two.vercel.app/",
+      "homepage": "https://solo-hub-two.vercel.app",
       "language": "JavaScript",
       "topics": [],
-      "stargazers_count": 0,
+      "stargazers_count": 6,
       "forks_count": 0,
-      "updated_at": "2026-08-21T12:02:00Z",
+      "updated_at": "2026-09-13T16:41:01Z",
       "archived": false,
       "visibility": "public",
-      "owner": { "login": "OlatomiwaTech" }
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
     },
     {
-      "name": "petra-school-project",
-      "full_name": "Michael-aal/petra-school-project",
-      "description": "Nuvora is a multi-tenant school operations platform for managing the daily academic, administrative, financial, and communication workflows of schools from one workspace.",
-      "html_url": "https://github.com/Michael-aal/petra-school-project",
-      "homepage": "",
+      "name": "Watch-Website",
+      "full_name": "OlatomiwaTech/Watch-Website",
+      "description": "A modern, responsive luxury watch website designed to showcase premium timepieces through an elegant and user-friendly digital experience. ⌚",
+      "html_url": "https://github.com/OlatomiwaTech/Watch-Website",
+      "homepage": "https://watch-website-mu-vert.vercel.app/",
+      "language": "CSS",
+      "topics": [],
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "updated_at": "2026-09-10T11:47:34Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "nexa",
+      "full_name": "OlatomiwaTech/nexa",
+      "description": null,
+      "html_url": "https://github.com/OlatomiwaTech/nexa",
+      "homepage": null,
       "language": "JavaScript",
       "topics": [],
       "stargazers_count": 0,
       "forks_count": 0,
-      "updated_at": "2026-09-20T14:29:00Z",
+      "updated_at": "2026-09-08T08:58:47Z",
       "archived": false,
       "visibility": "public",
-      "owner": { "login": "Michael-aal" }
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "akoko-luxury",
+      "full_name": "OlatomiwaTech/akoko-luxury",
+      "description": null,
+      "html_url": "https://github.com/OlatomiwaTech/akoko-luxury",
+      "homepage": null,
+      "language": "TypeScript",
+      "topics": [],
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "updated_at": "2026-08-21T18:53:07Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "Simple_Login__System",
+      "full_name": "OlatomiwaTech/Simple_Login__System",
+      "description": "A learning project implementing secure user registration, login, password hashing, sessions, and protected routes with Next.js, Prisma, and PostgreSQL.",
+      "html_url": "https://github.com/OlatomiwaTech/Simple_Login__System",
+      "homepage": "https://simple-login-system-murex.vercel.app",
+      "language": "TypeScript",
+      "topics": [],
+      "stargazers_count": 3,
+      "forks_count": 0,
+      "updated_at": "2026-08-17T10:52:26Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "badges",
+      "full_name": "OlatomiwaTech/badges",
+      "description": null,
+      "html_url": "https://github.com/OlatomiwaTech/badges",
+      "homepage": null,
+      "language": "HTML",
+      "topics": [],
+      "stargazers_count": 0,
+      "forks_count": 1,
+      "updated_at": "2026-08-17T06:18:36Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
+    },
+    {
+      "name": "maria-stitches",
+      "full_name": "OlatomiwaTech/maria-stitches",
+      "description": "A web application for my Mom Displaying her work",
+      "html_url": "https://github.com/OlatomiwaTech/maria-stitches",
+      "homepage": null,
+      "language": null,
+      "topics": [],
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "updated_at": "2026-07-30T13:05:44Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": {
+        "login": "OlatomiwaTech"
+      }
     }
   ]
 }

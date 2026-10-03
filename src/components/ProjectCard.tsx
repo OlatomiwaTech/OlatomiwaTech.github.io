@@ -104,22 +104,22 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
                   <span className="font-semibold text-[#F8FAFC]">Nuvora Administration Portal</span>
                 </div>
                 <span className="bg-sky-500/10 text-[var(--blue-accent)] px-2 py-0.5 rounded text-[10px] border border-sky-500/20">
-                  Term 2 Live Telemetry
+                  Active development
                 </span>
               </div>
 
               <div className="grid grid-cols-3 gap-2 text-left">
                 <div className="bg-[var(--surface-card)] p-2.5 rounded-lg border border-slate-800">
                   <p className="text-[10px] text-[#94A3B8]">STUDENTS</p>
-                  <p className="text-base font-bold text-[#F8FAFC]">1,248</p>
+                  <p className="text-base font-bold text-[#F8FAFC]">Student records</p>
                 </div>
                 <div className="bg-[var(--surface-card)] p-2.5 rounded-lg border border-slate-800">
                   <p className="text-[10px] text-[#94A3B8]">ATTENDANCE</p>
-                  <p className="text-base font-bold text-[var(--success)]">97.8%</p>
+                  <p className="text-base font-bold text-[var(--success)]">Attendance</p>
                 </div>
                 <div className="bg-[var(--surface-card)] p-2.5 rounded-lg border border-slate-800">
                   <p className="text-[10px] text-[#94A3B8]">API LATENCY</p>
-                  <p className="text-base font-bold text-[var(--blue-accent)]">24ms</p>
+                  <p className="text-base font-bold text-[var(--blue-accent)]">Assessments</p>
                 </div>
               </div>
 

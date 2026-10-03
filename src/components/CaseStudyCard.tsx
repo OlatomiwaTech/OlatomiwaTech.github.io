@@ -183,18 +183,18 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project, onOpenMod
                       <span className="font-semibold text-[#F8FAFC]">Nuvora Administrative Portal</span>
                     </div>
                     <span className="bg-sky-500/10 text-[#38BDF8] px-2.5 py-0.5 rounded text-[10px] border border-sky-500/20">
-                      Term 2 Active
+                      Active development
                     </span>
                   </div>
 
                   <div className="grid grid-cols-3 gap-2.5">
                     <div className="bg-[#111827] p-3 rounded-xl border border-slate-800">
                       <p className="text-[10px] text-[#94A3B8]">STUDENTS</p>
-                      <p className="text-base font-bold text-[#F8FAFC]">1,248</p>
+                      <p className="text-base font-bold text-[#F8FAFC]">Student records</p>
                     </div>
                     <div className="bg-[#111827] p-3 rounded-xl border border-slate-800">
                       <p className="text-[10px] text-[#94A3B8]">ATTENDANCE</p>
-                      <p className="text-base font-bold text-[var(--success)]">97.8%</p>
+                      <p className="text-base font-bold text-[var(--success)]">Attendance</p>
                     </div>
                     <div className="bg-[#111827] p-3 rounded-xl border border-slate-800">
                       <p className="text-[10px] text-[#94A3B8]">DATABASE</p>

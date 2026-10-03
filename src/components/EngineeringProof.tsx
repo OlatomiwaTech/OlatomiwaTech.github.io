@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, Database, Layers, Cpu, CheckCircle2 } from 'lucide-react';
+import { Code2, Database, Layers, Cpu } from 'lucide-react';
 import { PROOF_CATEGORIES } from '../data/portfolioData';
 
 export const EngineeringProof: React.FC = () => {
@@ -76,7 +76,6 @@ export const EngineeringProof: React.FC = () => {
                   <div key={idx} className="flex items-center justify-between">
                     <span className="text-[#94A3B8]">{m.label}</span>
                     <span className="text-[#F8FAFC] font-semibold flex items-center gap-1">
-                      <CheckCircle2 className="w-3 h-3 text-[var(--blue-accent)]" />
                       {m.value}
                     </span>
                   </div>

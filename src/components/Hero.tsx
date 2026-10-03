@@ -175,7 +175,7 @@ export const Hero: React.FC = () => {
                     </div>
                   </div>
                   <span className="font-mono text-xs text-[var(--success)] bg-[var(--success)]/10 px-2.5 py-1 rounded-md border border-[var(--success)]/20 self-start sm:self-auto shrink-0">
-                    Active development
+                    Collaborative project
                   </span>
                 </div>
 

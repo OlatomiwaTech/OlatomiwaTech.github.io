@@ -155,7 +155,7 @@ export const Hero: React.FC = () => {
                 </div>
                 <div className="hidden sm:flex bg-[#080B14] rounded-md px-3 py-1 text-xs font-mono text-[var(--text-muted)] border border-white/[0.06] items-center gap-2 min-w-0 truncate">
                   <span className="w-2 h-2 rounded-full bg-[var(--success)] shrink-0" />
-                  <span className="truncate">nuvora.school / admin</span>
+                  <span className="truncate">school-operations / workspace</span>
                 </div>
                 <div className="flex items-center gap-1 text-[10px] sm:text-[11px] font-mono text-[var(--accent)] bg-[var(--accent)]/10 px-2 py-0.5 rounded border border-[var(--accent)]/20 shrink-0">
                   <span>REAL WORK</span>
@@ -170,7 +170,7 @@ export const Hero: React.FC = () => {
                     </div>
                     <div className="min-w-0">
                       <h3 className="font-bold text-sm text-[var(--text-primary)] tracking-tight truncate">
-                        Petra School Platform (Nuvora)
+                        Petra School System · collaborative
                       </h3>
                       <p className="text-xs font-mono text-[var(--text-muted)] truncate">
                         School Operations & Student Record Engine

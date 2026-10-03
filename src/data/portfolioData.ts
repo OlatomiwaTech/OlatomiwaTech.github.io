@@ -20,13 +20,13 @@ export const PERSONAL_INFO = {
   role: 'Software Engineer · Product Builder · Entrepreneur',
   eyebrow: 'SOFTWARE ENGINEER & PRODUCT BUILDER',
   headline: 'I build software around real problems — and I’m using every project to become a better engineer.',
-  bio: 'I am a software engineer and product builder focused on creating scalable web applications, robust database architectures, and practical AI integrations.',
+  bio: 'I build full-stack applications and practical software for business, education, and everyday workflows, while continuing to grow as an engineer.',
   contactHeading: 'Have a problem worth solving?',
   contactCopy: 'Interested in working together, discussing software architecture, or exploring product opportunities? Send a direct message.',
   contactEmail: 'mrcodex2012@gmail.com',
   githubUrl: 'https://github.com/OlatomiwaTech',
   linkedinUrl: 'https://linkedin.com/in/olatomiwa-olabode',
-  statusText: 'Available for high-impact engineering roles & products',
+  statusText: 'Open to software engineering opportunities',
   copyright: '© 2026 Olatomiwa Olabode',
 };
 
@@ -88,7 +88,7 @@ export const CAPABILITY_PILLARS: CapabilityPillar[] = [
     tag: 'Core Focus',
     description: 'Turning real-world problems into useful software products with clean interfaces, intuitive user flows, and tight feedback loops.',
     technologies: ['React 19', 'TypeScript', 'Tailwind CSS', 'UX Architecture', 'State Management'],
-    level: 'Production Proven',
+    level: 'Active Domain',
     icon: 'Box',
   },
   {
@@ -97,7 +97,7 @@ export const CAPABILITY_PILLARS: CapabilityPillar[] = [
     tag: 'Architecture',
     description: 'Building complete web applications across client interfaces, RESTful API engines, auth middleware, and persistent relational data layers.',
     technologies: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Prisma ORM'],
-    level: 'Production Proven',
+    level: 'Active Domain',
     icon: 'Layers',
   },
   {
@@ -106,7 +106,7 @@ export const CAPABILITY_PILLARS: CapabilityPillar[] = [
     tag: 'Server Layer',
     description: 'Engineering resilient REST APIs, JWT/OAuth authorization middleware, SQL queries, relational schemas, and Prisma ORM data persistence.',
     technologies: ['Node.js', 'Express', 'PostgreSQL', 'Prisma ORM', 'REST APIs'],
-    level: 'Production Proven',
+    level: 'Active Domain',
     icon: 'Database',
   },
   {

@@ -12,9 +12,7 @@ async function readJson(file) {
 }
 
 export async function fetchRepositories(fetchImpl = fetch) {
-  const response = await fetchImpl(`https://api.github.com/users/${owner}/repos?per_page=100&sort=updated`, {
-    headers: { Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
-  });
+  const response = await fetchImpl(`https://api.github.com/users/${owner}/repos?per_page=100&sort=updated`, { headers: { Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' } });
   if (!response.ok) throw new Error(`GitHub repository request failed (${response.status} ${response.statusText})`);
   const data = await response.json();
   if (!Array.isArray(data)) throw new Error('GitHub returned an invalid repository list');
@@ -22,11 +20,7 @@ export async function fetchRepositories(fetchImpl = fetch) {
 }
 
 export function normalizeRepositories(repositories) {
-  return repositories.map(({ name, full_name, description, html_url, homepage, language, topics, stargazers_count, forks_count, updated_at, archived, visibility, owner: repoOwner }) => ({
-    name, full_name, description, html_url, homepage, language, topics: topics ?? [],
-    stargazers_count, forks_count, updated_at, archived, visibility,
-    owner: { login: repoOwner.login },
-  }));
+  return repositories.map(({ name, full_name, description, html_url, homepage, language, topics, stargazers_count, forks_count, updated_at, archived, visibility, owner: repoOwner }) => ({ name, full_name, description, html_url, homepage, language, topics: topics ?? [], stargazers_count, forks_count, updated_at, archived, visibility, owner: { login: repoOwner.login } }));
 }
 
 async function main() {
@@ -34,11 +28,11 @@ async function main() {
   const cached = await readJson(cache);
   try {
     const repositories = normalizeRepositories(await fetchRepositories());
-    const result = { generatedAt: new Date().toISOString(), repositories };
+    const snapshot = { generatedAt: new Date().toISOString(), repositories };
     await fs.mkdir(path.dirname(output), { recursive: true });
     await fs.mkdir(path.dirname(cache), { recursive: true });
-    await fs.writeFile(output, `${JSON.stringify(result, null, 2)}\n`);
-    await fs.writeFile(cache, JSON.stringify(result));
+    await fs.writeFile(output, `${JSON.stringify(snapshot, null, 2)}\n`);
+    await fs.writeFile(cache, JSON.stringify(snapshot));
     console.log(`Updated GitHub project data for ${repositories.length} public repositories.`);
   } catch (error) {
     const fallback = existing?.repositories?.length ? existing : cached;

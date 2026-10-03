@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "sync:projects": "node scripts/github/repositories.mjs",
-    "build": "npm run sync:projects && tsc && vite build",
+    "build": "npm run sync:projects && tsc -b && vite build",
+    "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"

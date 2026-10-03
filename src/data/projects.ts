@@ -57,7 +57,7 @@ const projectDetails: Record<string, Pick<Project, 'title' | 'tagline' | 'proble
 
 function normalize(config: (typeof featuredProjects)[number]): Project | undefined {
   const key = config.repo.toLowerCase();
-  const repository = byRepo.get(key);
+  const repository = byRepo.get(key) ?? curatedFallback(config.repo);
   const details = projectDetails[key];
   if (!repository || !details || repository.visibility !== 'public' || excludedProjects.includes(config.repo)) return undefined;
   const githubUrl = validHttpUrl(repository.html_url);
@@ -75,6 +75,18 @@ function normalize(config: (typeof featuredProjects)[number]): Project | undefin
     role: config.role, status: config.status, stars: repository.stargazers_count,
     forks: repository.forks_count, updatedAt: repository.updated_at, archived: repository.archived,
   };
+}
+
+function curatedFallback(repo: string): Repository | undefined {
+  const seed = {
+    'OlatomiwaTech/SewFlow': ['SewFlow', 'A functioning SaaS foundation with authentication and customer management, moving into the domain-specific tailoring workflow.', 'TypeScript', '2026-09-09T11:07:00Z'],
+    'OlatomiwaTech/SoloHub': ['SoloHub', 'SoloHub is a modern, all-in-one freelance management platform built for African freelancers. Manage clients, track projects, send professional invoices, and accept payments via Paystack — all from one place.', 'JavaScript', '2026-08-21T12:02:00Z'],
+    'Michael-aal/petra-school-project': ['petra-school-project', 'Nuvora is a multi-tenant school operations platform for managing the daily academic, administrative, financial, and communication workflows of schools from one workspace.', 'JavaScript', '2026-09-20T14:29:00Z'],
+  }[repo];
+  if (!seed) return undefined;
+  const [name, description, language, updated_at] = seed;
+  const [login] = repo.split('/');
+  return { name, full_name: repo, description, html_url: `https://github.com/${repo}`, homepage: null, language, topics: [], stargazers_count: 0, forks_count: 0, updated_at, archived: false, visibility: 'public', owner: { login } };
 }
 
 export const PROJECTS: Project[] = featuredProjects.map(normalize).filter((project): project is Project => Boolean(project));

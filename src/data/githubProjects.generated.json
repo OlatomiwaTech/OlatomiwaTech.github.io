@@ -1,4 +1,50 @@
 {
   "generatedAt": "2026-10-03T00:00:00.000Z",
-  "repositories": []
+  "repositories": [
+    {
+      "name": "SewFlow",
+      "full_name": "OlatomiwaTech/SewFlow",
+      "description": "A functioning SaaS foundation with authentication and customer management, moving into the domain-specific tailoring workflow.",
+      "html_url": "https://github.com/OlatomiwaTech/SewFlow",
+      "homepage": "",
+      "language": "TypeScript",
+      "topics": [],
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "updated_at": "2026-09-09T11:07:00Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": { "login": "OlatomiwaTech" }
+    },
+    {
+      "name": "SoloHub",
+      "full_name": "OlatomiwaTech/SoloHub",
+      "description": "SoloHub is a modern, all-in-one freelance management platform built for African freelancers. Manage clients, track projects, send professional invoices, and accept payments via Paystack — all from one place.",
+      "html_url": "https://github.com/OlatomiwaTech/SoloHub",
+      "homepage": "",
+      "language": "JavaScript",
+      "topics": [],
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "updated_at": "2026-08-21T12:02:00Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": { "login": "OlatomiwaTech" }
+    },
+    {
+      "name": "petra-school-project",
+      "full_name": "Michael-aal/petra-school-project",
+      "description": "Nuvora is a multi-tenant school operations platform for managing the daily academic, administrative, financial, and communication workflows of schools from one workspace.",
+      "html_url": "https://github.com/Michael-aal/petra-school-project",
+      "homepage": "",
+      "language": "JavaScript",
+      "topics": [],
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "updated_at": "2026-09-20T14:29:00Z",
+      "archived": false,
+      "visibility": "public",
+      "owner": { "login": "Michael-aal" }
+    }
+  ]
 }

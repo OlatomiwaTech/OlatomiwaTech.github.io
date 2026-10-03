@@ -25,7 +25,7 @@ export const About: React.FC = () => {
             </p>
 
             <p className="leading-relaxed prose-width text-[var(--text-secondary)]">
-              Based in Nigeria, I focus on full-stack web applications, backend architecture, relational database modeling, and practical AI integrations. I care deeply about product usability, clear code contracts, and building software people can actually rely on.
+              Based in Nigeria, I build full-stack web applications and business software for practical problems. I care about clear interfaces, maintainable code, and understanding the workflow a product needs to support.
             </p>
           </FadeUp>
 
@@ -33,7 +33,7 @@ export const About: React.FC = () => {
             {[
               {
                 label: 'WHO I AM',
-                body: 'Full-stack software engineer and product builder focused on scalable web apps and databases.',
+                body: 'Full-stack software engineer building useful web apps and business products.',
               },
               {
                 label: 'WHAT I BUILD',

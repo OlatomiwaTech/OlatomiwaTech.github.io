@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight, GitFork, Star } from 'lucide-react';
-import { PROJECTS } from '../data/projects';
+import { DISCOVERED_PROJECTS, PROJECTS, PROJECTS_UPDATED_AT } from '../data/projects';
 import type { Project } from '../types/portfolio';
 
 interface Props { onOpenModal: (project: Project) => void }
@@ -15,6 +15,10 @@ export const ProjectSection: React.FC<Props> = ({ onOpenModal }) => (
           Products for freelance work, tailoring businesses, and school operations. Project details and repository activity are refreshed from GitHub during the site build.
         </p>
       </header>
+
+      <p className="mb-6 text-xs text-[var(--text-muted)]" title={PROJECTS_UPDATED_AT}>
+        Featured from {DISCOVERED_PROJECTS.length} discovered public repositories · metadata refreshed {new Date(PROJECTS_UPDATED_AT).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
+      </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6">
         {PROJECTS.map((project) => (

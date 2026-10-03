@@ -201,10 +201,4 @@ export const NOW_DATA: NowItem[] = [
     description: 'Learning how to work with databases and queries.',
     tag: 'Learning',
   },
-  {
-    category: 'NEXT',
-    title: 'Backend development',
-    description: 'Learning more about APIs and server-side code.',
-    tag: 'Learning',
-  },
 ];

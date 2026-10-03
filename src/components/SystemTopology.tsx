@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Cpu, Server, Database, Layers, Activity, CheckCircle2 } from 'lucide-react';
+import { Server, Database, Layers, Activity, CheckCircle2 } from 'lucide-react';
 import { TOPOLOGY_NODES } from '../data/portfolioData';
 import type { TopologyNode } from '../types/portfolio';
 import { useMotion } from '../motion/MotionContext';
@@ -22,8 +22,6 @@ export const SystemTopology: React.FC = () => {
         return <Server className="w-4 h-4 text-[#38BDF8]" />;
       case 'database':
         return <Database className="w-4 h-4 text-[#38BDF8]" />;
-      case 'ai':
-        return <Cpu className="w-4 h-4 text-[#38BDF8]" />;
       case 'infra':
         return <CheckCircle2 className="w-4 h-4 text-emerald-400" />;
       default:

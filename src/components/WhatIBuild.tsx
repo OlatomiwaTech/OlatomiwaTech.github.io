@@ -1,6 +1,5 @@
 import React from 'react';
-import { CAPABILITY_PILLARS, TECH_GRAPH_NODES, TECH_GRAPH_EDGES } from '../data/portfolioData';
-import { TechGraph } from '../motion/TechGraph';
+import { CAPABILITY_PILLARS } from '../data/portfolioData';
 import { PhaseHandoff } from '../motion/PhaseHandoff';
 
 export const WhatIBuild: React.FC = () => {
@@ -25,22 +24,6 @@ export const WhatIBuild: React.FC = () => {
             <p className="type-lead section-header__intro">
               I build frontend applications, APIs, and database-backed software.
             </p>
-          </div>
-
-          <div
-            className="mb-12 md:mb-16 p-4 sm:p-6 md:p-8 rounded-2xl border border-white/[0.08] bg-[var(--surface-card)]/60 backdrop-blur-sm min-w-0"
-            style={{ containerType: 'inline-size', containerName: 'tech-graph' }}
-          >
-            <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-              <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[var(--accent)]">
-                Technologies
-              </p>
-              <span className="font-mono text-[10px] text-[var(--text-muted)]">
-                <span className="tech-graph__hint-desktop">Select a technology to view related tools</span>
-                <span className="tech-graph__hint-touch">Tap a technology to view related tools</span>
-              </span>
-            </div>
-            <TechGraph nodes={TECH_GRAPH_NODES} edges={TECH_GRAPH_EDGES} />
           </div>
 
           <div className="space-y-0 divide-y divide-white/[0.08]">

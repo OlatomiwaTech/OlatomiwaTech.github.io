@@ -9,7 +9,7 @@ import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
-import { MotionProvider, DepthField, ScrollSpine } from './motion';
+import { MotionProvider } from './motion';
 import type { Project } from './types/portfolio';
 
 export function App() {
@@ -18,9 +18,6 @@ export function App() {
   return (
     <MotionProvider>
       <div className="relative min-h-[100dvh] text-[var(--text-primary)] font-sans">
-        <DepthField />
-        <ScrollSpine />
-
         <Navbar />
 
         <main className="relative z-10">

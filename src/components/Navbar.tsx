@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { GithubIcon } from './icons/GithubIcon';
@@ -19,7 +18,6 @@ export const Navbar: React.FC = () => {
   const { activePhase } = useMotion();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 40);
@@ -41,10 +39,7 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <motion.header
-      initial={shouldReduceMotion ? false : { opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+    <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-[var(--background)]/85 backdrop-blur-xl border-b border-white/[0.06] py-3 shadow-2xl'
@@ -76,11 +71,7 @@ export const Navbar: React.FC = () => {
               >
                 {label}
                 {active && (
-                  <motion.span
-                    layoutId="navIndicator"
-                    transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                    className="absolute bottom-1 left-0 right-0 h-0.5 bg-[var(--accent)] rounded-full"
-                  />
+                  <span className="absolute bottom-1 left-0 right-0 h-0.5 bg-[var(--accent)]" />
                 )}
               </a>
             );
@@ -111,10 +102,7 @@ export const Navbar: React.FC = () => {
       </div>
 
       {mobileOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
+        <div
           className="md:hidden bg-[var(--background)] border-b border-white/[0.08]"
         >
           <nav className="section-container py-4 space-y-1" aria-label="Mobile">
@@ -149,8 +137,8 @@ export const Navbar: React.FC = () => {
               </MagneticButton>
             </div>
           </nav>
-        </motion.div>
+        </div>
       )}
-    </motion.header>
+    </header>
   );
 };

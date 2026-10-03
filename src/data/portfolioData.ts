@@ -77,7 +77,7 @@ export const CAPABILITY_PILLARS: CapabilityPillar[] = [
     tag: 'What I build',
     description: 'I build web apps with React and TypeScript.',
     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-    level: 'Active Domain',
+    level: 'Using',
     icon: 'Box',
   },
   {
@@ -86,7 +86,7 @@ export const CAPABILITY_PILLARS: CapabilityPillar[] = [
     tag: 'Frontend and backend',
     description: 'I work on frontend apps, APIs, and databases.',
     technologies: ['React', 'Node.js', 'Express'],
-    level: 'Active Domain',
+    level: 'Using',
     icon: 'Layers',
   },
   {
@@ -95,7 +95,7 @@ export const CAPABILITY_PILLARS: CapabilityPillar[] = [
     tag: 'Server and database',
     description: 'I build APIs and work with relational databases.',
     technologies: ['Node.js', 'Express', 'PostgreSQL', 'Prisma'],
-    level: 'Active Domain',
+    level: 'Using',
     icon: 'Database',
   },
 ];

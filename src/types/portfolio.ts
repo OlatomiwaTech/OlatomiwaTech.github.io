@@ -30,7 +30,7 @@ export interface CapabilityPillar {
   tag: string;
   description: string;
   technologies: string[];
-  level: 'Active Domain' | 'Exploring';
+  level: 'Using' | 'Learning';
   icon: string;
 }
 

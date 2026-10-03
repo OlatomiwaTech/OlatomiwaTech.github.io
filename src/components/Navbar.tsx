@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { AnimatePresence, motion, useReducedMotion, useScroll } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { GithubIcon } from './icons/GithubIcon';
@@ -16,6 +17,8 @@ const PHASE_NAV: { label: string; phase: ScrollPhase; href: string }[] = [
 
 export const Navbar: React.FC = () => {
   const { activePhase } = useMotion();
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -47,6 +50,7 @@ export const Navbar: React.FC = () => {
       }`}
       data-scroll-phase={activePhase}
     >
+      {!reduceMotion && <motion.span className="scroll-progress" style={{ scaleX: scrollYProgress }} aria-hidden="true" />}
       <div className="section-container flex items-center justify-between gap-4 min-w-0">
         <a
           href="#home"
@@ -71,7 +75,7 @@ export const Navbar: React.FC = () => {
               >
                 {label}
                 {active && (
-                  <span className="absolute bottom-1 left-0 right-0 h-0.5 bg-[var(--accent)]" />
+                  <motion.span layoutId="active-nav" transition={{ type: 'spring', stiffness: 360, damping: 30 }} className="absolute bottom-1 left-0 right-0 h-0.5 origin-left bg-[var(--accent)]" />
                 )}
               </a>
             );
@@ -101,9 +105,14 @@ export const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {mobileOpen && (
-        <div
-          className="md:hidden bg-[var(--background)] border-b border-white/[0.08]"
+      <AnimatePresence initial={false}>
+        {mobileOpen && (
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, height: 0, y: -8 }}
+          animate={{ opacity: 1, height: 'auto', y: 0 }}
+          exit={reduceMotion ? undefined : { opacity: 0, height: 0, y: -8 }}
+          transition={{ duration: reduceMotion ? 0 : 0.22, ease: [0.22, 1, 0.36, 1] }}
+          className="md:hidden overflow-hidden border-b border-[var(--border)] bg-[var(--background)]"
         >
           <nav className="section-container py-4 space-y-1" aria-label="Mobile">
             {PHASE_NAV.map(({ label, href }) => (
@@ -137,8 +146,9 @@ export const Navbar: React.FC = () => {
               </MagneticButton>
             </div>
           </nav>
-        </div>
-      )}
+        </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

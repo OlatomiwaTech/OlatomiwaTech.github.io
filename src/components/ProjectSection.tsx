@@ -100,8 +100,7 @@ const AnimatedProjectCard: React.FC<{ project: Project; index: number; onOpenMod
         </motion.div>
       </div>
 
-      <div className="mb-4 flex items-center justify-between gap-3">
-        <span className="font-mono text-[11px] font-medium text-[var(--text-muted)]">{project.number}</span>
+      <div className="mb-4 flex items-center justify-end gap-3">
         <span className="rounded-full border border-[var(--border)] px-3 py-1 text-[11px] text-[var(--text-muted)]">{project.status}</span>
       </div>
       <h3 className="text-xl font-semibold tracking-tight text-[var(--text-primary)]">{project.title}</h3>

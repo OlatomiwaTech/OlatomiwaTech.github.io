@@ -61,7 +61,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             {/* Header */}
             <div className="mb-6">
               <span className="font-mono text-xs font-bold text-[var(--accent)] bg-[var(--accent)]/10 border border-[var(--accent)]/20 px-3 py-1 rounded-md tracking-wider inline-block mb-3">
-                PROJECT {project.number} ARCHITECTURE
+                PROJECT DETAILS
               </span>
 
               <h3 className="text-3xl font-extrabold text-[var(--text-primary)]">
@@ -135,10 +135,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--accent)] text-[var(--background)] font-semibold text-sm hover:bg-[var(--accent-hover)] transition-colors"
                 >
                   <GithubIcon className="w-4 h-4" />
-                  <span>GitHub Repository</span>
+                <span>GitHub Repository</span>
                 </a>
               </MagneticButton>
 
+              {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 rounded-lg bg-[var(--surface-card)] border border-white/10 text-[var(--text-primary)] font-medium text-sm transition-colors">Live site</a>}
               <button
                 onClick={onClose}
                 className="px-5 py-2.5 rounded-lg bg-[var(--surface-card)] border border-white/10 text-[var(--text-muted)] hover:text-[var(--text-primary)] font-medium text-sm transition-colors"

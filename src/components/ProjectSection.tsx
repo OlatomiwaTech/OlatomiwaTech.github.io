@@ -12,15 +12,18 @@ const PROJECT_ICONS: Record<string, LucideIcon> = {
   'michael-aal/petra-school-project': GraduationCap,
 };
 
-export const ProjectSection: React.FC<Props> = ({ onOpenModal }) => (
+export const ProjectSection: React.FC<Props> = ({ onOpenModal }) => {
+  const reduceMotion = useReducedMotion();
+
+  return (
   <section id="projects" className="border-t border-[var(--border)]">
     <div className="section-container section-shell !py-[clamp(3rem,6vw,5rem)]">
       <motion.header
         className="mb-10 max-w-3xl md:mb-14"
-        initial={{ opacity: 0, y: 20 }}
+        initial={reduceMotion ? false : { opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: reduceMotion ? 0 : 0.55, ease: [0.22, 1, 0.36, 1] }}
       >
         <p className="text-sm font-medium text-[var(--accent)]">Selected work</p>
         <h2 className="type-section mt-2 text-[var(--text-primary)]">Selected projects</h2>
@@ -37,7 +40,8 @@ export const ProjectSection: React.FC<Props> = ({ onOpenModal }) => (
       {!PROJECTS.length && <p className="text-sm text-[var(--text-secondary)]">Project data is temporarily unavailable. Repository source remains available from <a className="underline" href="https://github.com/OlatomiwaTech">GitHub</a>.</p>}
     </div>
   </section>
-);
+  );
+};
 
 const AnimatedProjectCard: React.FC<{ project: Project; index: number; onOpenModal: Props['onOpenModal'] }> = ({ project, index, onOpenModal }) => {
   const reduceMotion = useReducedMotion();
@@ -47,7 +51,7 @@ const AnimatedProjectCard: React.FC<{ project: Project; index: number; onOpenMod
   const artName = project.id.split('/').pop()?.toLowerCase() ?? 'default';
 
   const handleMouseMove = useCallback((event: React.MouseEvent<HTMLElement>) => {
-    if (reduceMotion || event.pointerType === 'touch') return;
+    if (reduceMotion) return;
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = (event.clientX - bounds.left) / bounds.width - 0.5;
     const y = (event.clientY - bounds.top) / bounds.height - 0.5;

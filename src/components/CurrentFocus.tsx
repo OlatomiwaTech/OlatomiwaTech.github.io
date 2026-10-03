@@ -34,7 +34,7 @@ export const CurrentFocus: React.FC = () => {
           </h2>
 
           <p className="text-base sm:text-lg text-[#94A3B8] max-w-2xl">
-            Areas I am actively building in and expanding toward higher-level engineering maturity.
+            Technologies and areas I am currently studying.
           </p>
         </div>
 

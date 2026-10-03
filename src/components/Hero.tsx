@@ -117,7 +117,7 @@ export const Hero: React.FC = () => {
                 onClick={() => scrollTo('#about')}
                 className="signal-link text-xs font-mono text-[var(--text-muted)] sm:ml-2 touch-target !min-w-0 px-2"
               >
-                About Me →
+                About Me
               </button>
             </div>
 

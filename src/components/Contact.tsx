@@ -136,7 +136,7 @@ export const Contact: React.FC = () => {
                   onClick={() => setState('idle')}
                   className="font-mono text-xs text-[var(--accent)] hover:underline mt-2"
                 >
-                  Send another message →
+                  Send another message
                 </button>
               </div>
             ) : (

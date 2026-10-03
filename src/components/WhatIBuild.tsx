@@ -6,7 +6,7 @@ import { PhaseHandoff } from '../motion/PhaseHandoff';
 export const WhatIBuild: React.FC = () => {
   return (
     <>
-      <PhaseHandoff fromId="journey" toId="capabilities" fromLabel="Journey" toLabel="Capabilities" />
+      <PhaseHandoff fromId="journey" toId="capabilities" fromLabel="Projects" toLabel="Skills" />
 
       <section id="capabilities" className="bg-[var(--surface)]/80 section-shell border-t border-white/[0.06] relative">
         <div className="section-container">

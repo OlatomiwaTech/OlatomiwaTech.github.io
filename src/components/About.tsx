@@ -21,7 +21,7 @@ export const About: React.FC = () => {
             </h2>
 
             <p className="type-lead">
-              I enjoy understanding how complex systems work, building software products from scratch, and using each project to push my engineering ability further.
+              I enjoy solving product problems and working across frontend and backend code.
             </p>
 
             <p className="leading-relaxed prose-width text-[var(--text-secondary)]">

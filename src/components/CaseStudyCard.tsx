@@ -63,7 +63,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project, onOpenMod
               <div className="flex items-center justify-between border-b border-slate-800 pb-3 text-xs text-[#94A3B8]">
                 <div className="flex items-center gap-2">
                   <Scissors className="w-4 h-4 text-[#38BDF8]" />
-                  <span className="font-semibold text-[#F8FAFC]">Maria Stitches Bespoke Order & Measurement Telemetry</span>
+                  <span className="font-semibold text-[#F8FAFC]">Tailoring business workflow</span>
                 </div>
                 <span className="bg-[var(--success)]/10 text-[var(--success)] px-2.5 py-0.5 rounded text-[10px] border border-[var(--success)]/20">
                   Order #MS-482 Active

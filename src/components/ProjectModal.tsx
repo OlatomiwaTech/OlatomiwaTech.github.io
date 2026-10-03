@@ -47,6 +47,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.96, y: 12 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-modal-title"
             className="relative z-10 w-full max-w-3xl max-h-[min(90dvh,640px)] overflow-y-auto bg-[var(--surface)] border border-white/10 rounded-2xl shadow-2xl p-6 sm:p-8 text-left text-[var(--text-primary)]"
           >
             {/* Close Button */}
@@ -64,7 +67,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 PROJECT DETAILS
               </span>
 
-              <h3 className="text-3xl font-extrabold text-[var(--text-primary)]">
+              <h3 id="project-modal-title" className="text-3xl font-extrabold text-[var(--text-primary)]">
                 {project.title}
               </h3>
               <p className="text-xs font-mono text-[var(--accent)] mt-1">

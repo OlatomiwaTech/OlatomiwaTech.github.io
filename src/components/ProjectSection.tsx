@@ -17,7 +17,7 @@ export const ProjectSection: React.FC<Props> = ({ onOpenModal }) => (
       </header>
 
       <p className="mb-6 text-xs text-[var(--text-muted)]" title={PROJECTS_UPDATED_AT}>
-        Featured from {DISCOVERED_PROJECTS.length} discovered public repositories · metadata refreshed {new Date(PROJECTS_UPDATED_AT).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
+        {PROJECTS.length} curated projects · {DISCOVERED_PROJECTS.length} public repositories discovered · metadata refreshed {new Date(PROJECTS_UPDATED_AT).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6">
@@ -28,6 +28,7 @@ export const ProjectSection: React.FC<Props> = ({ onOpenModal }) => (
               {project.owner !== 'OlatomiwaTech' && (
                 <span className="rounded border border-white/10 px-2 py-1 text-xs text-[var(--text-secondary)]">{project.role} · owned by {project.owner}</span>
               )}
+              {project.archived && <span className="rounded border border-amber-300/30 px-2 py-1 text-xs text-amber-200">Archived</span>}
             </div>
             <h3 className="text-2xl font-semibold text-[var(--text-primary)]">{project.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">{project.description}</p>

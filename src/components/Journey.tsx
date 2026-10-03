@@ -98,7 +98,7 @@ const JourneyHeader: React.FC = () => (
       </h2>
     </div>
     <p className="type-lead section-header__intro">
-      From foundational projects to production systems, each milestone represents intentional growth in solving real-world problems with better engineering.
+      Projects and learning milestones reflect a continuing effort to solve practical problems with better engineering.
     </p>
   </div>
 );
@@ -120,16 +120,14 @@ const JourneyCardContent: React.FC<{
         </span>
       </div>
       {step.linkedProjectId && (
-        <a
-          href={`#project-${step.linkedProjectId}`}
-          onClick={(e) => {
-            e.preventDefault();
-            scrollTo(`#project-${step.linkedProjectId}`);
-          }}
-          className="p-2 rounded-lg bg-[var(--surface-card)] border border-white/[0.06] text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)]/30 transition-colors"
+        <button
+          type="button"
+          aria-label={`View ${step.title} project`}
+          onClick={() => scrollTo('#projects')}
+          className="p-2 rounded-lg bg-[var(--surface-card)] border border-white/[0.06] text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)]/30 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)]"
         >
           <ArrowUpRight className="w-3.5 h-3.5" />
-        </a>
+        </button>
       )}
     </div>
 

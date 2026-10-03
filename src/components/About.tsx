@@ -37,7 +37,7 @@ export const About: React.FC = () => {
               },
               {
                 label: 'WHAT I BUILD',
-                body: 'Developer tools, institutional platforms, custom e-commerce engines, and RESTful API services.',
+                body: 'Full-stack applications, SaaS products, business software, and school systems.',
               },
               {
                 label: "WHAT I'M LEARNING",
@@ -45,7 +45,7 @@ export const About: React.FC = () => {
               },
               {
                 label: 'WHERE I\'M HEADED',
-                body: 'Staff-level software architecture, high-throughput systems, and AI-native product development.',
+                body: 'Deeper experience in software architecture, backend systems, and useful product development.',
               },
             ].map(({ label, body }) => (
               <StaggerItem key={label}>

@@ -155,10 +155,10 @@ export const Hero: React.FC = () => {
                 </div>
                 <div className="hidden sm:flex bg-[#080B14] rounded-md px-3 py-1 text-xs font-mono text-[var(--text-muted)] border border-white/[0.06] items-center gap-2 min-w-0 truncate">
                   <span className="w-2 h-2 rounded-full bg-[var(--success)] shrink-0" />
-                  <span className="truncate">school-operations / workspace</span>
+                  <span className="truncate">petra-school-project / workspace</span>
                 </div>
                 <div className="flex items-center gap-1 text-[10px] sm:text-[11px] font-mono text-[var(--accent)] bg-[var(--accent)]/10 px-2 py-0.5 rounded border border-[var(--accent)]/20 shrink-0">
-                  <span>REAL WORK</span>
+                  <span>COLLABORATIVE PROJECT</span>
                 </div>
               </div>
 
@@ -170,7 +170,7 @@ export const Hero: React.FC = () => {
                     </div>
                     <div className="min-w-0">
                       <h3 className="font-bold text-sm text-[var(--text-primary)] tracking-tight truncate">
-                        Petra School System · collaborative
+                        Petra School System · contributor
                       </h3>
                       <p className="text-xs font-mono text-[var(--text-muted)] truncate">
                         School Operations & Student Record Engine
@@ -178,7 +178,7 @@ export const Hero: React.FC = () => {
                     </div>
                   </div>
                   <span className="font-mono text-xs text-[var(--success)] bg-[var(--success)]/10 px-2.5 py-1 rounded-md border border-[var(--success)]/20 self-start sm:self-auto shrink-0">
-                    Term 2 Active
+                    Active development
                   </span>
                 </div>
 

@@ -89,6 +89,14 @@ function curatedFallback(repo: string): Repository | undefined {
   return { name, full_name: repo, description, html_url: `https://github.com/${repo}`, homepage: null, language, topics: [], stargazers_count: 0, forks_count: 0, updated_at, archived: false, visibility: 'public', owner: { login } };
 }
 
-export const PROJECTS: Project[] = featuredProjects.map(normalize).filter((project): project is Project => Boolean(project));
+export function mergeProjects(discovered: Repository[], featured: typeof featuredProjects, excluded: string[] = excludedProjects): Project[] {
+  const previous = new Map(byRepo);
+  for (const repository of discovered) previous.set(repository.full_name.toLowerCase(), repository);
+  for (const [repo, repository] of previous) byRepo.set(repo, repository);
+  const selected = featured.filter((config) => config.featured && !excluded.includes(config.repo));
+  return selected.map(normalize).filter((project): project is Project => Boolean(project));
+}
+
+export const PROJECTS: Project[] = mergeProjects(repositories, featuredProjects);
 export const DISCOVERED_PROJECTS = repositories.filter((repository) => repository.owner.login.toLowerCase() === 'olatomiwatech' && repository.visibility === 'public' && !excludedProjects.includes(repository.full_name));
 export const PROJECTS_UPDATED_AT = generated.generatedAt;

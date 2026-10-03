@@ -4,6 +4,7 @@ import { FadeUp } from './motion/MotionPrimitives';
 
 const details = [
   ['Based in', 'Nigeria'],
+  ['Age', '14'],
   ['I work on', 'Frontend and backend'],
   ['Learning', 'PostgreSQL and Prisma'],
 ];
@@ -18,8 +19,8 @@ export const About: React.FC = () => {
         <p className="mb-4 text-sm font-medium text-[var(--text-muted)]">About</p>
         <h2 className="type-section max-w-[20ch]">I work on both sides of a web app.</h2>
         <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-[var(--text-secondary)]">
-          <p>I’m a software engineer from Nigeria. I build web apps for schools, freelancers, and small businesses.</p>
-          <p>I work on the interface, backend, and database, depending on what a project needs.</p>
+          <p>I’m 14 and based in Nigeria. I build web apps for schools, freelancers, and small businesses.</p>
+          <p>I like breaking a problem into smaller steps, then working through them to build a solution.</p>
         </div>
       </FadeUp>
 

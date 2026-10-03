@@ -125,7 +125,7 @@ export const Hero: React.FC = () => {
               <span className="font-mono text-[10px] text-[var(--text-muted)] uppercase tracking-wider mr-1 w-full sm:w-auto">
                 STACK:
               </span>
-              {['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma'].map((tech) => (
+              {['React', 'JavaScript', 'TypeScript', 'Node.js', 'PostgreSQL'].map((tech) => (
                 <span
                   key={tech}
                   className="font-mono text-[11px] px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-[var(--text-primary)]"
@@ -241,7 +241,7 @@ export const Hero: React.FC = () => {
         <div className="mt-[clamp(2rem,5vh,3.5rem)] flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-[var(--text-muted)]">
           <div className="flex items-center gap-3 min-w-0">
             <span className="w-2 h-2 rounded-full bg-[var(--success)] shrink-0" />
-            <span className="font-mono text-[11px]">Available for software engineering roles & product builds</span>
+            <span className="font-mono text-[11px]">Open to software roles and project work</span>
           </div>
           <button
             onClick={() => scrollTo('#projects')}

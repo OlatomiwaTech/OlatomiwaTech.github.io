@@ -25,7 +25,7 @@ export const About: React.FC = () => {
             </p>
 
             <p className="leading-relaxed prose-width text-[var(--text-secondary)]">
-              Based in Nigeria, I build full-stack web applications and business software. I focus on clear interfaces and maintainable code.
+              Based in Nigeria, I build web applications and business software. I try to keep the code clear and easy to maintain.
             </p>
           </FadeUp>
 
@@ -33,7 +33,7 @@ export const About: React.FC = () => {
             {[
               {
                 label: 'WHO I AM',
-                body: 'Full-stack software engineer building useful web apps and business products.',
+                body: 'Software engineer building web apps and business products.',
               },
               {
                 label: 'WHAT I BUILD',

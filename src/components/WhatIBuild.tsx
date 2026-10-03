@@ -19,7 +19,7 @@ export const WhatIBuild: React.FC = () => {
                 </p>
               </div>
               <h2 className="type-section">
-                ENGINEERING CAPABILITIES.
+                WHAT I BUILD.
               </h2>
             </div>
             <p className="type-lead section-header__intro">

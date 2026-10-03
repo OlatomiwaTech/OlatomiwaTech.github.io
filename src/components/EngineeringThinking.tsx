@@ -43,7 +43,7 @@ export const EngineeringThinking: React.FC = () => {
 
         <div className="bg-[var(--surface)] p-6 sm:p-8 rounded-2xl border border-white/10 mb-16 max-w-3xl">
           <p className="text-[var(--text-primary)] font-medium text-base sm:text-lg leading-relaxed">
-            I try to understand what the software needs to do before choosing the tools.
+            I first work out what the software needs to do, then choose the tools.
           </p>
         </div>
 
